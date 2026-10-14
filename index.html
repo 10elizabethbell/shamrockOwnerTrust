@@ -49,10 +49,18 @@ p{margin:0}
 .ed :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
-.bar{display:flex;align-items:center;gap:10px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
-.bar svg{width:34px;height:34px;flex:none}
+.bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;border-radius:8px}
+.brand svg{width:34px;height:34px;flex:none}
+.nav{gap:22px}
+.nav a,.bar-phone{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+.bar-phone{gap:8px;font-weight:850;font-size:20px}
+.bar-phone svg{width:20px;height:20px}
+@media (hover:hover){.nav a:hover,.bar-phone:hover{border-bottom-color:var(--focus)}}
+.nav,.bar-phone{display:none}
 .bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
 .bar b span{display:block;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+@media (max-width:379px){.bar b span{letter-spacing:.06em}}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;padding-top:14px}
@@ -65,8 +73,9 @@ p{margin:0}
 .sign h1{font-size:clamp(3rem,15vw,5.6rem);color:#f4f7f2;letter-spacing:-.02em;line-height:.98}
 .sign h1 span{display:block}
 .promise{font-size:clamp(17px,4.9vw,20px);line-height:1.45;color:var(--on-dark);max-width:34ch}
-.ctas{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
-@media (max-width:379px){.ctas{gap:8px}.btn{padding:0 12px;font-size:17px;gap:8px}.btn svg{width:20px;height:20px}.btn-ghost svg{display:none}.btn-ghost{padding:0 18px}}
+.ctas{display:grid;grid-template-columns:1fr;gap:10px}
+.two-line{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
+.two-line small{font-size:16px;font-weight:700;opacity:.85}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font-weight:800;font-size:18px;text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .btn svg{width:22px;height:22px;flex:none}
 .btn:active{transform:translateY(1px)}
@@ -110,9 +119,14 @@ section.pad{padding:44px 0 64px}
 .services li:first-child{border-top:2px dotted #b9c8be}
 .services li::before{content:"";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}
 .sh{margin-top:56px}
+.steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px 1fr;column-gap:14px;counter-increment:s}
+.steps li::before{content:counter(s);grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sign);color:#f4f7f2;font-weight:850;font-size:20px}
+.steps h3{font-size:20px;font-weight:750;line-height:1.35;letter-spacing:0;margin:8px 0 4px}
+.steps p{max-width:46ch}
 
 /* Good to know */
-.qa{margin-top:22px;border-top:2px solid #c8d4cb}
+.qa{margin-top:22px;border-top:2px solid #c8d4cb;max-width:760px}
 .qa h3{font-size:20px;font-weight:750;line-height:1.35;letter-spacing:0;margin:20px 0 8px}
 .qa p{max-width:60ch;padding-bottom:20px;border-bottom:2px solid #c8d4cb}
 
@@ -120,11 +134,21 @@ section.pad{padding:44px 0 64px}
 .close{padding:48px 0 56px;text-align:left}
 .close h2{color:var(--on-dark)}
 .close .lede{color:var(--on-dark-soft)}
-.close .ctas{margin-top:26px;max-width:520px}
+.close .ctas{margin-top:22px;max-width:520px}
+.close-phone{margin-top:18px}
+.close-phone a{font-size:clamp(30px,9vw,44px);font-weight:850;letter-spacing:-.01em;color:var(--on-dark);text-decoration:none;border-bottom:3px solid rgba(242,246,241,.4)}
+@media (hover:hover){.close-phone a:hover{border-bottom-color:var(--focus)}}
+
+/* Sticky call (phones only; this site only, by Ellie's request 2026-10-14): small, labeled, hidden while another Call button is on screen */
+.sticky-call{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;display:inline-flex;align-items:center;gap:8px;min-height:56px;padding:0 20px;border-radius:999px;background:var(--amber);color:var(--ink);font-weight:850;font-size:18px;text-decoration:none;box-shadow:0 8px 20px -6px rgba(5,20,25,.55);transition:opacity .25s,transform .25s}
+.sticky-call svg{width:20px;height:20px}
+.sticky-call.off{opacity:0;transform:translateY(12px);pointer-events:none}
+@media (min-width:760px){.sticky-call{display:none}}
+@media (prefers-reduced-motion:reduce){.sticky-call{transition:none}}
 .tagline{margin-top:34px;font-size:18px;font-style:italic;color:var(--on-dark-soft)}
 
 /* Footer */
-footer{background:var(--night-2);padding:30px 0 40px;font-size:16px;color:var(--on-dark-soft)}
+footer{background:var(--night-2);padding:30px 0 104px;font-size:16px;color:var(--on-dark-soft)}
 footer .wrap{display:grid;gap:6px}
 footer strong{color:var(--on-dark);font-size:18px}
 footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
@@ -140,6 +164,8 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .sign{grid-row:span 2}
   .promise{align-self:end}
   .ctas{align-self:start;grid-template-columns:auto auto;justify-content:start}
+  .nav{display:flex}.bar-phone{display:inline-flex}
+  footer{padding-bottom:40px}
   .road{height:340px;margin-top:40px}
   .pack-grid{grid-template-columns:1.1fr 1fr;align-items:center}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:64px}
@@ -148,7 +174,7 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .seam{height:64px}
   .ed .sign{max-width:860px}
   .ed .sign-in{padding:40px 44px}
-  footer .wrap{grid-template-columns:auto auto auto;justify-content:space-between;align-items:center}
+  footer .wrap{grid-template-columns:auto auto auto auto;justify-content:space-between;align-items:center}
 }
 @media (min-width:1100px){.road{height:380px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -185,11 +211,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </svg>
 
 <header class="bar">
-  <svg aria-hidden="true"><use href="#clover"/></svg>
-  <b>Shamrock Transportation<span>Owner &amp; driver: Ed Brannagan</span></b>
+  <a class="brand" href="#top" aria-label="Shamrock Transportation, back to top"><svg aria-hidden="true"><use href="#clover"/></svg><b>Shamrock Transportation<span>Owner &amp; driver: Ed Brannagan</span></b></a>
+  <nav class="nav" aria-label="Sections"><a href="#driver">Meet your driver</a><a href="#how">How it works</a><a href="#questions">Questions</a></nav>
+  <a class="bar-phone" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
 </header>
 
-<main>
+<main id="top">
 <section class="hero" aria-label="Shamrock Transportation">
   <div class="wrap hero-copy">
     <div class="sign">
@@ -198,10 +225,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <h1><span>You fly.</span><span>I'll drive.</span></h1>
       </div>
     </div>
-    <p class="promise">I drive your own car between New Jersey and Florida, door to door, so you can fly and still have your own car down there.</p>
-    <div class="ctas">
-      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
-      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
+    <p class="promise">Personal, door-to-door car delivery between New Jersey and Florida. You speak directly with the person who drives your car: me.</p>
+    <div class="ctas" id="heroCtas">
+      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg><span class="two-line">Call for a free quote<small>732-300-3835</small></span></a>
+      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Send a text</a>
     </div>
   </div>
   <div class="road" id="road">
@@ -210,13 +237,45 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
 
+<section class="ed" id="driver" aria-labelledby="ed-h">
+  <div class="wrap">
+    <div class="sign">
+      <div class="sign-in">
+        <h2 id="ed-h">Meet your driver</h2>
+        <p class="lede">Hi, I'm Ed Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. When you call, you get me on my cell, not a dispatcher.</p>
+        <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="light pad" id="how" style="padding-top:8px">
+  <div class="wrap two">
+    <div>
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><h3>Call for a quote</h3><p>Tell me about the car, where it is, where it's going, and your dates. I'll give you a price.</p></li>
+        <li><h3>Arrange pickup</h3><p>We agree on a pickup day and place. I come to your door.</p></li>
+        <li><h3>Receive your car</h3><p>I drive it myself, door to door, to the address we agreed on.</p></li>
+      </ol>
+    </div>
+    <div class="sh">
+      <h2>What I do</h2>
+      <ul class="services">
+        <li>New Jersey to Florida, and back</li>
+        <li>Local &amp; long distance</li>
+        <li>Airport services anywhere in Florida</li>
+        <li>Door to door</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<section class="light pad" id="pack">
+<section class="light pad" id="pack" style="padding-top:8px">
   <div class="wrap pack-grid">
     <div>
-      <h2>Pack it full.</h2>
-      <p class="lede">I'm driving your car, not loading it on a truck, so it can come down with your things inside: winter clothes, golf clubs, the boxes you'd otherwise ship.</p>
+      <h2>Driven, not trucked.</h2>
+      <p class="lede">Your car isn't loaded onto a carrier truck. I drive it, so it can come down packed with your things: winter clothes, golf clubs, the boxes you'd otherwise ship.</p>
     </div>
     <svg class="trunk" viewBox="0 0 420 230" role="img" aria-label="Your car packed to the windows, a suitcase on the roof and golf clubs in the back seat, with Ed at the wheel">
       <defs><clipPath id="glass"><path d="M150 112Q162 84 188 74L252 74V112Z"/><path d="M262 74H292Q314 78 334 112H262Z"/></clipPath></defs>
@@ -245,37 +304,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<section class="ed" id="driver" aria-labelledby="ed-h">
+<section class="light pad" id="questions" style="padding-top:8px">
   <div class="wrap">
-    <div class="sign">
-      <div class="sign-in">
-        <h2 id="ed-h">You'll know who's driving.</h2>
-        <p class="lede">Me, Edward Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. You call my cell, not a dispatcher.</p>
-        <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="light pad" id="services" style="padding-top:8px">
-  <div class="wrap two">
-    <div>
-      <h2>What I do</h2>
-      <ul class="services">
-        <li>New Jersey to Florida, and back</li>
-        <li>Local &amp; long distance</li>
-        <li>Airport services anywhere in Florida</li>
-        <li>Door to door</li>
-      </ul>
-    </div>
-    <div class="sh">
-      <h2>Good to know</h2>
-      <div class="qa">
-        <h3>When is a truck carrier the better choice?</h3>
-        <p>If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
-        <h3>Do you bring it back up in the spring?</h3>
-        <p>Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p>
-      </div>
+    <h2>Questions</h2>
+    <div class="qa">
+      <h3>What does it cost?</h3>
+      <p>Very reasonable rates. Every trip is different, so call me with where and when and I'll give you a price.</p>
+      <h3>Can I pack the car?</h3>
+      <p>Yes. Tell me what's going in when you call and I'll tell you what fits.</p>
+      <h3>Do you bring it back up in the spring?</h3>
+      <p>Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p>
+      <h3>When is a truck carrier the better choice?</h3>
+      <p>If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
+      <!-- Insurance answer goes here once Ed confirms his coverage (HANDOFF.md, question 1). Do not publish a guess. -->
     </div>
   </div>
 </section>
@@ -285,20 +326,24 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="close" aria-labelledby="close-h">
   <div class="wrap">
     <h2 id="close-h">Heading south this winter?</h2>
-    <p class="lede">Very reasonable rates. Call me with where and when, and I'll give you a price.</p>
-    <div class="ctas">
-      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
-      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
+    <p class="lede">I drive between New Jersey and Florida, door to door. Call me for a free quote.</p>
+    <p class="close-phone"><a href="tel:+17323003835">732-300-3835</a></p>
+    <div class="ctas" id="closeCtas">
+      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg><span class="two-line">Call for a free quote<small>732-300-3835</small></span></a>
+      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Send a text</a>
     </div>
     <p class="tagline">Life is a highway… drive it all night long.</p>
   </div>
 </section>
 </main>
 
+<a class="sticky-call off" id="stickyCall" href="tel:+17323003835" aria-label="Call Ed for a free quote, 732-300-3835"><svg aria-hidden="true"><use href="#phone"/></svg>Call Ed</a>
+
 <footer>
   <div class="wrap">
     <strong>Shamrock Transportation</strong>
     <span>Edward Brannagan, owner &amp; driver</span>
+    <span>New Jersey and Florida, door to door</span>
     <a href="tel:+17323003835">732-300-3835</a>
   </div>
 </footer>
@@ -319,6 +364,21 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   });
 })();
 
+/* ---------- Sticky call: shows once the hero buttons scroll away, hides at the closing buttons ---------- */
+(function(){
+  var btn = document.getElementById('stickyCall'), hero = document.getElementById('heroCtas'), close = document.getElementById('closeCtas'), queued = false;
+  function check(){
+    queued = false;
+    var h = hero.getBoundingClientRect(), c = close.getBoundingClientRect();
+    var show = h.bottom < 0 && !(c.top < innerHeight && c.bottom > 0);
+    btn.classList.toggle('off', !show);
+  }
+  function soon(){ if (!queued){ queued = true; requestAnimationFrame(check); } }
+  addEventListener('scroll', soon, {passive: true});
+  addEventListener('resize', soon);
+  check();
+})();
+
 /* ---------- Shared animation loop ---------- */
 var Loop = (function(){
   var jobs = [], running = false, last = 0;
@@ -336,7 +396,7 @@ var Loop = (function(){
 var REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 function watch(el, job){
   if (!('IntersectionObserver' in window)){ job.on = true; Loop.wake(); return; }
-  new IntersectionObserver(function(es){ job.on = es[0].isIntersecting; if (job.on) Loop.wake(); }).observe(el);
+  var io = new IntersectionObserver(function(es){ job.on = es[0].isIntersecting; if (job.on) Loop.wake(); }).observe(el);
 }
 
 /* ---------- Seams: a still lane line along each section edge ---------- */
