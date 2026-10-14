@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shamrock Transportation · You fly, I'll drive</title>
-<meta name="description" content="Ed Brannagan drives your car between New Jersey and Florida, door to door, so it's waiting when you land. Call 732-300-3835.">
+<meta name="description" content="Ed Brannagan drives your car between New Jersey and Florida, door to door, so you can fly and still have your own car down there. Call 732-300-3835.">
 <meta name="theme-color" content="#0e2a33">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shamrock Transportation · You fly, I'll drive">
-<meta property="og:description" content="I drive your car between New Jersey and Florida, door to door. Call Ed: 732-300-3835.">
+<meta property="og:description" content="I drive your own car between New Jersey and Florida, door to door. Call Ed: 732-300-3835.">
 <meta property="og:url" content="https://10elizabethbell.github.io/shamrockOwnerTrust/">
 <meta property="og:image" content="https://10elizabethbell.github.io/shamrockOwnerTrust/og.png">
 <meta property="og:image:width" content="1200">
@@ -27,6 +27,7 @@
   --amber:#f6b638;        /* headlights, center line, primary button */
   --amber-deep:#e09a12;
   --focus:#3d9bff;        /* one accent for hover/focus outlines (interstate-shield blue) */
+  --focus-deep:#1a5fb4;   /* the same blue, deep enough for 3:1 on light grounds */
   --paper:#eef2ee;        /* light sections: sign-back aluminum, cool */
   --paper-2:#e2e9e3;
   --ink:#0e2a33;
@@ -48,12 +49,14 @@ p{margin:0}
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.light :focus-visible,.light .faq summary:hover{outline-color:var(--focus-deep)}
+.ed :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
 .bar{display:flex;align-items:center;gap:10px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
 .bar svg{width:34px;height:34px;flex:none}
 .bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
-.bar b span{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+.bar b span{display:block;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;padding-top:14px}
@@ -72,15 +75,15 @@ p{margin:0}
 .btn svg{width:22px;height:22px;flex:none}
 .btn:active{transform:translateY(1px)}
 .btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}
-.btn-call:hover{background:#ffc75a;border-color:var(--focus)}
+@media (hover:hover){.btn-call:hover{background:#ffc75a;border-color:var(--focus)}}
 .btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}
-.btn-ghost:hover{border-color:var(--focus);color:#fff}
+@media (hover:hover){.btn-ghost:hover{border-color:var(--focus);color:#fff}}
 
 /* road canvas */
 .road{position:relative;margin-top:22px;height:236px;background:linear-gradient(#173c33,#163a37);touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
 .road:active{cursor:grabbing}
 .road canvas{position:absolute;inset:0;width:100%;height:100%}
-.hint{position:absolute;right:14px;bottom:52px;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(242,246,241,.75);pointer-events:none;transition:opacity .6s}
+.hint{position:absolute;right:14px;bottom:52px;font-size:15px;font-weight:600;letter-spacing:.04em;color:rgba(242,246,241,.75);pointer-events:none;transition:opacity .6s}
 .hint.gone{opacity:0}
 
 /* ---------- Seams: a lane line flowing along the top of the next section ---------- */
@@ -105,9 +108,8 @@ section.pad{padding:44px 0 64px}
 .ed h2{color:#f4f7f2}
 .ed .lede{color:#f4f7f2}
 .ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
-.ed-call:hover{border-color:var(--focus)}
+@media (hover:hover){.ed-call:hover{border-color:var(--focus)}}
 .ed-call svg{width:30px;height:30px}
-.ed-meta{margin-top:14px;font-size:16px;color:#cfe0d4}
 
 /* Services + how */
 .services{list-style:none;margin:22px 0 0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.3}
@@ -116,22 +118,21 @@ section.pad{padding:44px 0 64px}
 .services li::before{content:"";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}
 .how{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
 .how li{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;counter-increment:s}
-.how li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--amber);font-weight:850;font-size:20px}
+.how li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#f4f7f2;font-weight:850;font-size:20px}
 .how b{display:block;font-size:21px;line-height:1.25}
 .how span{color:var(--ink-soft)}
 .sh{margin-top:56px}
 
 /* Rates + FAQ */
-.rates{font-size:clamp(28px,8vw,44px);font-weight:850;text-transform:uppercase;line-height:1.04;margin-top:4px}
 .faq{margin-top:22px;border-top:2px solid #c8d4cb}
 .faq details{border-bottom:2px solid #c8d4cb}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-weight:750;font-size:20px;line-height:1.3;border-radius:8px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary:hover{outline:3px solid var(--focus);outline-offset:2px}
+.faq summary:focus-visible{outline-offset:2px}
+@media (hover:hover){.faq summary:hover{outline:3px solid var(--focus-deep);outline-offset:2px}.faq summary:hover i{border-color:var(--focus-deep)}}
 .faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink-soft);position:relative;transition:transform .25s,border-color .2s}
 .faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--ink-soft)}
 .faq summary i::after{transform:rotate(90deg);transition:transform .25s}
-.faq summary:hover i{border-color:var(--focus)}
 .faq details[open] summary i::after{transform:rotate(0)}
 .faq .a{padding:0 4px 20px;max-width:60ch;color:var(--ink)}
 
@@ -147,7 +148,9 @@ footer{background:var(--night-2);padding:30px 0 40px;font-size:16px;color:var(--
 footer .wrap{display:grid;gap:6px}
 footer strong{color:var(--on-dark);font-size:18px}
 footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
-footer a:hover{text-decoration-color:var(--focus)}
+@media (hover:hover){footer a:hover{text-decoration-color:var(--focus)}}
+/* sms: links do nothing on most computers; the number is on the Call button */
+@media (hover:hover) and (pointer:fine){.js-sms{display:none}.ctas{grid-template-columns:auto}}
 
 /* ---------- Wider screens ---------- */
 @media (min-width:760px){
@@ -163,6 +166,7 @@ footer a:hover{text-decoration-color:var(--focus)}
   .sh{margin-top:0}
   section.pad{padding:56px 0 88px}
   .seam{height:64px}
+  .ed .sign{max-width:860px}
   .ed .sign-in{padding:40px 44px}
   footer .wrap{grid-template-columns:auto auto auto;justify-content:space-between;align-items:center}
 }
@@ -176,7 +180,7 @@ THESIS: The owner is the driver. The page is a night drive down I-95: the headli
 OWN-WORLD: Blue-green night ground (#0e2a33), guide-sign green panels with a white inset border, headlight amber for the one call button and the center line, sign-back aluminum light sections, interstate-shield blue only for hover and focus. Heavy uppercase system sans; sign lettering mixed case.
 STORY: Snowbird learns Ed himself drives their own car NJ <-> FL, packed full, door to door or to any Florida airport; believes it because he names himself, gives his cell, and says when a truck is the better choice; taps Call.
 FIRST VIEWPORT (phone): wordmark with shamrock; guide sign "I-95 SOUTH / You fly. I'll drive."; one-line promise; Call 732-300-3835 (amber) + Text (outline); a top-down night highway band underneath where a packed car drives itself south past state lines, drag to steer and push it.
-FORM: one-page drive-along, own-world guide-sign + highway canvas; chosen first of 6; seed: unattended (no concept-seed run).
+FORM: one-page drive-along, own-world guide-sign + highway canvas; picked by the builder from 6 listed worlds without a concept-seed roll (unattended run, no seed key); runner-up in HANDOFF.md.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -214,15 +218,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <h1><span>You fly.</span><span>I'll drive.</span></h1>
       </div>
     </div>
-    <p class="promise">I drive your own car between New Jersey and Florida, door to door, so it's there when you land.</p>
+    <p class="promise">I drive your own car between New Jersey and Florida, door to door, so you can fly and still have your own car down there.</p>
     <div class="ctas">
       <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
       <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
     </div>
   </div>
   <div class="road" id="road">
-    <canvas id="roadCanvas" role="img" aria-label="A packed car driving I-95 at night between New Jersey and Florida. Drag to steer it."></canvas>
-    <span class="hint" id="hint">Drag to drive</span>
+    <canvas id="roadCanvas" role="img" aria-label="A packed car driving I-95 at night between New Jersey and Florida."></canvas>
+    <span class="hint" id="hint" aria-hidden="true">Drag to drive</span>
   </div>
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
@@ -233,27 +237,31 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap pack-grid">
     <div>
       <h2>Pack it full.</h2>
-      <p class="lede">I'm driving your car, not loading it on a truck, so it can come down with your things inside: winter clothes, golf clubs, the boxes you'd otherwise ship. Most truck carriers want the car empty.</p>
+      <p class="lede">I'm driving your car, not loading it on a truck, so it can come down with your things inside: winter clothes, golf clubs, the boxes you'd otherwise ship.</p>
     </div>
-    <svg class="trunk" viewBox="0 0 420 250" role="img" aria-label="Your car from above, packed with suitcases, boxes and golf clubs">
-      <defs><clipPath id="cab"><rect x="96" y="56" width="236" height="138" rx="30"/></clipPath></defs>
-      <rect x="40" y="40" width="340" height="170" rx="62" fill="#c9d3cd"/>
-      <rect x="40" y="40" width="340" height="170" rx="62" fill="none" stroke="#9fb0a6" stroke-width="3"/>
-      <rect x="96" y="56" width="236" height="138" rx="30" fill="#2a3e45"/>
-      <g clip-path="url(#cab)">
-        <rect x="186" y="66" width="70" height="52" rx="6" fill="#f6b638"/><rect x="186" y="66" width="70" height="52" rx="6" fill="none" stroke="#c98c14" stroke-width="3"/>
-        <path d="M221 66v52" stroke="#c98c14" stroke-width="3"/>
-        <rect x="262" y="64" width="62" height="64" rx="8" fill="#0a6337"/><rect x="284" y="58" width="18" height="10" rx="4" fill="#0a6337"/>
-        <rect x="186" y="126" width="54" height="62" rx="5" fill="#b98a5a"/><path d="M186 152h54" stroke="#94693f" stroke-width="3"/>
-        <rect x="246" y="134" width="80" height="54" rx="8" fill="#3d6f9e"/><path d="M262 134v54M310 134v54" stroke="#2c5579" stroke-width="3"/>
-        <rect x="104" y="160" width="74" height="26" rx="13" fill="#5b4636"/>
-        <circle cx="110" cy="166" r="6" fill="#d9d2c5"/><circle cx="118" cy="178" r="6" fill="#d9d2c5"/><circle cx="106" cy="181" r="5" fill="#d9d2c5"/>
-        <rect x="108" y="70" width="64" height="74" rx="14" fill="#33525c"/>
+    <svg class="trunk" viewBox="0 0 420 230" role="img" aria-label="Your car packed to the windows, a suitcase on the roof and golf clubs in the back seat, with Ed at the wheel">
+      <defs><clipPath id="glass"><path d="M150 112Q162 84 188 74L252 74V112Z"/><path d="M262 74H292Q314 78 334 112H262Z"/></clipPath></defs>
+      <ellipse cx="214" cy="200" rx="190" ry="10" fill="#cdd8d0"/>
+      <rect x="168" y="42" width="104" height="26" rx="6" fill="#0a6337"/><rect x="200" y="36" width="40" height="9" rx="4" fill="none" stroke="#0a6337" stroke-width="4"/><path d="M190 42v26M250 42v26" stroke="#084d2b" stroke-width="4"/>
+      <path d="M176 70h88" stroke="#5a6a6f" stroke-width="4" stroke-linecap="round"/>
+      <path d="M28 160Q26 128 58 122L126 114Q154 74 188 66H290Q322 68 346 112L384 120Q402 124 402 150V166Q402 176 392 176H38Q28 176 28 166Z" fill="#e9e2cf" stroke="#b8ad94" stroke-width="3"/>
+      <path d="M150 112Q162 84 188 74L252 74V112Z" fill="#2a3e45"/><path d="M262 74H292Q314 78 334 112H262Z" fill="#2a3e45"/>
+      <g clip-path="url(#glass)">
+        <rect x="196" y="88" width="34" height="26" rx="3" fill="#b98a5a"/><path d="M196 100h34" stroke="#94693f" stroke-width="2"/>
+        <rect x="226" y="80" width="30" height="34" rx="3" fill="#f6b638"/><path d="M241 80v34" stroke="#c98c14" stroke-width="2"/>
+        <rect x="166" y="98" width="24" height="16" rx="4" fill="#3d6f9e"/>
+        <path d="M178 112 172 80M184 112 186 78M190 112 196 82" stroke="#cfd6d8" stroke-width="3" stroke-linecap="round"/>
+        <path d="M168 78h8l-2 5h-7zM183 75h8l-1 5h-7zM193 79h8l-1 5h-7z" fill="#e8ecee"/>
+        <circle cx="300" cy="92" r="10" fill="#14262c"/><path d="M282 114q0-14 18-14t18 14z" fill="#14262c"/>
       </g>
-      <path d="M332 70c18 10 26 30 26 55s-8 45-26 55" fill="#2a3e45"/>
-      <path d="M96 66c-12 14-16 36-16 59s4 45 16 59" fill="#2a3e45"/>
-      <rect x="372" y="62" width="12" height="26" rx="5" fill="#fff2c4"/><rect x="372" y="162" width="12" height="26" rx="5" fill="#fff2c4"/>
-      <rect x="36" y="62" width="10" height="26" rx="4" fill="#d6283b"/><rect x="36" y="162" width="10" height="26" rx="4" fill="#d6283b"/>
+      <path d="M257 112V168" stroke="#b8ad94" stroke-width="3"/>
+      <rect x="226" y="122" width="16" height="5" rx="2.5" fill="#b8ad94"/><rect x="298" y="122" width="16" height="5" rx="2.5" fill="#b8ad94"/>
+      <path d="M330 108l14-4v10z" fill="#b8ad94"/>
+      <path d="M62 176a38 38 0 0 1 76 0M300 176a38 38 0 0 1 76 0" fill="#2a3e45"/>
+      <circle cx="100" cy="176" r="28" fill="#1d2a2f"/><circle cx="100" cy="176" r="11" fill="#9aa7ab"/>
+      <circle cx="338" cy="176" r="28" fill="#1d2a2f"/><circle cx="338" cy="176" r="11" fill="#9aa7ab"/>
+      <rect x="390" y="130" width="12" height="12" rx="3" fill="#fff2c4"/>
+      <rect x="28" y="130" width="9" height="16" rx="3" fill="#d6283b"/>
     </svg>
   </div>
 </section>
@@ -275,9 +283,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div>
       <h2>What I do</h2>
       <ul class="services">
-        <li>New Jersey ⇄ Florida</li>
+        <li>New Jersey to Florida, and back</li>
         <li>Local &amp; long distance</li>
-        <li>Airport runs anywhere in Florida</li>
+        <li>Airport services anywhere in Florida</li>
         <li>Door to door</li>
       </ul>
     </div>
@@ -287,7 +295,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <li><div><b>Call me</b><span>Tell me where the car is, where it's going, and when you fly.</span></div></li>
         <li><div><b>Pack the car</b><span>Load it up. I pick it up at your door.</span></div></li>
         <li><div><b>You fly</b><span>I drive.</span></div></li>
-        <li><div><b>Your car is waiting</b><span>At your Florida door, or I meet you at the airport.</span></div></li>
+        <li><div><b>Your car is there</b><span>Delivered to your Florida door.</span></div></li>
       </ol>
     </div>
   </div>
@@ -298,20 +306,19 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="light pad" id="questions" style="background:var(--paper-2)">
   <div class="wrap two">
     <div>
-      <h2>Rates</h2>
-      <p class="rates" style="margin-top:18px">Very reasonable.</p>
+      <h2>Very reasonable rates.</h2>
       <p class="lede">Call me with where and when, and I'll give you a price for your trip.</p>
     </div>
     <div class="sh">
       <h2>Questions</h2>
       <div class="faq">
-        <details>
+        <details open>
           <summary>When is a truck carrier the better choice?<i aria-hidden="true"></i></summary>
           <p class="a">If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
         </details>
         <details>
           <summary>Can I really pack the car?<i aria-hidden="true"></i></summary>
-          <p class="a">Yes. That's the point of having it driven. Tell me what's going in when you call.</p>
+          <p class="a">Yes. Tell me what's going in when you call and I'll tell you what fits.</p>
         </details>
         <details>
           <summary>Do you bring it back up in the spring?<i aria-hidden="true"></i></summary>
@@ -319,7 +326,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </details>
         <details>
           <summary>Which airports?<i aria-hidden="true"></i></summary>
-          <p class="a">Anywhere in Florida. Tell me your flight and I'll meet you with the car, or pick it up from you when you leave.</p>
+          <p class="a">Anywhere in Florida. Tell me your flight when you call.</p>
         </details>
       </div>
     </div>
@@ -452,15 +459,20 @@ function watch(el, job){
   function makeSprites(){
     var s = phone ? 0.85 : 1;
     spr.pine = []; spr.oak = []; spr.palm = [];
+    // headlight beam, drawn once: car-local box x 0..190, y -50..50
+    var bc = document.createElement('canvas'); bc.width = 190 * dpr; bc.height = 100 * dpr;
+    var bg = bc.getContext('2d'); bg.scale(dpr, dpr); bg.translate(0, 50);
+    var g = bg.createRadialGradient(22, 0, 2, 22, 0, 150);
+    g.addColorStop(0, 'rgba(255,226,150,.55)'); g.addColorStop(0.5, 'rgba(255,214,120,.16)'); g.addColorStop(1, 'rgba(255,214,120,0)');
+    bg.fillStyle = g; bg.beginPath(); bg.moveTo(20, -7); bg.lineTo(170, -46); bg.quadraticCurveTo(186, 0, 170, 46); bg.lineTo(20, 7); bg.closePath(); bg.fill();
+    spr.beam = bc;
     for (var v = 0; v < 3; v++){
       var R = (13 + v * 3) * s;
-      [false].forEach(function(){
-        spr.pine.push(sprite(R + 2, function(g){
-          star(g, 14, R, R * 0.8, v); g.fillStyle = '#0f3829'; g.fill();
-          star(g, 12, R * 0.74, R * 0.58, v + 0.3); g.fillStyle = '#17503c'; g.fill();
-          star(g, 9, R * 0.44, R * 0.32, v); g.fillStyle = '#1f6249'; g.fill();
-        }));
-      });
+      spr.pine.push(sprite(R + 2, function(g){
+        star(g, 14, R, R * 0.8, v); g.fillStyle = '#0f3829'; g.fill();
+        star(g, 12, R * 0.74, R * 0.58, v + 0.3); g.fillStyle = '#17503c'; g.fill();
+        star(g, 9, R * 0.44, R * 0.32, v); g.fillStyle = '#1f6249'; g.fill();
+      }));
       spr.oak.push(sprite(R + 3, function(g){
         var gr = g.createRadialGradient(-R * 0.3, -R * 0.35, R * 0.1, 0, 0, R + 2);
         gr.addColorStop(0, '#2f7a4c'); gr.addColorStop(1, '#123f2c');
@@ -498,9 +510,7 @@ function watch(el, job){
     ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.scale(s, s);
     if (lightsOn){
       ctx.globalCompositeOperation = 'lighter';
-      var g = ctx.createRadialGradient(22, 0, 2, 22, 0, 150);
-      g.addColorStop(0, 'rgba(255,226,150,.55)'); g.addColorStop(0.5, 'rgba(255,214,120,.16)'); g.addColorStop(1, 'rgba(255,214,120,0)');
-      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(20, -7); ctx.lineTo(170, -46); ctx.quadraticCurveTo(186, 0, 170, 46); ctx.lineTo(20, 7); ctx.closePath(); ctx.fill();
+      ctx.drawImage(spr.beam, 0, -50, 190, 100);
       ctx.globalCompositeOperation = 'source-over';
     }
     ctx.fillStyle = 'rgba(0,0,0,.35)'; rr(-21, -10, 46, 23, 8); ctx.fill();
@@ -539,7 +549,7 @@ function watch(el, job){
     ctx.restore();
   }
   function stateSign(x, y, name){
-    var fs = phone ? 10.5 : 12.5;
+    var fs = phone ? 12.5 : 13.5;
     ctx.font = '700 ' + fs + 'px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';
     var t1 = 'Welcome to', w = Math.max(ctx.measureText(t1).width, ctx.measureText(name).width) + 16, h = fs * 2 + 14;
     ctx.fillStyle = '#4b5a5f'; ctx.fillRect(x - 1.5, y, 3, 10);
@@ -552,8 +562,7 @@ function watch(el, job){
 
   function step(dt){
     T += dt;
-    var rect = cv.getBoundingClientRect();
-    ptr.x = ptr.cx - rect.left; ptr.y = ptr.cy - rect.top;
+    if (ptr.on){ var rect = cv.getBoundingClientRect(); ptr.x = ptr.cx - rect.left; ptr.y = ptr.cy - rect.top; }
 
     // speed: drag sideways pushes the car; let go and it settles back to cruising
     if (pause > 0){ pause -= dt; vel = 0; if (pause <= 0){ dir = -dir; vel = dir * 30; } }
@@ -681,7 +690,7 @@ function watch(el, job){
 
   size();
   window.addEventListener('resize', size);
-  if (REDUCED){ cam = camTarget(); draw(pos - cam, roadY(pos) + dir * RW / 4, 0); return; }
+  if (REDUCED){ hint.hidden = true; cam = camTarget(); draw(pos - cam, roadY(pos) + dir * RW / 4, 0); return; }
   var job = Loop.add(function(dt){ step(dt); });
   watch(wrapEl, job);
 })();
