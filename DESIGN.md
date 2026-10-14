@@ -43,12 +43,12 @@ typography:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
     fontSize: "clamp(21px, 5.6vw, 26px)"
     fontWeight: 750
-    lineHeight: 1.3
+    lineHeight: 1.35
   question:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
     fontSize: "20px"
     fontWeight: 750
-    lineHeight: 1.3
+    lineHeight: 1.35
     letterSpacing: "0"
   lede:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
