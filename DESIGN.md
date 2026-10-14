@@ -19,6 +19,10 @@ colors:
   on-dark-soft: "#b9cdc7"
   rule: "#c8d4cb"
   rule-dotted: "#b9c8be"
+  amber-hover: "#ffc75a"
+  white: "#ffffff"
+  road-band: "#173c33"
+  road-band-2: "#163a37"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
@@ -61,12 +65,34 @@ typography:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
     fontSize: "18px"
     fontWeight: 800
+  button-compact:
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    fontSize: "17px"
+    fontWeight: 800
+  step-number:
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    fontSize: "20px"
+    fontWeight: 850
+  small:
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+  hint:
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    fontSize: "15px"
+    fontWeight: 600
+  wordmark-sub:
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
+    fontSize: "14px"
+    fontWeight: 600
+    letterSpacing: "0.14em"
 rounded:
   sign: "16px"
   sign-inset: "11px"
   control: "12px"
   row: "8px"
   focus: "6px"
+  tick: "3px"
 spacing:
   gutter: "20px"
   stack: "22px"
