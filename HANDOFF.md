@@ -3,31 +3,34 @@
 **Live:** https://10elizabethbell.github.io/shamrockOwnerTrust/ · **Repo:** https://github.com/10elizabethbell/shamrockOwnerTrust · **Built:** 2026-10-14 from Muse brief of 2026-10-13 (Vibe 2, owner-operator trust, approved by Ellie 2026-10-14)
 
 ## What's built
-- **The look: I-95 at night.** The page ground is a blue-green night color (`#0e2a33`, not black). The headline sits on a green interstate guide sign: interstate green is shamrock green, so it carries the brand. The sign has an I-95 shield and SOUTH, and the hero headline is **"You fly. I'll drive."**, taken from the domain on Ed's card (youflyilldrive.com).
-- **The one moving part (in the hero, under the button):** a top-down night highway. A packed cream car drives steadily south past "Welcome to Delaware … Florida" signs, from a house in NJ to a house in FL, pauses, then drives back north. Pines turn to palms on the way. Nothing else moves and nothing needs touching; the page scrolls normally over it. Its speed and spacing (`CRUISE`, `SEG`, `TREE_GAP`) are at the top of the road script.
-- **Section edges:** still (not moving) dashed lane lines.
-- **Sections (shortened 2026-10-14):**
-  - Hero: sign, promise, Call + Text.
-  - Pack it full: a side-view drawing of the car with a suitcase on the roof, boxes and golf clubs inside, and Ed at the wheel.
-  - "You'll know who's driving.": a second guide sign with Ed's name and a tap-to-call number.
-  - What I do, beside "Good to know": two questions answered in plain text, always visible (when a truck carrier is better; the spring trip home).
-  - A closing call, with "Very reasonable rates" folded in.
-  - Footer: name, Ed, phone.
-- **Season-aware:** March–August the sign reads NORTH, the close reads "Heading home this spring?", and the car starts northbound.
+- **The look: I-95 at night.** Blue-green night ground (`#0e2a33`, not black), interstate-sign green (= shamrock green) for the "Meet your driver" sign, amber only for Call buttons and the road's centre line. Headline **"You fly. I'll drive."**, taken from the domain on Ed's card (youflyilldrive.com).
+- **Quiet hero (Ellie, 2026-10-14):** headline, one line ("I drive your car between New Jersey and Florida, door to door."), one big "Call for a free quote / 732-300-3835" button, an "or send a text" link, and "Owner & driver: Ed Brannagan". No sign panel and no motion in the hero.
+- **The one moving part:** a short road strip just above the closing call. A packed cream car drives steadily south past "Welcome to Delaware … Florida" signs, house to house, pauses, then drives back north. Nothing else moves and nothing needs touching. Speed and spacing (`CRUISE`, `SEG`, `TREE_GAP`) are at the top of the road script.
+- **Section edges:** still dashed lane lines.
+- **Sections, following the 40–70 research brief (Ellie, 2026-10-14):**
+  - Header: name; on desktop also "Meet your driver / How it works / Questions" and the phone number.
+  - Hero (above).
+  - Meet your driver: green sign, Ed in his own words, tap-to-call number.
+  - How it works: Call for a quote → Arrange pickup → Receive your car, beside What I do.
+  - Driven, not trucked: the packing point, with the side-view drawing of the packed car.
+  - Questions, always visible: cost, packing, the spring trip home, when a truck carrier is better. A comment in the HTML marks where the insurance answer goes once Ed confirms.
+  - Close: the road strip, "Heading south this winter?", the phone number in large type, Call + Text.
+  - Footer: name, Ed, service area, phone.
+- **Season-aware:** March–August the close reads "Heading home this spring?" and the car starts northbound.
 - **Contact:**
-  - `tel:+17323003835` everywhere.
-  - The Text button opens a text that's already filled in: "Hi Ed, I'd like my car driven from ___ to ___ around ___." It's hidden on computers, where `sms:` links do nothing.
+  - `tel:+17323003835` everywhere; the number is always visible as text.
+  - **Sticky Call button on phones (this site only, Ellie's call):** a small "Call Ed" pill at the bottom right. It appears once the hero button scrolls away and hides when the closing buttons are on screen. This is a deliberate exception to the no-sticky-bar house rule.
+  - "Send a text" opens a text that's already filled in: "Hi Ed, I'd like my car driven from ___ to ___ around ___." Hidden on computers, where `sms:` links do nothing.
 - **Page details:**
-  - 40 KB single file with no photos.
+  - About 33 KB, single file, no photos.
   - Favicon and iPhone home-screen icon: a white clover on sign green.
-  - Link-preview image: `og.png` (1200x630).
-
+  - Link-preview image: `og.png` (1200x630), regenerated for the new hero.
 ## Assumptions I made
-- **"Pack it full" is a selling point.** The brief made it the #1 differentiator. It's inferred from how driveaway works, not from Ed. **Confirm he's fine with packed cars and whether there are weight or contents limits.**
+- **Packing the car ("Driven, not trucked") is a selling point.** The brief made it the #1 differentiator. It's inferred from how driveaway works, not from Ed. **Confirm he's fine with packed cars and whether there are weight or contents limits.**
 - **"I'm the one behind the wheel" / "You call my cell, not a dispatcher".** The brief names Ed as the only known driver. Confirm he drives every job himself.
 - **"I pick it up at your door" / "Delivered to your Florida door".** Based on the brief's "door-to-door" trust idea.
 - **The airport line is the card's verbatim wording ("Airport services anywhere in Florida").** I left what that means vague on purpose (meeting the customer with their car? passenger rides?).
-- **The "Good to know" answer about when a truck carrier is better** comes from the competitor pattern the brief pointed to (drivecartoflorida.com), written in Ed's voice.
+- **The Questions answer about when a truck carrier is better** comes from the competitor pattern the brief pointed to (drivecartoflorida.com), written in Ed's voice.
 - **Colors:** I didn't have the card photo, so I used sign green `#0a6337` and leaf green `#3dbb6c` for the clover. Sample the real green from the card once it's cleared.
 - **The clover mark is my own drawing**, not the card's emblem. The brief says to check with Ellie before using a card scan publicly.
 - **I picked the look myself, from 6 options I listed.** The run was unattended, so there was no Impeccable decision page and no comparison against other directions.
@@ -41,7 +44,7 @@
 - **Texting:** the brief says "accepts texts: unknown". The Text button is a guess. If Ed doesn't text, delete both `.js-sms` buttons; Call can stand alone.
 
 ## Questions for Ed (Thursday)
-1. Rates: a flat NJ↔FL price, or per trip? Is that okay to publish?
+1. Rates: a flat NJ↔FL price, or per trip? Is that okay to publish? What does it include: fuel, tolls, lodging, your trip back?
 2. Insurance: what covers the car and the things inside it while you drive? (Snowbirds will ask first. It's the biggest gap.)
 3. Do you take texts?
 4. Any packing limits (weight, valuables, nothing on the roof)?
@@ -58,10 +61,13 @@ Ellie: "too much, overwhelming, and confusing", so I kept the look and made it c
 - Removed "How it works" (thin steps that repeated the hero), the separate Rates section (now one line in the close), the tap-to-open FAQ rows, and two FAQ answers that repeated other sections (packing, airports).
 - This deliberately overrides the house rules that the signature element reacts to touch and that the hero lets the visitor do the job. Ellie asked for it on this site; I haven't changed the house rules themselves.
 
+## Research brief applied (Ellie, 2026-10-14)
+From Ellie's "Website UX Research & Design Brief, ages 40–70": kept the look, adopted the structure (Meet your driver, a 3-step How it works, Call for a free quote, phone number in the header and close, plain-text FAQ incl. cost) and the sticky Call pill. Not adopted, because the facts don't exist yet: reviews, insurance terms, credentials, what the price includes (fuel, tolls, lodging, return travel), years of experience, Ed's portrait. Each is a Thursday question. Fonts stay the system stack (the brief suggests Inter, Source Sans 3 or Atkinson Hyperlegible; swapping would be easy).
+
 ## Ideas not built (yours to pick)
 - **Runner-up look: "Departure board."** A split-flap airport board for "You fly", with NJ → FL flights and the car as the "arrival". Less touchable than the road.
 - **Highway Gothic lettering:** self-host Overpass (open licence, based on Highway Gothic) for the sign text only. It breaks the system-font house rule, so I didn't.
-- **Desktop:** the Ed sign is capped at 860px. Ed's photo would fill its right half.
+- **Desktop:** the hero's right half is empty and the Ed sign is capped at 860px. Ed's photo (the research brief's "Meet Ed first" hero) would fill both.
 - **A moving top edge for the road band**, like the other section edges (currently a straight edge).
 
 ## Impeccable pass
