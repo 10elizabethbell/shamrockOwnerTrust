@@ -10,7 +10,7 @@
 - **Sections, following the 40–70 research brief (Ellie, 2026-10-14):**
   - Header: name; on desktop also "Meet your driver / How it works / Questions" and the phone number.
   - Hero (above).
-  - Meet your driver: green sign, Ed in his own words, tap-to-call number.
+  - Meet your driver: green sign, a dashed "Photo of Ed" placeholder card (above the text on phones, beside it on desktop), Ed in his own words, tap-to-call number. To add the photo, drop `ed.jpg` in the folder and swap the placeholder for the `<img>` line in the HTML comment above it.
   - How it works: Call for a quote → Arrange pickup → Receive your car, beside What I do.
   - Driven, not trucked: the packing point, with the side-view drawing of the packed car.
   - Questions, always visible: cost, packing, the spring trip home, when a truck carrier is better. A comment in the HTML marks where the insurance answer goes once Ed confirms.
@@ -36,7 +36,7 @@
 - **I picked the look myself, from 6 options I listed.** The run was unattended, so there was no Impeccable decision page and no comparison against other directions.
 
 ## Placeholders and gaps
-- **No photos at all.** Nothing of Ed, his vehicle, or any job.
+- **No photos at all.** Nothing of Ed, his vehicle, or any job. The Meet your driver sign has a visible placeholder card waiting for Ed's photo; don't hand the site over with it still empty.
 - **No logo file** (the card emblem isn't cleared).
 - **No email and no Facebook.** So, against the usual rules: no footer email, and no "see more of my work" Facebook link. Add both if Ed has them.
 - **Rates:** the page only says "Very reasonable rates" (card wording) and "call for a price". No numbers.
@@ -50,7 +50,7 @@
 4. Any packing limits (weight, valuables, nothing on the roof)?
 5. What does "Airport services anywhere in Florida" mean in practice?
 6. Do you drive every car yourself? Do you ever bring a second driver?
-7. Can we use the shamrock from your card? Do you have a photo of yourself, and of your car if you have one? It would go in the "You'll know who's driving" sign.
+7. Can we use the shamrock from your card? Do you have a photo of yourself, and of your car if you have one? It goes in the placeholder card on the Meet your driver sign.
 8. Hours or season windows, years doing this, and any customers willing to be quoted.
 9. youflyilldrive.com is unregistered. Want it registered and pointed here?
 

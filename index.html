@@ -113,6 +113,11 @@ section.pad{padding:44px 0 64px}
 .ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
 @media (hover:hover){.ed-call:hover{border-color:var(--focus)}}
 .ed-call svg{width:30px;height:30px}
+.ed-in{display:grid;gap:22px}
+.ed-photo{margin:0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(244,247,242,.6);border-radius:10px;background:var(--sign-deep);display:grid;place-content:center;justify-items:center;gap:10px;color:#f4f7f2;overflow:hidden}
+.ed-photo svg{width:56px;height:56px;opacity:.8}
+.ed-photo figcaption{font-size:15px;font-weight:700}
+.ed-photo img{width:100%;height:100%;object-fit:cover}
 
 /* Services + how */
 .services{list-style:none;margin:22px 0 0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.35}
@@ -173,8 +178,10 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .sh{margin-top:0}
   section.pad{padding:56px 0 88px}
   .seam{height:64px}
-  .ed .sign{max-width:860px}
+  .ed .sign{max-width:960px}
   .ed .sign-in{padding:40px 44px}
+  .ed-in{grid-template-columns:240px 1fr;gap:40px;align-items:center}
+  .ed-photo{width:100%}
   footer .wrap{grid-template-columns:auto auto auto auto;justify-content:space-between;align-items:center}
 }
 
@@ -228,10 +235,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="ed" id="driver" aria-labelledby="ed-h">
   <div class="wrap">
     <div class="sign">
-      <div class="sign-in">
+      <div class="sign-in ed-in">
+        <!-- Placeholder until Ed sends a photo. Swap the svg + figcaption for:
+             <img src="ed.jpg" alt="Ed Brannagan" width="480" height="600"> -->
+        <figure class="ed-photo" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor"/></svg>
+          <figcaption>Photo of Ed</figcaption>
+        </figure>
+        <div>
         <h2 id="ed-h">Meet your driver</h2>
         <p class="lede">Hi, I'm Ed Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. When you call, you get me on my cell, not a dispatcher.</p>
         <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
+        </div>
       </div>
     </div>
   </div>
