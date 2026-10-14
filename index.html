@@ -38,7 +38,7 @@
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;background:var(--night);color:var(--on-dark);font:400 18px/1.55 var(--font);overflow-x:hidden}
 ::selection{background:var(--amber);color:var(--ink)}
 a{color:inherit}
@@ -49,7 +49,7 @@ p{margin:0}
 .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
-.light :focus-visible,.light .faq summary:hover{outline-color:var(--focus-deep)}
+.light :focus-visible{outline-color:var(--focus-deep)}
 .ed :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
@@ -80,13 +80,10 @@ p{margin:0}
 @media (hover:hover){.btn-ghost:hover{border-color:var(--focus);color:#fff}}
 
 /* road canvas */
-.road{position:relative;margin-top:22px;height:236px;background:linear-gradient(#173c33,#163a37);touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
-.road:active{cursor:grabbing}
+.road{position:relative;margin-top:22px;height:236px;background:linear-gradient(#173c33,#163a37)}
 .road canvas{position:absolute;inset:0;width:100%;height:100%}
-.hint{position:absolute;right:14px;bottom:52px;font-size:15px;font-weight:600;letter-spacing:.04em;color:rgba(242,246,241,.75);pointer-events:none;transition:opacity .6s}
-.hint.gone{opacity:0}
 
-/* ---------- Seams: a lane line flowing along the top of the next section ---------- */
+/* ---------- Seams: a lane line along the top of the next section ---------- */
 .seam{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:44px;margin-bottom:-1px}
 .road + .seam,.hero .seam{margin-top:-44px}
 .seam path.fill{fill:var(--next)}
@@ -116,25 +113,12 @@ section.pad{padding:44px 0 64px}
 .services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}
 .services li:first-child{border-top:2px dotted #b9c8be}
 .services li::before{content:"";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}
-.how{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
-.how li{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;counter-increment:s}
-.how li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#f4f7f2;font-weight:850;font-size:20px}
-.how b{display:block;font-size:21px;line-height:1.25}
-.how span{color:var(--ink-soft)}
 .sh{margin-top:56px}
 
-/* Rates + FAQ */
-.faq{margin-top:22px;border-top:2px solid #c8d4cb}
-.faq details{border-bottom:2px solid #c8d4cb}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-weight:750;font-size:20px;line-height:1.3;border-radius:8px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:focus-visible{outline-offset:2px}
-@media (hover:hover){.faq summary:hover{outline:3px solid var(--focus-deep);outline-offset:2px}.faq summary:hover i{border-color:var(--focus-deep)}}
-.faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink-soft);position:relative;transition:transform .25s,border-color .2s}
-.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--ink-soft)}
-.faq summary i::after{transform:rotate(90deg);transition:transform .25s}
-.faq details[open] summary i::after{transform:rotate(0)}
-.faq .a{padding:0 4px 20px;max-width:60ch;color:var(--ink)}
+/* Good to know */
+.qa{margin-top:22px;border-top:2px solid #c8d4cb}
+.qa h3{font-size:20px;font-weight:750;line-height:1.3;letter-spacing:0;margin:20px 0 8px}
+.qa p{max-width:60ch;padding-bottom:20px;border-bottom:2px solid #c8d4cb}
 
 /* Close */
 .close{padding:48px 0 56px;text-align:left}
@@ -225,8 +209,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </div>
   </div>
   <div class="road" id="road">
-    <canvas id="roadCanvas" role="img" aria-label="A packed car driving I-95 at night between New Jersey and Florida."></canvas>
-    <span class="hint" id="hint" aria-hidden="true">Drag to drive</span>
+    <canvas id="roadCanvas" role="img" aria-label="A packed car driving I-95 at night from New Jersey to Florida."></canvas>
   </div>
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
@@ -290,55 +273,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </ul>
     </div>
     <div class="sh">
-      <h2>How it works</h2>
-      <ol class="how">
-        <li><div><b>Call me</b><span>Tell me where the car is, where it's going, and when you fly.</span></div></li>
-        <li><div><b>Pack the car</b><span>Load it up. I pick it up at your door.</span></div></li>
-        <li><div><b>You fly</b><span>I drive.</span></div></li>
-        <li><div><b>Your car is there</b><span>Delivered to your Florida door.</span></div></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper-2);--lane:#f4f7f2;background:var(--paper)" aria-hidden="true"><path class="fill"/><path class="lane" style="stroke:#9fb3a8"/></svg>
-
-<section class="light pad" id="questions" style="background:var(--paper-2)">
-  <div class="wrap two">
-    <div>
-      <h2>Very reasonable rates.</h2>
-      <p class="lede">Call me with where and when, and I'll give you a price for your trip.</p>
-    </div>
-    <div class="sh">
-      <h2>Questions</h2>
-      <div class="faq">
-        <details open>
-          <summary>When is a truck carrier the better choice?<i aria-hidden="true"></i></summary>
-          <p class="a">If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
-        </details>
-        <details>
-          <summary>Can I really pack the car?<i aria-hidden="true"></i></summary>
-          <p class="a">Yes. Tell me what's going in when you call and I'll tell you what fits.</p>
-        </details>
-        <details>
-          <summary>Do you bring it back up in the spring?<i aria-hidden="true"></i></summary>
-          <p class="a">Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p>
-        </details>
-        <details>
-          <summary>Which airports?<i aria-hidden="true"></i></summary>
-          <p class="a">Anywhere in Florida. Tell me your flight when you call.</p>
-        </details>
+      <h2>Good to know</h2>
+      <div class="qa">
+        <h3>When is a truck carrier the better choice?</h3>
+        <p>If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
+        <h3>Do you bring it back up in the spring?</h3>
+        <p>Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--night);--lane:var(--amber);background:var(--paper-2)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
+<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--night);--lane:var(--amber);background:var(--paper)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 
 <section class="close" aria-labelledby="close-h">
   <div class="wrap">
     <h2 id="close-h">Heading south this winter?</h2>
-    <p class="lede">Call me with your dates. I'll take it from your driveway.</p>
+    <p class="lede">Very reasonable rates. Call me with where and when, and I'll give you a price.</p>
     <div class="ctas">
       <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
       <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
@@ -392,49 +343,31 @@ function watch(el, job){
   new IntersectionObserver(function(es){ job.on = es[0].isIntersecting; if (job.on) Loop.wake(); }).observe(el);
 }
 
-/* ---------- Seams: a lane line rolling along each section edge ---------- */
+/* ---------- Seams: a still lane line along each section edge ---------- */
 (function(){
-  var SEAM_SPEED = 46;      // dash travel, viewBox units per second
-  var seams = [].slice.call(document.querySelectorAll('.seam'));
-  seams.forEach(function(svg, k){
-    var fill = svg.querySelector('.fill'), lane = svg.querySelector('.lane');
-    function draw(t){
-      var d = '', ph = k * 1.7;
-      for (var x = 0; x <= 1200; x += 20){
-        var y = 34 + 9 * Math.sin(x / 190 + t * 0.55 + ph) + 5 * Math.sin(x / 83 - t * 0.9 + ph * 2);
-        d += (x ? 'L' : 'M') + x + ' ' + y.toFixed(1);
-      }
-      lane.setAttribute('d', d);
-      fill.setAttribute('d', d + 'L1200 64L0 64Z');
-      lane.style.strokeDashoffset = (-t * SEAM_SPEED).toFixed(1);
+  [].slice.call(document.querySelectorAll('.seam')).forEach(function(svg, k){
+    var d = '', ph = k * 1.7;
+    for (var x = 0; x <= 1200; x += 20){
+      var y = 34 + 9 * Math.sin(x / 190 + ph) + 5 * Math.sin(x / 83 + ph * 2);
+      d += (x ? 'L' : 'M') + x + ' ' + y.toFixed(1);
     }
-    draw(0);
-    if (REDUCED) return;
-    var job = Loop.add(function(dt, t){ draw(t); });
-    watch(svg, job);
+    svg.querySelector('.lane').setAttribute('d', d);
+    svg.querySelector('.fill').setAttribute('d', d + 'L1200 64L0 64Z');
   });
 })();
 
-/* ---------- The road: a packed car drives I-95 at night; drag to steer and push ---------- */
+/* ---------- The road: a packed car drives I-95 at night, Jersey to Florida and back ---------- */
 (function(){
-  var CRUISE = 120;          // px/s the car drives itself
-  var MAX_SPEED = 900;       // px/s when pushed
+  var CRUISE = 110;          // px/s the car drives
   var SEG = 900;             // world px per state
   var TREE_GAP = 22;         // average spacing of roadside trees
-  var PUSH_R = 80;           // finger reach for bending trees
-  var SPRING = 38, DAMP = 6.5;
   var STATES = ['New Jersey','Delaware','Maryland','Virginia','North Carolina','South Carolina','Georgia','Florida'];
   var L = SEG * STATES.length;
 
   var wrapEl = document.getElementById('road'), cv = document.getElementById('roadCanvas'), ctx = cv.getContext('2d');
-  var hint = document.getElementById('hint');
   var W = 0, H = 0, dpr = 1, RW = 64, phone = true;
   var dir = window.SHAMROCK_NORTH ? -1 : 1;
-  var pos = dir > 0 ? SEG * 0.15 : L - SEG * 0.15, vel = dir * CRUISE, cam = 0, pause = 0;
-  var lane = 0, laneV = 0, heading = 0;
-  var ptr = {on: false, down: false, cx: 0, cy: 0, x: 0, y: 0, vx: 0, lastCx: 0}, touched = false;
-  var bends = {};            // per-tree spring state
-  var oncoming = [], nextCar = 1.5, plane = null, nextPlane = 4, T = 0;
+  var pos = dir > 0 ? SEG * 0.15 : L - SEG * 0.15, cam = 0, pause = 0, lane = dir * 15, heading = 0;
 
   function hash(i){ var x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
   function smooth(a, b, x){ x = Math.max(0, Math.min(1, (x - a) / (b - a))); return x * x * (3 - 2 * x); }
@@ -443,12 +376,12 @@ function watch(el, job){
 
   function size(){
     var r = wrapEl.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
-    if (w === W && h === H) return;           // phones fire resize mid-drag; only rebuild on a real change
+    if (w === W && h === H) return;           // phones fire resize as the address bar slides; only rebuild on a real change
     W = w; H = h; dpr = Math.min(2, window.devicePixelRatio || 1);
     cv.width = W * dpr; cv.height = H * dpr;
     phone = W < 700; RW = phone ? 60 : 78;
     makeSprites();
-    if (!ptr.down) cam = camTarget();
+    cam = camTarget();
   }
   function camTarget(){ return pos - W * (dir > 0 ? 0.36 : 0.64); }
 
@@ -494,17 +427,6 @@ function watch(el, job){
     }
   }
 
-  /* pointer: client coordinates stored; converted every frame from a fresh rect */
-  function pdown(e){ ptr.down = true; ptr.on = true; ptr.cx = ptr.lastCx = e.clientX; ptr.cy = e.clientY; if (e.pointerType !== 'mouse') ptr.vx = 0; try { cv.setPointerCapture(e.pointerId); } catch(_){} e.preventDefault(); if (!touched){ touched = true; hint.classList.add('gone'); } }
-  function pmove(e){ ptr.on = true; ptr.cx = e.clientX; ptr.cy = e.clientY; }
-  function pup(e){ ptr.down = false; if (e.pointerType !== 'mouse') ptr.on = false; }
-  cv.addEventListener('pointerdown', pdown);
-  cv.addEventListener('pointermove', pmove);
-  cv.addEventListener('pointerup', pup);
-  cv.addEventListener('pointercancel', pup);
-  cv.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse'){ ptr.on = false; ptr.down = false; } });
-  window.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' && e.target === cv) pmove(e); }, {passive: true});
-
   /* drawing helpers */
   function car(x, y, ang, s, body, packed, lightsOn){
     ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.scale(s, s);
@@ -523,22 +445,6 @@ function watch(el, job){
     ctx.restore();
   }
   function rr(x, y, w, h, r){ ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
-  function airplane(x, y, s, d){
-    ctx.save(); ctx.translate(x, y); ctx.scale(s * d, s);
-    ctx.fillStyle = 'rgba(0,0,0,.18)'; planePath(10, 26); ctx.fill();          // shadow on the ground
-    ctx.fillStyle = '#dfe7ea'; planePath(0, 0); ctx.fill();
-    var blink = (T * 1.2) % 1 < 0.12;
-    ctx.fillStyle = blink ? '#ff4d4d' : 'rgba(255,77,77,.35)'; ctx.beginPath(); ctx.arc(-2, -27, 1.8, 0, 7); ctx.fill();
-    ctx.fillStyle = blink ? '#5dff8a' : 'rgba(93,255,138,.35)'; ctx.beginPath(); ctx.arc(-2, 27, 1.8, 0, 7); ctx.fill();
-    ctx.restore();
-  }
-  function planePath(ox, oy){
-    ctx.beginPath(); ctx.save(); ctx.translate(ox, oy);
-    ctx.moveTo(30, 0); ctx.quadraticCurveTo(28, -3, 20, -3.2); ctx.lineTo(4, -3.2); ctx.lineTo(-4, -27); ctx.lineTo(-9, -27); ctx.lineTo(-4, -3.2);
-    ctx.lineTo(-20, -3); ctx.lineTo(-26, -11); ctx.lineTo(-29, -11); ctx.lineTo(-27, 0);
-    ctx.lineTo(-29, 11); ctx.lineTo(-26, 11); ctx.lineTo(-20, 3); ctx.lineTo(-4, 3.2); ctx.lineTo(-9, 27); ctx.lineTo(-4, 27); ctx.lineTo(4, 3.2); ctx.lineTo(20, 3.2); ctx.quadraticCurveTo(28, 3, 30, 0);
-    ctx.restore(); ctx.closePath();
-  }
   function house(x, y, flip){
     ctx.save(); ctx.translate(x, y);
     ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.fillRect(-20, -14, 44, 34);
@@ -561,45 +467,21 @@ function watch(el, job){
   }
 
   function step(dt){
-    T += dt;
-    if (ptr.on){ var rect = cv.getBoundingClientRect(); ptr.x = ptr.cx - rect.left; ptr.y = ptr.cy - rect.top; }
-
-    // speed: drag sideways pushes the car; let go and it settles back to cruising
-    if (pause > 0){ pause -= dt; vel = 0; if (pause <= 0){ dir = -dir; vel = dir * 30; } }
+    // drive at a steady speed; at the end of the trip, wait, turn around, drive back
+    if (pause > 0){ pause -= dt; if (pause <= 0) dir = -dir; }
     else {
-      if (ptr.down){ var dx = ptr.cx - ptr.lastCx; vel += (dx / Math.max(dt, 0.008)) * 0.12 * dt * 18; }
-      vel += (dir * CRUISE - vel) * Math.min(1, dt * (ptr.down ? 0.6 : 1.4));
-      vel = Math.max(-MAX_SPEED, Math.min(MAX_SPEED, vel));
-      pos += vel * dt;
-      if (dir > 0 && pos >= L + 30){ pos = L + 30; pause = 2.2; }
-      if (dir < 0 && pos <= -30){ pos = -30; pause = 2.2; }
-      pos = Math.max(-30, Math.min(L + 30, pos));
+      pos += dir * CRUISE * dt;
+      if (dir > 0 && pos >= L + 30){ pos = L + 30; pause = 2.5; }
+      if (dir < 0 && pos <= -30){ pos = -30; pause = 2.5; }
     }
-    ptr.lastCx = ptr.cx;
-    cam += (camTarget() - cam) * Math.min(1, dt * 3);
-
-    // steering: finger's height on the road picks the car's line; let go and it returns to its lane
-    var carX = pos - cam, cy = roadY(pos), home = dir * RW / 4;
-    var target = (ptr.down || (ptr.on && !phone)) ? Math.max(-RW / 2 + 9, Math.min(RW / 2 - 9, ptr.y - cy)) : home;
-    if (pause > 0) target = home;
-    laneV += ((target - lane) * 14 - laneV * 6) * dt; lane += laneV * dt;
-    var want = Math.atan(slope(pos)) + Math.atan2(laneV * 0.12, Math.max(40, Math.abs(vel)) * 0.12) * (dir) + (dir < 0 ? Math.PI : 0);
-    if (Math.abs(vel) < 5 && pause > 0) want = heading;
-    var dA = ((want - heading + Math.PI * 3) % (Math.PI * 2)) - Math.PI; heading += dA * Math.min(1, dt * 6);
-
-    // traffic in the other lane, a plane overhead now and then
-    nextCar -= dt;
-    if (nextCar <= 0){ nextCar = 2.5 + hash(T) * 4; oncoming.push({wx: cam + (dir > 0 ? W + 80 : -80), d: -dir, v: 150 + hash(T + 1) * 70, c: ['#c0392b', '#d8dde0', '#3a6ea5', '#5b6b70'][Math.floor(hash(T + 2) * 4)]}); }
-    oncoming.forEach(function(o){ o.wx += o.d * o.v * dt; });
-    oncoming = oncoming.filter(function(o){ return o.wx > cam - 200 && o.wx < cam + W + 200; });
-    nextPlane -= dt;
-    if (!plane && nextPlane <= 0) plane = {x: dir > 0 ? -60 : W + 60, y: H * (0.18 + hash(T) * 0.2), d: dir};
-    if (plane){ plane.x += plane.d * 160 * dt; if (plane.x > W + 80 || plane.x < -80){ plane = null; nextPlane = 14 + hash(T) * 8; } }
-
-    draw(carX, cy + lane, dt);
+    cam += (camTarget() - cam) * Math.min(1, dt * 2);
+    var home = dir * RW / 4; lane += (home - lane) * Math.min(1, dt * 2);
+    var want = Math.atan(slope(pos)) + (dir < 0 ? Math.PI : 0);
+    var dA = ((want - heading + Math.PI * 3) % (Math.PI * 2)) - Math.PI; heading += dA * Math.min(1, dt * 3);
+    draw(pos - cam, roadY(pos) + lane, heading);
   }
 
-  function draw(carX, carY, dt){
+  function draw(carX, carY, heading){
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // ground: cooler in Jersey, warmer in Florida
     for (var x = 0; x < W; x += 24){
@@ -634,13 +516,12 @@ function watch(el, job){
     line(RW / 2 - 7, 'rgba(244,247,242,.8)', 2);
     line(0, '#f6b638', 2.2, [16, 16]);
 
-    // reflector posts light up in the headlights
+    // reflector posts along both edges
     for (var rx = Math.floor(cam / 64) * 64; rx < cam + W + 64; rx += 64){
-      var ahead = (rx - pos) * dir, lit = ahead > 10 && ahead < 190 ? 1 - ahead / 190 : 0;
       [-1, 1].forEach(function(sd){
         var y = roadY(rx), sl = slope(rx), n = 1 / Math.sqrt(1 + sl * sl), off = sd * (RW / 2 + 5);
-        ctx.fillStyle = lit ? 'rgba(255,' + Math.round(200 + 40 * lit) + ',140,' + (0.35 + 0.65 * lit) + ')' : 'rgba(244,247,242,.22)';
-        ctx.beginPath(); ctx.arc(rx - cam - sl * n * off, y + n * off, lit ? 2.2 : 1.6, 0, 7); ctx.fill();
+        ctx.fillStyle = 'rgba(244,247,242,.3)';
+        ctx.beginPath(); ctx.arc(rx - cam - sl * n * off, y + n * off, 1.7, 0, 7); ctx.fill();
       });
     }
 
@@ -648,15 +529,9 @@ function watch(el, job){
     house(0 - cam - 60, roadY(-60) - RW / 2 - 34, false);
     house(L - cam + 60, roadY(L + 60) + RW / 2 + 30, true);
 
-    // traffic
-    oncoming.forEach(function(o){
-      var oy = roadY(o.wx) + o.d * RW / 4, a = Math.atan(slope(o.wx)) + (o.d < 0 ? Math.PI : 0);
-      car(o.wx - cam, oy, a, phone ? 0.9 : 1.05, o.c, false, true);
-    });
     car(carX, carY, heading, phone ? 1 : 1.2, '#e9e2cf', true, true);
 
-    // roadside trees, bending away from your finger
-    var px = ptr.x, py = ptr.y, act = ptr.on;
+    // roadside trees: pines in Jersey, palms by Florida
     var i0 = Math.floor((cam - 60) / TREE_GAP), i1 = Math.ceil((cam + W + 60) / TREE_GAP);
     for (var i = i0; i <= i1; i++){
       var h1 = hash(i), h2 = hash(i + 0.37), h3 = hash(i + 0.71);
@@ -666,18 +541,10 @@ function watch(el, job){
       var t = wx / L, kind;
       var pPalm = smooth(0.6, 0.85, t), pPine = 1 - smooth(0.22, 0.5, t), r = hash(i + 0.13);
       kind = r < pPalm ? 'palm' : (r < pPalm + pPine * (1 - pPalm) ? 'pine' : 'oak');
-      var b = bends[i] || (bends[i] = {x: 0, y: 0, vx: 0, vy: 0});
-      if (act){
-        var dx = sx - px, dy = base - py, d = Math.sqrt(dx * dx + dy * dy);
-        if (d < PUSH_R && d > 0.1){ var f = (1 - d / PUSH_R) * 900; b.vx += dx / d * f * dt; b.vy += dy / d * f * dt; }
-      }
-      b.vx += (-b.x * SPRING - b.vx * DAMP) * dt; b.vy += (-b.y * SPRING - b.vy * DAMP) * dt;
-      b.x += b.vx * dt; b.y += b.vy * dt;
-      var sp = spr[kind][Math.floor(h3 * 3)], sway = Math.sin(T * 1.4 + i) * 1.2;
+      var sp = spr[kind][Math.floor(h3 * 3)];
       ctx.fillStyle = 'rgba(0,0,0,.28)'; ctx.beginPath(); ctx.arc(sx + 3, base + 4, sp.r * 0.8, 0, 7); ctx.fill();
-      ctx.drawImage(sp, sx + b.x + sway - sp.r, base + b.y - sp.r, sp.r * 2, sp.r * 2);
+      ctx.drawImage(sp, sx - sp.r, base - sp.r, sp.r * 2, sp.r * 2);
     }
-    for (var k in bends) if (k < i0 - 4 || k > i1 + 4) delete bends[k];
 
     // state lines
     for (var s = 1; s < STATES.length; s++){
@@ -685,12 +552,12 @@ function watch(el, job){
       if (sx2 < -90 || sx2 > W + 90) continue;
       stateSign(sx2, roadY(bx) + RW / 2 + (phone ? 40 : 46), dir > 0 ? STATES[s] : STATES[s - 1]);
     }
-    if (plane) airplane(plane.x, plane.y, phone ? 0.7 : 0.9, plane.d);
   }
 
   size();
   window.addEventListener('resize', size);
-  if (REDUCED){ hint.hidden = true; cam = camTarget(); draw(pos - cam, roadY(pos) + dir * RW / 4, 0); return; }
+  heading = Math.atan(slope(pos)) + (dir < 0 ? Math.PI : 0);
+  if (REDUCED){ draw(pos - cam, roadY(pos) + lane, heading); return; }
   var job = Loop.add(function(dt){ step(dt); });
   watch(wrapEl, job);
 })();
