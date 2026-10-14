@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T14:15:31+00:00",
+  "generatedAt": "2026-10-14T22:04:16.286788+00:00",
   "title": "Design System: Shamrock Transportation",
   "extensions": {
     "colorMeta": {
@@ -109,6 +109,21 @@
           "oklch(95% 0.152 79.7)"
         ]
       },
+      "amber-hover": {
+        "role": "secondary",
+        "displayName": "Lit Amber",
+        "canonical": "#ffc75a",
+        "tonalRamp": [
+          "oklch(15% 0.140 81.5)",
+          "oklch(26% 0.140 81.5)",
+          "oklch(38% 0.140 81.5)",
+          "oklch(50% 0.140 81.5)",
+          "oklch(62% 0.140 81.5)",
+          "oklch(74% 0.140 81.5)",
+          "oklch(85% 0.140 81.5)",
+          "oklch(95% 0.140 81.5)"
+        ]
+      },
       "focus": {
         "role": "tertiary",
         "displayName": "Interstate Shield Blue",
@@ -154,21 +169,6 @@
           "oklch(95% 0.007 145.5)"
         ]
       },
-      "paper-2": {
-        "role": "neutral",
-        "displayName": "Weathered Aluminum",
-        "canonical": "#e2e9e3",
-        "tonalRamp": [
-          "oklch(15% 0.011 149.9)",
-          "oklch(26% 0.011 149.9)",
-          "oklch(38% 0.011 149.9)",
-          "oklch(50% 0.011 149.9)",
-          "oklch(62% 0.011 149.9)",
-          "oklch(74% 0.011 149.9)",
-          "oklch(85% 0.011 149.9)",
-          "oklch(95% 0.011 149.9)"
-        ]
-      },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
@@ -182,21 +182,6 @@
           "oklch(74% 0.037 222.0)",
           "oklch(85% 0.037 222.0)",
           "oklch(95% 0.037 222.0)"
-        ]
-      },
-      "ink-soft": {
-        "role": "neutral",
-        "displayName": "Road Grey-Green",
-        "canonical": "#35505a",
-        "tonalRamp": [
-          "oklch(15% 0.037 223.1)",
-          "oklch(26% 0.037 223.1)",
-          "oklch(38% 0.037 223.1)",
-          "oklch(50% 0.037 223.1)",
-          "oklch(62% 0.037 223.1)",
-          "oklch(74% 0.037 223.1)",
-          "oklch(85% 0.037 223.1)",
-          "oklch(95% 0.037 223.1)"
         ]
       },
       "on-dark": {
@@ -229,6 +214,21 @@
           "oklch(95% 0.023 175.8)"
         ]
       },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(38% 0.000 89.9)",
+          "oklch(50% 0.000 89.9)",
+          "oklch(62% 0.000 89.9)",
+          "oklch(74% 0.000 89.9)",
+          "oklch(85% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
       "rule": {
         "role": "neutral",
         "displayName": "Guardrail",
@@ -258,6 +258,36 @@
           "oklch(85% 0.021 156.7)",
           "oklch(95% 0.021 156.7)"
         ]
+      },
+      "road-band": {
+        "role": "neutral",
+        "displayName": "Road Band",
+        "canonical": "#173c33",
+        "tonalRamp": [
+          "oklch(15% 0.046 175.1)",
+          "oklch(26% 0.046 175.1)",
+          "oklch(38% 0.046 175.1)",
+          "oklch(50% 0.046 175.1)",
+          "oklch(62% 0.046 175.1)",
+          "oklch(74% 0.046 175.1)",
+          "oklch(85% 0.046 175.1)",
+          "oklch(95% 0.046 175.1)"
+        ]
+      },
+      "road-band-2": {
+        "role": "neutral",
+        "displayName": "Road Band (lower)",
+        "canonical": "#163a37",
+        "tonalRamp": [
+          "oklch(15% 0.042 188.0)",
+          "oklch(26% 0.042 188.0)",
+          "oklch(38% 0.042 188.0)",
+          "oklch(50% 0.042 188.0)",
+          "oklch(62% 0.042 188.0)",
+          "oklch(74% 0.042 188.0)",
+          "oklch(85% 0.042 188.0)",
+          "oklch(95% 0.042 188.0)"
+        ]
       }
     },
     "typographyMeta": {
@@ -267,23 +297,31 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headlines, uppercase, balanced wrap; also on the Ed sign."
+        "purpose": "Section headlines, uppercase, balanced wrap; on aluminum, night, and the Ed sign."
       },
       "phone-number": {
         "displayName": "Phone Number",
-        "purpose": "Ed's cell on the trust sign, set at headline scale."
+        "purpose": "Ed's cell on the trust sign, set near headline size."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Services lines; FAQ questions (20px) and step titles (21px) at the same weight."
+        "purpose": "Services list lines."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "The h3 of each always-visible Good to know pair."
       },
       "lede": {
         "displayName": "Lede",
         "purpose": "Paragraph under a section headline, max 38ch."
       },
+      "promise": {
+        "displayName": "Promise",
+        "purpose": "The one-line promise beside the hero sign, max 34ch."
+      },
       "body": {
         "displayName": "Body",
-        "purpose": "Reading text floor: 18px/1.55; FAQ answers max 60ch."
+        "purpose": "Reading-text floor, 18px/1.55; Good to know answers max 60ch; the italic closing tagline."
       },
       "label-sign": {
         "displayName": "Sign Label",
@@ -292,6 +330,22 @@
       "button": {
         "displayName": "Button",
         "purpose": "Call and Text button labels."
+      },
+      "button-compact": {
+        "displayName": "Button (compact)",
+        "purpose": "Button labels under 380px wide."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Business name in the top bar."
+      },
+      "wordmark-sub": {
+        "displayName": "Wordmark Sub",
+        "purpose": "Uppercase tracked owner line under the wordmark."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Footer text; the only text below 17px."
       }
     },
     "shadows": [
@@ -302,40 +356,30 @@
       },
       {
         "name": "canvas-cast",
-        "value": "offset 2-10px, rgba(0,0,0,.18-.35) fills",
-        "purpose": "Top-down light inside the road canvas only (cars, trees, houses, signs, plane). Not UI elevation."
+        "value": "offset 2-4px fills at rgba(0,0,0,.28-.35)",
+        "purpose": "Top-down light inside the road canvas only (car, trees, houses, state signs). Not UI elevation."
       }
     ],
     "motion": [
       {
         "name": "button-state",
         "value": "background-color .2s, border-color .2s, transform .15s; :active translateY(1px)",
-        "purpose": "Call/Text hover and press."
-      },
-      {
-        "name": "faq-toggle",
-        "value": "transform .25s, border-color .2s",
-        "purpose": "Plus rotates to minus; ring border shifts to deep blue on hover."
-      },
-      {
-        "name": "hint-fade",
-        "value": "opacity .6s",
-        "purpose": "'Drag to drive' fades on first touch."
-      },
-      {
-        "name": "seam-roll",
-        "value": "SEAM_SPEED 46 viewBox units/s; wave y = 34 + 9 sin(x/190 + .55t + φ) + 5 sin(x/83 − .9t + 2φ), φ = 1.7·index, sampled every 20 units; dash 26/22, stroke 3",
-        "purpose": "Lane line rolling along every section edge."
+        "purpose": "Call/Text hover and press feedback. Response to touch, not ambient motion."
       },
       {
         "name": "road-canvas",
-        "value": "CRUISE 120 px/s; MAX_SPEED 900 px/s; SEG 900 px per state (8 states, NJ→FL); TREE_GAP 22; PUSH_R 80; tree SPRING 38 / DAMP 6.5; lane spring k 14 / damp 6; camera ease dt·3; road width 60 (phone, <700px) / 78; dpr cap 2; end pause 2.2s then reverse; plane every 14-22s; oncoming car every 2.5-6.5s",
-        "purpose": "Self-driving packed car the reader can push and steer; trees bend away from the finger."
+        "value": "CRUISE 110 px/s steady; SEG 900 px per state (8 states, NJ to FL); TREE_GAP 22; end pause 2.5s at 30px past each house, then reverse; camera and lane ease dt*2, heading ease dt*3; road width 60 (canvas <700px) / 78; dpr cap 2; no input of any kind",
+        "purpose": "The one moving thing on the page: a packed car driving NJ to FL and back."
+      },
+      {
+        "name": "seam-static",
+        "value": "wave y = 34 + 9 sin(x/190 + phi) + 5 sin(x/83 + 2 phi), phi = 1.7*index, sampled every 20 units; dash 26/22, stroke 3; drawn once",
+        "purpose": "Still lane line along each change of ground. Never animated."
       },
       {
         "name": "loop-and-reduced-motion",
-        "value": "one shared requestAnimationFrame loop, dt capped at 50ms, jobs gated by IntersectionObserver; prefers-reduced-motion: static seams, single static canvas frame, hint hidden, scroll-behavior auto",
-        "purpose": "Motion runs only on screen and never for users who opt out."
+        "value": "one shared requestAnimationFrame loop, dt capped at 50ms, gated by IntersectionObserver; prefers-reduced-motion: single still canvas frame, scroll-behavior auto",
+        "purpose": "The car runs only on screen and never for users who opt out."
       }
     ],
     "breakpoints": [
@@ -365,12 +409,22 @@
       "shoulder": "#5b6a6c",
       "edgeLine": "rgba(244,247,242,.8)",
       "centreLine": "#f6b638 dash 16/16 width 2.2",
+      "reflector": "rgba(244,247,242,.3)",
       "groundJersey": "rgb(22,58,55)",
       "groundFlorida": "rgb(28,66,43)",
+      "grassPatch": "rgba(8,30,24,.06-.14)",
       "bandFallback": "linear-gradient(#173c33,#163a37)",
       "heroCar": "#e9e2cf",
-      "beam": "radial rgba(255,226,150,.55) → rgba(255,214,120,0), additive",
-      "reflectorLit": "rgba(255,200-240,140,.35-1)",
+      "cabinGlass": "#1d2f36",
+      "headlamp": "#fff4cf",
+      "taillamp": "#e0303f",
+      "beam": "radial rgba(255,226,150,.55) to rgba(255,214,120,0), additive",
+      "house": [
+        "#7a5146",
+        "#5f3d34",
+        "#4a2f28"
+      ],
+      "signPost": "#4b5a5f",
       "pine": [
         "#0f3829",
         "#17503c",
@@ -394,7 +448,7 @@
       "refersTo": "button-call",
       "description": "The one amber action: call Ed's cell. Number written into the label.",
       "html": "<div class=\"ds-ground\"><a class=\"ds-btn ds-btn-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>Call 732-300-3835</a></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}"
     },
     {
       "name": "Text Button (ghost)",
@@ -402,7 +456,7 @@
       "refersTo": "button-ghost",
       "description": "Outline partner to Call; opens sms: with a prefilled message. Hidden on fine-pointer devices.",
       "html": "<div class=\"ds-ground\"><a class=\"ds-btn ds-btn-ghost\" href=\"sms:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16v11H9l-5 4z\"/></svg>Text</a></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
     },
     {
       "name": "Contact Pair",
@@ -410,7 +464,7 @@
       "refersTo": "button-call",
       "description": "The maximum contact cluster: Call (wide column) + Text. Never a third button.",
       "html": "<div class=\"ds-ground\"><div class=\"ds-ctas\"><a class=\"ds-btn ds-btn-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>Call 732-300-3835</a><a class=\"ds-btn ds-btn-ghost\" href=\"sms:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16v11H9l-5 4z\"/></svg>Text</a></div></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-ctas{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;max-width:520px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px}.ds-ctas{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;max-width:520px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
     },
     {
       "name": "Guide Sign (hero)",
@@ -418,7 +472,7 @@
       "refersTo": "guide-sign",
       "description": "Interstate guide sign carrying the display headline under a route shield and direction word.",
       "html": "<div class=\"ds-ground\"><div class=\"ds-sign\"><div class=\"ds-sign-in\"><div class=\"ds-sign-top\"><svg viewBox=\"0 0 40 42\" aria-hidden=\"true\"><path d=\"M3 3c5 2 12 2 17-1 5 3 12 3 17 1 2 6 3 12 2 18-1 9-8 16-19 20C9 37 2 30 1 21 0 15 1 9 3 3z\" fill=\"#f4f7f2\"/><path d=\"M5.5 5.6c5 1.5 10.5 1.2 14.5-.9 4 2.1 9.5 2.4 14.5.9.6 2.3 1 4.6 1.2 6.9H4.3c.2-2.3.6-4.6 1.2-6.9z\" fill=\"#c8102e\"/><path d=\"M4.2 14.5h31.6c.1 2.2 0 4.4-.3 6.4-1 7.6-6.8 13.2-15.5 16.7C11.3 34.1 5.5 28.5 4.5 20.9c-.3-2-.4-4.2-.3-6.4z\" fill=\"#003f87\"/><text x=\"20\" y=\"31\" text-anchor=\"middle\" font-family=\"-apple-system,Segoe UI,Arial,sans-serif\" font-weight=\"800\" font-size=\"14\" fill=\"#f4f7f2\">95</text></svg><span>SOUTH</span></div><h1 class=\"ds-h1\"><span>You fly.</span><span>I'll drive.</span></h1></div></div></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px;font-family:var(--font)}.ds-sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep);max-width:520px}.ds-sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:14px 18px 18px}.ds-sign-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}.ds-sign-top svg{width:38px;height:40px}.ds-sign-top span{font-weight:800;font-size:18px;letter-spacing:.12em;color:#f4f7f2}.ds-h1{margin:0;font-weight:850;font-size:clamp(3rem,15vw,5.6rem);line-height:.98;letter-spacing:-.02em;color:#f4f7f2}.ds-h1 span{display:block}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);padding:24px;font-family:var(--font)}.ds-sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep);max-width:520px}.ds-sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:14px 18px 18px}.ds-sign-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}.ds-sign-top svg{width:38px;height:40px}.ds-sign-top span{font-weight:800;font-size:18px;letter-spacing:.12em;color:#f4f7f2}.ds-h1{margin:0;font-weight:850;font-size:clamp(3rem,15vw,5.6rem);line-height:.98;letter-spacing:-.02em;color:#f4f7f2}.ds-h1 span{display:block}"
     },
     {
       "name": "Guide Sign (content)",
@@ -426,31 +480,39 @@
       "refersTo": "guide-sign-inset",
       "description": "Sign-shaped trust block on aluminum: uppercase headline, lede, and the phone number as a big underlined link.",
       "html": "<div class=\"ds-ground\"><div class=\"ds-sign\"><div class=\"ds-sign-in\"><h2 class=\"ds-h2\">You'll know who's driving.</h2><p class=\"ds-lede\">Me, Edward Brannagan. I own Shamrock Transportation and I'm the one behind the wheel.</p><a class=\"ds-ed-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>732-300-3835</a></div></div></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper);padding:24px;font-family:var(--font)}.ds-sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep)}.ds-sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:24px 20px 26px}.ds-h2{margin:0;font-weight:850;font-size:clamp(2rem,8.4vw,3.4rem);line-height:1.02;letter-spacing:-.015em;text-transform:uppercase;text-wrap:balance;color:#f4f7f2}.ds-lede{margin:18px 0 0;font-size:clamp(18px,4.8vw,21px);line-height:1.5;max-width:38ch;color:#f4f7f2}.ds-ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}.ds-ed-call svg{width:30px;height:30px}.ds-ed-call:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}@media (hover:hover){.ds-ed-call:hover{border-color:var(--focus)}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper);padding:24px;font-family:var(--font)}.ds-sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep)}.ds-sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:24px 20px 26px}.ds-h2{margin:0;font-weight:850;font-size:clamp(2rem,8.4vw,3.4rem);line-height:1.02;letter-spacing:-.015em;text-transform:uppercase;text-wrap:balance;color:#f4f7f2}.ds-lede{margin:18px 0 0;font-size:clamp(18px,4.8vw,21px);line-height:1.5;max-width:38ch;color:#f4f7f2}.ds-ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}.ds-ed-call svg{width:30px;height:30px}.ds-ed-call:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}@media (hover:hover){.ds-ed-call:hover{border-color:var(--focus)}}"
     },
     {
       "name": "Lane-line Seam",
       "kind": "custom",
       "refersTo": "",
-      "description": "Wavy section edge filled with the next ground and traced by a dashed lane line (animated in the build at 46 units/s; static here).",
+      "description": "Wavy section edge filled with the next ground and traced by a still dashed amber lane line. Never animated.",
       "html": "<div class=\"ds-seam-demo\"><svg class=\"ds-seam\" viewBox=\"0 0 1200 64\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path class=\"ds-fill\" d=\"M0 37.6L200 30.4L400 41.2L600 29.1L800 38.9L1000 31.7L1200 36.5L1200 64L0 64Z\"/><path class=\"ds-lane\" d=\"M0 37.6L200 30.4L400 41.2L600 29.1L800 38.9L1000 31.7L1200 36.5\"/></svg><div class=\"ds-next\"></div></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-seam-demo{background:var(--paper-2)}.ds-seam{display:block;width:100%;height:64px;margin-bottom:-1px}.ds-fill{fill:var(--night)}.ds-lane{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round;animation:ds-roll 1s linear infinite}.ds-next{height:48px;background:var(--night)}@keyframes ds-roll{to{stroke-dashoffset:-46}}@media (prefers-reduced-motion:reduce){.ds-lane{animation:none}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-seam-demo{background:var(--paper)}.ds-seam{display:block;width:100%;height:64px;margin-bottom:-1px}.ds-fill{fill:var(--night)}.ds-lane{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}.ds-next{height:48px;background:var(--night)}"
     },
     {
-      "name": "FAQ Row",
-      "kind": "custom",
-      "refersTo": "faq-row",
-      "description": "Native details row with a plus/minus ring; deep-blue outline on hover and focus.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-faq\"><details open><summary>When is a truck carrier the better choice?<i aria-hidden=\"true\"></i></summary><p class=\"ds-a\">If the lowest price matters most, a carrier truck is the better fit. I'll tell you that straight when you call.</p></details><details><summary>Which airports?<i aria-hidden=\"true\"></i></summary><p class=\"ds-a\">Anywhere in Florida.</p></details></div></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper-2);color:var(--ink);padding:24px;font:400 18px/1.55 var(--font)}.ds-faq{border-top:2px solid #c8d4cb}.ds-faq details{border-bottom:2px solid #c8d4cb}.ds-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-weight:750;font-size:20px;line-height:1.3;border-radius:8px}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary:focus-visible{outline:3px solid var(--focus-deep);outline-offset:2px}@media (hover:hover){.ds-faq summary:hover{outline:3px solid var(--focus-deep);outline-offset:2px}.ds-faq summary:hover i{border-color:var(--focus-deep)}}.ds-faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink-soft);position:relative;transition:transform .25s,border-color .2s}.ds-faq summary i::before,.ds-faq summary i::after{content:\"\";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--ink-soft)}.ds-faq summary i::after{transform:rotate(90deg);transition:transform .25s}.ds-faq details[open] summary i::after{transform:rotate(0)}.ds-a{margin:0;padding:0 4px 20px;max-width:60ch}"
-    },
-    {
-      "name": "Services and Steps",
+      "name": "Road Band",
       "kind": "custom",
       "refersTo": "",
-      "description": "Dotted-guardrail services list with sign-green squares, and numbered steps on ink discs.",
-      "html": "<div class=\"ds-ground\"><ul class=\"ds-services\"><li>New Jersey to Florida, and back</li><li>Door to door</li></ul><ol class=\"ds-how\"><li><div><b>Call me</b><span>Tell me where the car is, where it's going, and when you fly.</span></div></li><li><div><b>Pack the car</b><span>Load it up. I pick it up at your door.</span></div></li></ol></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font:400 18px/1.55 var(--font)}.ds-services{list-style:none;margin:0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.3}.ds-services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}.ds-services li:first-child{border-top:2px dotted #b9c8be}.ds-services li::before{content:\"\";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}.ds-how{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}.ds-how li{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;counter-increment:s}.ds-how li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#f4f7f2;font-weight:850;font-size:20px}.ds-how b{display:block;font-size:21px;line-height:1.25}.ds-how span{color:var(--ink-soft)}"
+      "description": "Static preview of the road canvas: a winding night road with an amber centre dash. In the build a packed car drives it at 110px/s; it takes no input.",
+      "html": "<div class=\"ds-road\" role=\"img\" aria-label=\"Night road preview\"><svg viewBox=\"0 0 600 200\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M0 100C120 60 200 140 300 100S480 60 600 100\" fill=\"none\" stroke=\"#5b6a6c\" stroke-width=\"68\"/><path d=\"M0 100C120 60 200 140 300 100S480 60 600 100\" fill=\"none\" stroke=\"#2c3439\" stroke-width=\"56\"/><path d=\"M0 100C120 60 200 140 300 100S480 60 600 100\" fill=\"none\" stroke=\"#f6b638\" stroke-width=\"2.2\" stroke-dasharray=\"16 16\"/><g transform=\"translate(250 112) rotate(-12)\"><rect x=\"-23\" y=\"-11.5\" width=\"46\" height=\"23\" rx=\"8\" fill=\"#e9e2cf\"/><rect x=\"-10\" y=\"-9\" width=\"22\" height=\"18\" rx=\"4\" fill=\"#1d2f36\"/><rect x=\"-6\" y=\"-8\" width=\"13\" height=\"16\" rx=\"3\" fill=\"#e9e2cf\"/><rect x=\"-9\" y=\"-7.5\" width=\"3\" height=\"6\" fill=\"#f6b638\"/><rect x=\"-9\" y=\"1\" width=\"3\" height=\"6.5\" fill=\"#0a6337\"/></g></svg></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-road{height:200px;background:linear-gradient(#173c33,#163a37)}.ds-road svg{display:block;width:100%;height:100%}"
+    },
+    {
+      "name": "Services List",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Title-weight service lines between dotted guardrail rules, each led by a sign-green square.",
+      "html": "<div class=\"ds-ground\"><ul class=\"ds-services\"><li>New Jersey to Florida, and back</li><li>Local &amp; long distance</li><li>Airport services anywhere in Florida</li><li>Door to door</li></ul></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font:400 18px/1.55 var(--font)}.ds-services{list-style:none;margin:0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.3}.ds-services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}.ds-services li:first-child{border-top:2px dotted #b9c8be}.ds-services li::before{content:\"\";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}"
+    },
+    {
+      "name": "Good to Know Pairs",
+      "kind": "custom",
+      "refersTo": "qa-pair",
+      "description": "Plain question/answer pairs, always visible. No toggle, no icon, nothing to tap.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-qa\"><h3>When is a truck carrier the better choice?</h3><p>If the lowest price matters most, if your dates are wide open, or if the car doesn't run, a carrier truck is the better fit. I'll tell you that straight when you call.</p><h3>Do you bring it back up in the spring?</h3><p>Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p></div></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font:400 18px/1.55 var(--font)}.ds-qa{border-top:2px solid #c8d4cb}.ds-qa h3{font-size:20px;font-weight:750;line-height:1.3;letter-spacing:0;margin:20px 0 8px}.ds-qa p{margin:0;max-width:60ch;padding-bottom:20px;border-bottom:2px solid #c8d4cb}"
     },
     {
       "name": "Wordmark Bar",
@@ -458,34 +520,35 @@
       "refersTo": "",
       "description": "Non-sticky top bar: clover mark, name, and owner subline. No navigation links.",
       "html": "<div class=\"ds-ground\"><header class=\"ds-bar\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><g fill=\"#3dbb6c\"><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/><path transform=\"rotate(118 32 32)\" d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/><path transform=\"rotate(-118 32 32)\" d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/></g><path d=\"M33 34c2 9 6 16 13 23\" fill=\"none\" stroke=\"#3dbb6c\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg><b>Shamrock Transportation<span>Owner &amp; driver: Ed Brannagan</span></b></header></div>",
-      "css": ":host{--night:#0e2a33;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--paper-2:#e2e9e3;--ink:#0e2a33;--ink-soft:#35505a;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);color:var(--on-dark);padding:8px 0;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:10px;padding:14px 20px 4px}.ds-bar svg{width:34px;height:34px;flex:none}.ds-bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-bar b span{display:block;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif}.ds-ground{background:var(--night);color:var(--on-dark);padding:8px 0;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:10px;padding:14px 20px 4px}.ds-bar svg{width:34px;height:34px;flex:none}.ds-bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-bar b span{display:block;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}"
     }
   ],
   "narrative": {
     "northStar": "The Night Drive Down I-95",
-    "overview": "The whole page is one drive south at night. The ground is the highway after dark: blue-green, never black. Headlines go up on interstate guide signs, and interstate green is also shamrock green, so the mark and the road share one colour. Headlight amber is the only warm light on the page. It belongs to the Call button and the road's centre line, and nothing else in the interface. Between sections, the light \"sign-back aluminum\" bands work like the backs of road signs: cool, matte, plain.\n\nDensity is low and sizes are large on purpose. The audience is mostly 60+, on a phone, often inside Facebook's in-app browser. Body text is 18px, buttons are 58px tall, and nothing relies on hover. The one interactive set piece is the road canvas. A packed cream car drives itself past state-line signs, and the reader can drag to steer it and push it along. It is something to play with, and the page never asks anyone to use it.\n\nThe world rejects the trucking-company template: no fleet photos, no quote forms, no badges. Type is the system font stack in heavy weights (750–850). Section headlines are uppercase. Lettering on the signs is mixed case, the way real guide signs are lettered.",
+    "overview": "The whole page is one drive south at night. The ground is the highway after dark: blue-green, never black. The headlines that matter most go up on interstate guide signs, and interstate green is also shamrock green, so the mark and the road share one colour. Headlight amber is the only warm light on the page. It belongs to the Call button and the road's centre line, and nothing else in the interface. The light \"sign-back aluminum\" band reads like the back of a road sign: cool, matte, plain.\n\nThe page is calm and short on purpose. Its readers are mostly 40 to 70, on a phone, often inside Facebook's in-app browser, and they found an earlier, busier version confusing. So there is one moving thing on the page, the packed cream car driving the road band. The road is scenery to watch, not a toy: it takes no touch, the page scrolls straight over it, and nothing on the page asks to be tapped open. Body text is 18px, buttons are 58px tall, every word is visible on arrival, and nothing depends on hover.\n\nThe world rejects the trucking-company template: no fleet photos, no quote forms, no badges. Type is the system font stack set heavy (750–850). Section headlines are uppercase. Lettering on the guide signs is mixed case, the way real guide signs are lettered.",
     "keyCharacteristics": [
-      "Blue-green night ground with cool aluminum light bands. No pure black anywhere as a surface.",
+      "Blue-green night ground with one long cool-aluminum light run. No pure black anywhere as a surface.",
       "Guide-sign panels (green, white inset border, rounded) carry the headlines that matter most.",
       "One warm colour, amber, reserved for calling and for the centre line.",
       "Interstate-shield blue appears only when something is hovered or focused.",
-      "Animated lane-line seams stitch every section change.",
+      "Only the car moves. Seams, sections and text are still.",
+      "Everything is visible: no accordions, no tabs, no tap-to-reveal.",
       "Heavy system sans with big tap targets, built for older eyes and thumbs."
     ],
     "rules": [
       {
         "name": "The One Headlight Rule",
-        "body": "In the interface, amber is used only for the call action and the road centre line (the canvas centre dash and the lane-line seams that cross the night ground). Don't use it for links, borders, icons, headings, or a second button. The only amber outside the interface is the cargo box in the two car drawings, which is what \"packed\" looks like at that size.",
+        "body": "In the interface, amber is used only for the call action and the road centre line (the canvas centre dash and the lane line on the seams). Don't use it for links, borders, icons, headings, or a second button. The only amber outside the interface is the cargo in the two car drawings, which is what \"packed\" looks like at that size.",
         "section": "colors"
       },
       {
-        "name": "The Blue Only Moves Rule",
-        "body": "Interstate-shield blue appears only as a response to the pointer or keyboard: hover borders, focus outlines, underline colour on footer links. It is never at rest. The one exception is the I-95 route shield's own red/white/blue, because that is a real road artefact.",
+        "name": "The Blue Only Responds Rule",
+        "body": "Interstate-shield blue appears only as a response to the pointer or keyboard: hover borders, focus outlines, underline colour on hovered links. It is never at rest. The one exception is the I-95 route shield's own red, white and blue, because that is a real road artefact.",
         "section": "colors"
       },
       {
         "name": "The Never Black Rule",
-        "body": "Dark grounds are blue-green night (night, night-2), never #000. Black appears only as low-alpha shadow inside the canvas and under the sign.",
+        "body": "Dark grounds are blue-green night (night, night-2), never #000. Black appears only as low-alpha shadow under the sign and inside the canvas.",
         "section": "colors"
       },
       {
@@ -495,43 +558,57 @@
       },
       {
         "name": "The Signs Speak Mixed Case Rule",
-        "body": "Lettering on a guide sign is mixed case (except the route direction word). Section headlines off the sign are uppercase.",
+        "body": "Lettering on a guide sign is mixed case, except the route direction word. Section headlines off the sign are uppercase.",
         "section": "typography"
       },
       {
         "name": "The Two Buttons Max Rule",
-        "body": "A contact cluster holds at most two buttons: Call (amber), then Text (outline). The hero and the closing section repeat the same pair. Don't add a third channel or a duplicate.",
+        "body": "A contact cluster holds at most two buttons: Call (amber), then Text (outline). The hero and the close repeat the same pair. Don't add a third channel or a duplicate.",
         "section": "layout"
       },
       {
         "name": "The No Sticky Bar Rule",
-        "body": "There is no sticky or fixed bottom call bar. Call is reachable from the hero, the Ed sign, the close section, and the footer.",
+        "body": "There is no sticky or fixed call bar. Call is reachable from the hero, the Ed sign, the close, and the footer.",
+        "section": "layout"
+      },
+      {
+        "name": "The Nothing Hidden Behind A Tap Rule",
+        "body": "No accordions, tabs, carousels, \"read more\" or tap-to-reveal. Every question shows its answer in full. If text is worth having on the page, it is visible on arrival; if it isn't, cut it.",
         "section": "layout"
       },
       {
         "name": "The Only Signs Stand Up Rule",
-        "body": "Only guide-sign panels get elevation. Buttons, FAQ rows, and sections stay flat.",
+        "body": "Only guide-sign panels get elevation. Buttons, lists, question pairs and sections stay flat.",
         "section": "elevation"
+      },
+      {
+        "name": "The One Moving Thing Rule",
+        "body": "Only the car moves. Seams, text, illustrations and sections never animate, reveal on scroll, or loop; the only other change on the page is state feedback (colour shifts and a 1px press) in direct response to a touch, hover or keyboard focus.",
+        "section": "components"
       }
     ],
     "dos": [
-      "**Do** put the headline that matters most on a guide sign: green, 3px sign-white inset border, 16/11px concentric radii, Sign Lift shadow.",
-      "**Do** keep amber for Call and the centre line. Text on amber is always ink.",
-      "**Do** show blue only on hover (gated behind `(hover:hover)`) and focus. Use deep shield blue on aluminum and sign-white focus inside green signs.",
-      "**Do** stitch every change of ground with a seam whose fill is the next section's colour.",
-      "**Do** keep reading text at 18px or larger, buttons at 58px tall or more, and FAQ rows at 60px or more.",
-      "**Do** run every animation on the shared loop, pause it off screen, and draw a static frame under `prefers-reduced-motion`.",
-      "**Do** write icons as inline SVG symbols that inherit `currentColor`."
+      "Do put the headline that matters most on a guide sign: green, 3px sign-white inset border, 16/11px concentric radii, Sign Lift shadow.",
+      "Do keep amber for Call and the centre line. Text on amber is always ink.",
+      "Do show blue only on hover (gated behind `(hover:hover)`) and focus. Use deep shield blue on aluminum and sign-white focus inside green signs.",
+      "Do stitch every change of ground with a still seam whose fill is the next section's colour.",
+      "Do keep reading text at 18px or larger and buttons at 58px tall or more.",
+      "Do show every answer in full, on arrival.",
+      "Do keep the car the only moving thing: run it on the shared loop, pause it off screen, and draw a still frame under `prefers-reduced-motion`.",
+      "Do write icons as inline SVG symbols that inherit `currentColor`."
     ],
     "donts": [
-      "**Don't** add a webfont or a second family. The system stack is the house style.",
-      "**Don't** add a sticky or fixed bottom call bar.",
-      "**Don't** put more than two contact buttons in a cluster, or add a second amber element to the interface.",
-      "**Don't** use blue at rest as a link colour, accent, or fill.",
-      "**Don't** use #000 or near-black as a ground. Night is blue-green.",
-      "**Don't** put a tracked uppercase label above a section headline. Tracked uppercase appears in only two places: the route direction word beside the shield inside a guide sign, and the wordmark subline.",
-      "**Don't** add shadows to buttons, rows, or sections. Only signs stand up.",
-      "**Don't** use stock fleet photos, quote forms, or trust badges."
+      "Don't add a second moving thing: no rolling seams, scroll reveals, marquees, looping illustrations, or extra traffic in the road.",
+      "Don't make the road band interactive or capture touch on it. It is scenery; the page must scroll over it.",
+      "Don't hide text behind a tap: no accordions, tabs, carousels or \"read more\".",
+      "Don't add a webfont or a second family. The system stack is the house style.",
+      "Don't add a sticky or fixed call bar.",
+      "Don't put more than two contact buttons in a cluster, or add a second amber element to the interface.",
+      "Don't use blue at rest as a link colour, accent, or fill.",
+      "Don't use #000 or near-black as a ground. Night is blue-green.",
+      "Don't put a tracked uppercase label above a section headline. Tracked uppercase appears in only two places: the route direction word beside the shield inside a guide sign, and the wordmark subline.",
+      "Don't add shadows to buttons, lists, question pairs or sections. Only signs stand up.",
+      "Don't use stock fleet photos, quote forms, or trust badges."
     ]
   }
 }
