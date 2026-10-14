@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shamrock Transportation · You fly, I'll drive</title>
+<meta name="description" content="Ed Brannagan drives your car between New Jersey and Florida, door to door, so it's waiting when you land. Call 732-300-3835.">
+<meta name="theme-color" content="#0e2a33">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shamrock Transportation · You fly, I'll drive">
+<meta property="og:description" content="I drive your car between New Jersey and Florida, door to door. Call Ed: 732-300-3835.">
+<meta property="og:url" content="https://10elizabethbell.github.io/shamrockOwnerTrust/">
+<meta property="og:image" content="https://10elizabethbell.github.io/shamrockOwnerTrust/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --night:#0e2a33;        /* page ground: I-95 after dark, blue-green, never black */
+  --night-2:#12343f;
+  --sign:#0a6337;         /* interstate guide-sign green = shamrock green */
+  --sign-deep:#084d2b;
+  --leaf:#3dbb6c;         /* the shamrock itself */
+  --amber:#f6b638;        /* headlights, center line, primary button */
+  --amber-deep:#e09a12;
+  --focus:#3d9bff;        /* one accent for hover/focus outlines (interstate-shield blue) */
+  --paper:#eef2ee;        /* light sections: sign-back aluminum, cool */
+  --paper-2:#e2e9e3;
+  --ink:#0e2a33;
+  --ink-soft:#35505a;
+  --on-dark:#f2f6f1;
+  --on-dark-soft:#b9cdc7;
+  --radius:14px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--on-dark);font:400 18px/1.55 var(--font);overflow-x:hidden}
+::selection{background:var(--amber);color:var(--ink)}
+a{color:inherit}
+img,svg,canvas{display:block}
+h1,h2,h3{margin:0;font-weight:850;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,8.4vw,3.4rem);text-transform:uppercase;text-wrap:balance}
+p{margin:0}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+
+/* ---------- Top bar ---------- */
+.bar{display:flex;align-items:center;gap:10px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
+.bar svg{width:34px;height:34px;flex:none}
+.bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
+.bar b span{display:block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-top:14px}
+.hero-copy{display:grid;gap:18px}
+.sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep)}
+.sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:14px 18px 18px}
+.sign-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.sign-top svg{width:38px;height:40px}
+.sign-top span{font-weight:800;font-size:18px;letter-spacing:.12em;color:#f4f7f2}
+.sign h1{font-size:clamp(3rem,15vw,5.6rem);color:#f4f7f2;letter-spacing:-.02em;line-height:.98}
+.sign h1 span{display:block}
+.promise{font-size:clamp(17px,4.9vw,20px);line-height:1.45;color:var(--on-dark);max-width:34ch}
+.ctas{display:grid;grid-template-columns:1fr auto;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font-weight:800;font-size:18px;text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.btn svg{width:22px;height:22px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.btn-call:hover{background:#ffc75a;border-color:var(--focus)}
+.btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}
+.btn-ghost:hover{border-color:var(--focus);color:#fff}
+
+/* road canvas */
+.road{position:relative;margin-top:22px;height:236px;background:linear-gradient(#173c33,#163a37);touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.road:active{cursor:grabbing}
+.road canvas{position:absolute;inset:0;width:100%;height:100%}
+.hint{position:absolute;right:14px;bottom:52px;font-size:13px;font-weight:600;letter-spacing:.04em;color:rgba(242,246,241,.75);pointer-events:none;transition:opacity .6s}
+.hint.gone{opacity:0}
+
+/* ---------- Seams: a lane line flowing along the top of the next section ---------- */
+.seam{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:44px;margin-bottom:-1px}
+.road + .seam,.hero .seam{margin-top:-44px}
+.seam path.fill{fill:var(--next)}
+.seam path.lane{fill:none;stroke:var(--lane);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}
+
+/* ---------- Sections ---------- */
+section.light{background:var(--paper);color:var(--ink)}
+section.pad{padding:44px 0 64px}
+.lede{font-size:clamp(18px,4.8vw,21px);line-height:1.5;max-width:38ch;margin-top:18px}
+.light .lede{color:var(--ink)}
+
+/* Pack it full */
+.pack-grid{display:grid;gap:28px}
+.trunk{width:100%;max-width:420px;height:auto}
+
+/* Ed: the sign-shaped trust block */
+.ed{background:var(--paper);padding:8px 0 64px}
+.ed .sign-in{padding:24px 20px 26px}
+.ed h2{color:#f4f7f2}
+.ed .lede{color:#f4f7f2}
+.ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
+.ed-call:hover{border-color:var(--focus)}
+.ed-call svg{width:30px;height:30px}
+.ed-meta{margin-top:14px;font-size:16px;color:#cfe0d4}
+
+/* Services + how */
+.services{list-style:none;margin:22px 0 0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.3}
+.services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}
+.services li:first-child{border-top:2px dotted #b9c8be}
+.services li::before{content:"";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}
+.how{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:22px;counter-reset:s}
+.how li{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;counter-increment:s}
+.how li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--amber);font-weight:850;font-size:20px}
+.how b{display:block;font-size:21px;line-height:1.25}
+.how span{color:var(--ink-soft)}
+.sh{margin-top:56px}
+
+/* Rates + FAQ */
+.rates{font-size:clamp(28px,8vw,44px);font-weight:850;text-transform:uppercase;line-height:1.04;margin-top:4px}
+.faq{margin-top:22px;border-top:2px solid #c8d4cb}
+.faq details{border-bottom:2px solid #c8d4cb}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-weight:750;font-size:20px;line-height:1.3;border-radius:8px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{outline:3px solid var(--focus);outline-offset:2px}
+.faq summary i{flex:none;width:30px;height:30px;border-radius:50%;border:2px solid var(--ink-soft);position:relative;transition:transform .25s,border-color .2s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;margin:-1px 0 0 -6px;background:var(--ink-soft)}
+.faq summary i::after{transform:rotate(90deg);transition:transform .25s}
+.faq summary:hover i{border-color:var(--focus)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .a{padding:0 4px 20px;max-width:60ch;color:var(--ink)}
+
+/* Close */
+.close{padding:48px 0 56px;text-align:left}
+.close h2{color:var(--on-dark)}
+.close .lede{color:var(--on-dark-soft)}
+.close .ctas{margin-top:26px;max-width:520px}
+.tagline{margin-top:34px;font-size:18px;font-style:italic;color:var(--on-dark-soft)}
+
+/* Footer */
+footer{background:var(--night-2);padding:30px 0 40px;font-size:16px;color:var(--on-dark-soft)}
+footer .wrap{display:grid;gap:6px}
+footer strong{color:var(--on-dark);font-size:18px}
+footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
+footer a:hover{text-decoration-color:var(--focus)}
+
+/* ---------- Wider screens ---------- */
+@media (min-width:760px){
+  .road + .seam,.hero .seam{margin-top:-64px}
+  .hero{padding-top:28px}
+  .hero-copy{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end;gap:28px 48px}
+  .sign{grid-row:span 2}
+  .promise{align-self:end}
+  .ctas{align-self:start;grid-template-columns:auto auto;justify-content:start}
+  .road{height:340px;margin-top:40px}
+  .pack-grid{grid-template-columns:1.1fr 1fr;align-items:center}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .sh{margin-top:0}
+  section.pad{padding:56px 0 88px}
+  .seam{height:64px}
+  .ed .sign-in{padding:40px 44px}
+  footer .wrap{grid-template-columns:auto auto auto;justify-content:space-between;align-items:center}
+}
+@media (min-width:1100px){.road{height:380px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!--
+THESIS: The owner is the driver. The page is a night drive down I-95: the headline is a green guide sign (interstate green = shamrock green), and you can take the wheel. Refuses the trucking-company template of fleet photos, quote forms and badges.
+OWN-WORLD: Blue-green night ground (#0e2a33), guide-sign green panels with a white inset border, headlight amber for the one call button and the center line, sign-back aluminum light sections, interstate-shield blue only for hover and focus. Heavy uppercase system sans; sign lettering mixed case.
+STORY: Snowbird learns Ed himself drives their own car NJ <-> FL, packed full, door to door or to any Florida airport; believes it because he names himself, gives his cell, and says when a truck is the better choice; taps Call.
+FIRST VIEWPORT (phone): wordmark with shamrock; guide sign "I-95 SOUTH / You fly. I'll drive."; one-line promise; Call 732-300-3835 (amber) + Text (outline); a top-down night highway band underneath where a packed car drives itself south past state lines, drag to steer and push it.
+FORM: one-page drive-along, own-world guide-sign + highway canvas; chosen first of 6; seed: unattended (no concept-seed run).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="clover" viewBox="0 0 64 64">
+      <g fill="#3dbb6c">
+        <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z"/>
+        <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z" transform="rotate(118 32 32)"/>
+        <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z" transform="rotate(-118 32 32)"/>
+      </g>
+      <path d="M33 34c2 9 6 16 13 23" fill="none" stroke="#3dbb6c" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="shield" viewBox="0 0 40 42">
+      <path d="M3 3c5 2 12 2 17-1 5 3 12 3 17 1 2 6 3 12 2 18-1 9-8 16-19 20C9 37 2 30 1 21 0 15 1 9 3 3z" fill="#f4f7f2"/>
+      <path d="M5.5 5.6c5 1.5 10.5 1.2 14.5-.9 4 2.1 9.5 2.4 14.5.9.6 2.3 1 4.6 1.2 6.9H4.3c.2-2.3.6-4.6 1.2-6.9z" fill="#c8102e"/>
+      <path d="M4.2 14.5h31.6c.1 2.2 0 4.4-.3 6.4-1 7.6-6.8 13.2-15.5 16.7C11.3 34.1 5.5 28.5 4.5 20.9c-.3-2-.4-4.2-.3-6.4z" fill="#003f87"/>
+      <text x="20" y="31" text-anchor="middle" font-family="-apple-system,Segoe UI,Arial,sans-serif" font-weight="800" font-size="14" fill="#f4f7f2">95</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <svg aria-hidden="true"><use href="#clover"/></svg>
+  <b>Shamrock Transportation<span>Owner &amp; driver: Ed Brannagan</span></b>
+</header>
+
+<main>
+<section class="hero" aria-label="Shamrock Transportation">
+  <div class="wrap hero-copy">
+    <div class="sign">
+      <div class="sign-in">
+        <div class="sign-top"><svg aria-hidden="true"><use href="#shield"/></svg><span id="heading">SOUTH</span></div>
+        <h1><span>You fly.</span><span>I'll drive.</span></h1>
+      </div>
+    </div>
+    <p class="promise">I drive your own car between New Jersey and Florida, door to door, so it's there when you land.</p>
+    <div class="ctas">
+      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
+      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
+    </div>
+  </div>
+  <div class="road" id="road">
+    <canvas id="roadCanvas" role="img" aria-label="A packed car driving I-95 at night between New Jersey and Florida. Drag to steer it."></canvas>
+    <span class="hint" id="hint">Drag to drive</span>
+  </div>
+  <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
+</section>
+
+
+
+<section class="light pad" id="pack">
+  <div class="wrap pack-grid">
+    <div>
+      <h2>Pack it full.</h2>
+      <p class="lede">I'm driving your car, not loading it on a truck, so it can come down with your things inside: winter clothes, golf clubs, the boxes you'd otherwise ship. Most truck carriers want the car empty.</p>
+    </div>
+    <svg class="trunk" viewBox="0 0 420 250" role="img" aria-label="Your car from above, packed with suitcases, boxes and golf clubs">
+      <defs><clipPath id="cab"><rect x="96" y="56" width="236" height="138" rx="30"/></clipPath></defs>
+      <rect x="40" y="40" width="340" height="170" rx="62" fill="#c9d3cd"/>
+      <rect x="40" y="40" width="340" height="170" rx="62" fill="none" stroke="#9fb0a6" stroke-width="3"/>
+      <rect x="96" y="56" width="236" height="138" rx="30" fill="#2a3e45"/>
+      <g clip-path="url(#cab)">
+        <rect x="186" y="66" width="70" height="52" rx="6" fill="#f6b638"/><rect x="186" y="66" width="70" height="52" rx="6" fill="none" stroke="#c98c14" stroke-width="3"/>
+        <path d="M221 66v52" stroke="#c98c14" stroke-width="3"/>
+        <rect x="262" y="64" width="62" height="64" rx="8" fill="#0a6337"/><rect x="284" y="58" width="18" height="10" rx="4" fill="#0a6337"/>
+        <rect x="186" y="126" width="54" height="62" rx="5" fill="#b98a5a"/><path d="M186 152h54" stroke="#94693f" stroke-width="3"/>
+        <rect x="246" y="134" width="80" height="54" rx="8" fill="#3d6f9e"/><path d="M262 134v54M310 134v54" stroke="#2c5579" stroke-width="3"/>
+        <rect x="104" y="160" width="74" height="26" rx="13" fill="#5b4636"/>
+        <circle cx="110" cy="166" r="6" fill="#d9d2c5"/><circle cx="118" cy="178" r="6" fill="#d9d2c5"/><circle cx="106" cy="181" r="5" fill="#d9d2c5"/>
+        <rect x="108" y="70" width="64" height="74" rx="14" fill="#33525c"/>
+      </g>
+      <path d="M332 70c18 10 26 30 26 55s-8 45-26 55" fill="#2a3e45"/>
+      <path d="M96 66c-12 14-16 36-16 59s4 45 16 59" fill="#2a3e45"/>
+      <rect x="372" y="62" width="12" height="26" rx="5" fill="#fff2c4"/><rect x="372" y="162" width="12" height="26" rx="5" fill="#fff2c4"/>
+      <rect x="36" y="62" width="10" height="26" rx="4" fill="#d6283b"/><rect x="36" y="162" width="10" height="26" rx="4" fill="#d6283b"/>
+    </svg>
+  </div>
+</section>
+
+<section class="ed" id="driver" aria-labelledby="ed-h">
+  <div class="wrap">
+    <div class="sign">
+      <div class="sign-in">
+        <h2 id="ed-h">You'll know who's driving.</h2>
+        <p class="lede">Me, Edward Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. You call my cell, not a dispatcher.</p>
+        <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light pad" id="services" style="padding-top:8px">
+  <div class="wrap two">
+    <div>
+      <h2>What I do</h2>
+      <ul class="services">
+        <li>New Jersey ⇄ Florida</li>
+        <li>Local &amp; long distance</li>
+        <li>Airport runs anywhere in Florida</li>
+        <li>Door to door</li>
+      </ul>
+    </div>
+    <div class="sh">
+      <h2>How it works</h2>
+      <ol class="how">
+        <li><div><b>Call me</b><span>Tell me where the car is, where it's going, and when you fly.</span></div></li>
+        <li><div><b>Pack the car</b><span>Load it up. I pick it up at your door.</span></div></li>
+        <li><div><b>You fly</b><span>I drive.</span></div></li>
+        <li><div><b>Your car is waiting</b><span>At your Florida door, or I meet you at the airport.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper-2);--lane:#f4f7f2;background:var(--paper)" aria-hidden="true"><path class="fill"/><path class="lane" style="stroke:#9fb3a8"/></svg>
+
+<section class="light pad" id="questions" style="background:var(--paper-2)">
+  <div class="wrap two">
+    <div>
+      <h2>Rates</h2>
+      <p class="rates" style="margin-top:18px">Very reasonable.</p>
+      <p class="lede">Call me with where and when, and I'll give you a price for your trip.</p>
+    </div>
+    <div class="sh">
+      <h2>Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>When is a truck carrier the better choice?<i aria-hidden="true"></i></summary>
+          <p class="a">If the lowest price matters most, if your dates are wide open, or if the car doesn't run or is a collector car you don't want miles on, a carrier truck is the better fit. I'll tell you that straight when you call.</p>
+        </details>
+        <details>
+          <summary>Can I really pack the car?<i aria-hidden="true"></i></summary>
+          <p class="a">Yes. That's the point of having it driven. Tell me what's going in when you call.</p>
+        </details>
+        <details>
+          <summary>Do you bring it back up in the spring?<i aria-hidden="true"></i></summary>
+          <p class="a">Yes. Down to Florida in the fall, back up to Jersey when you come home for the summer.</p>
+        </details>
+        <details>
+          <summary>Which airports?<i aria-hidden="true"></i></summary>
+          <p class="a">Anywhere in Florida. Tell me your flight and I'll meet you with the car, or pick it up from you when you leave.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--night);--lane:var(--amber);background:var(--paper-2)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
+
+<section class="close" aria-labelledby="close-h">
+  <div class="wrap">
+    <h2 id="close-h">Heading south this winter?</h2>
+    <p class="lede">Call me with your dates. I'll take it from your driveway.</p>
+    <div class="ctas">
+      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>Call 732-300-3835</a>
+      <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Text</a>
+    </div>
+    <p class="tagline">Life is a highway… drive it all night long.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Shamrock Transportation</strong>
+    <span>Edward Brannagan, owner &amp; driver</span>
+    <a href="tel:+17323003835">732-300-3835</a>
+  </div>
+</footer>
+
+<script>
+/* ---------- Season: south in fall/winter, north in spring/summer ---------- */
+(function(){
+  var m = new Date().getMonth();            // 0 = Jan
+  var north = m >= 2 && m <= 7;             // Mar–Aug: heading home to Jersey
+  window.SHAMROCK_NORTH = north;
+  if (north){
+    document.getElementById('heading').textContent = 'NORTH';
+    document.getElementById('close-h').textContent = 'Heading home this spring?';
+  }
+  var body = "Hi Ed, I'd like my car driven from ___ to ___ around ___.";
+  document.querySelectorAll('.js-sms').forEach(function(a){
+    a.href = 'sms:+17323003835?&body=' + encodeURIComponent(body);
+  });
+})();
+
+/* ---------- Shared animation loop ---------- */
+var Loop = (function(){
+  var jobs = [], running = false, last = 0;
+  function frame(now){
+    var dt = Math.min(0.05, (now - last) / 1000 || 0.016); last = now;
+    var any = false;
+    for (var i = 0; i < jobs.length; i++) if (jobs[i].on){ jobs[i].fn(dt, now / 1000); any = true; }
+    if (any) requestAnimationFrame(frame); else running = false;
+  }
+  return {
+    add: function(fn){ var j = {fn: fn, on: false}; jobs.push(j); return j; },
+    wake: function(){ if (!running){ running = true; last = performance.now(); requestAnimationFrame(frame); } }
+  };
+})();
+var REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function watch(el, job){
+  if (!('IntersectionObserver' in window)){ job.on = true; Loop.wake(); return; }
+  new IntersectionObserver(function(es){ job.on = es[0].isIntersecting; if (job.on) Loop.wake(); }).observe(el);
+}
+
+/* ---------- Seams: a lane line rolling along each section edge ---------- */
+(function(){
+  var SEAM_SPEED = 46;      // dash travel, viewBox units per second
+  var seams = [].slice.call(document.querySelectorAll('.seam'));
+  seams.forEach(function(svg, k){
+    var fill = svg.querySelector('.fill'), lane = svg.querySelector('.lane');
+    function draw(t){
+      var d = '', ph = k * 1.7;
+      for (var x = 0; x <= 1200; x += 20){
+        var y = 34 + 9 * Math.sin(x / 190 + t * 0.55 + ph) + 5 * Math.sin(x / 83 - t * 0.9 + ph * 2);
+        d += (x ? 'L' : 'M') + x + ' ' + y.toFixed(1);
+      }
+      lane.setAttribute('d', d);
+      fill.setAttribute('d', d + 'L1200 64L0 64Z');
+      lane.style.strokeDashoffset = (-t * SEAM_SPEED).toFixed(1);
+    }
+    draw(0);
+    if (REDUCED) return;
+    var job = Loop.add(function(dt, t){ draw(t); });
+    watch(svg, job);
+  });
+})();
+
+/* ---------- The road: a packed car drives I-95 at night; drag to steer and push ---------- */
+(function(){
+  var CRUISE = 120;          // px/s the car drives itself
+  var MAX_SPEED = 900;       // px/s when pushed
+  var SEG = 900;             // world px per state
+  var TREE_GAP = 22;         // average spacing of roadside trees
+  var PUSH_R = 80;           // finger reach for bending trees
+  var SPRING = 38, DAMP = 6.5;
+  var STATES = ['New Jersey','Delaware','Maryland','Virginia','North Carolina','South Carolina','Georgia','Florida'];
+  var L = SEG * STATES.length;
+
+  var wrapEl = document.getElementById('road'), cv = document.getElementById('roadCanvas'), ctx = cv.getContext('2d');
+  var hint = document.getElementById('hint');
+  var W = 0, H = 0, dpr = 1, RW = 64, phone = true;
+  var dir = window.SHAMROCK_NORTH ? -1 : 1;
+  var pos = dir > 0 ? SEG * 0.15 : L - SEG * 0.15, vel = dir * CRUISE, cam = 0, pause = 0;
+  var lane = 0, laneV = 0, heading = 0;
+  var ptr = {on: false, down: false, cx: 0, cy: 0, x: 0, y: 0, vx: 0, lastCx: 0}, touched = false;
+  var bends = {};            // per-tree spring state
+  var oncoming = [], nextCar = 1.5, plane = null, nextPlane = 4, T = 0;
+
+  function hash(i){ var x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
+  function smooth(a, b, x){ x = Math.max(0, Math.min(1, (x - a) / (b - a))); return x * x * (3 - 2 * x); }
+  function roadY(wx){ return H * 0.45 + H * 0.12 * Math.sin(wx / 520) + H * 0.07 * Math.sin(wx / 233 + 1.3); }
+  function slope(wx){ return (roadY(wx + 2) - roadY(wx - 2)) / 4; }
+
+  function size(){
+    var r = wrapEl.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
+    if (w === W && h === H) return;           // phones fire resize mid-drag; only rebuild on a real change
+    W = w; H = h; dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = W * dpr; cv.height = H * dpr;
+    phone = W < 700; RW = phone ? 60 : 78;
+    makeSprites();
+    if (!ptr.down) cam = camTarget();
+  }
+  function camTarget(){ return pos - W * (dir > 0 ? 0.36 : 0.64); }
+
+  /* sprites: pre-rendered trees */
+  var spr = {};
+  function sprite(r, draw){ var c = document.createElement('canvas'); c.width = c.height = Math.ceil(r * 2 * dpr); var g = c.getContext('2d'); g.scale(dpr, dpr); g.translate(r, r); draw(g); c.r = r; return c; }
+  function star(g, n, r1, r2, rot){ g.beginPath(); for (var i = 0; i < n * 2; i++){ var a = rot + i * Math.PI / n, rr = i % 2 ? r2 : r1; g.lineTo(Math.cos(a) * rr, Math.sin(a) * rr); } g.closePath(); }
+  function makeSprites(){
+    var s = phone ? 0.85 : 1;
+    spr.pine = []; spr.oak = []; spr.palm = [];
+    for (var v = 0; v < 3; v++){
+      var R = (13 + v * 3) * s;
+      [false].forEach(function(){
+        spr.pine.push(sprite(R + 2, function(g){
+          star(g, 14, R, R * 0.8, v); g.fillStyle = '#0f3829'; g.fill();
+          star(g, 12, R * 0.74, R * 0.58, v + 0.3); g.fillStyle = '#17503c'; g.fill();
+          star(g, 9, R * 0.44, R * 0.32, v); g.fillStyle = '#1f6249'; g.fill();
+        }));
+      });
+      spr.oak.push(sprite(R + 3, function(g){
+        var gr = g.createRadialGradient(-R * 0.3, -R * 0.35, R * 0.1, 0, 0, R + 2);
+        gr.addColorStop(0, '#2f7a4c'); gr.addColorStop(1, '#123f2c');
+        g.fillStyle = gr;
+        for (var k = 0; k < 6; k++){ var a = k * 1.05 + v; g.beginPath(); g.arc(Math.cos(a) * R * 0.45, Math.sin(a) * R * 0.45, R * 0.58, 0, 7); g.fill(); }
+      }));
+      spr.palm.push(sprite(R * 1.35 + 2, function(g){
+        var n = 7 + v, F = R * 1.3;
+        for (var k = 0; k < n; k++){
+          var a = k * 2 * Math.PI / n + v * 0.4, c = Math.cos(a), si = Math.sin(a), px = -si, py = c, w = F * 0.2;
+          g.beginPath(); g.moveTo(0, 0);
+          g.quadraticCurveTo(c * F * 0.5 + px * w, si * F * 0.5 + py * w, c * F, si * F);
+          g.quadraticCurveTo(c * F * 0.5 - px * w * 0.6, si * F * 0.5 - py * w * 0.6, 0, 0);
+          g.fillStyle = k % 2 ? '#2f8a50' : '#24713f'; g.fill();
+          g.beginPath(); g.moveTo(0, 0); g.lineTo(c * F * 0.92, si * F * 0.92); g.strokeStyle = 'rgba(14,42,30,.5)'; g.lineWidth = 1; g.stroke();
+        }
+        g.beginPath(); g.arc(0, 0, R * 0.16, 0, 7); g.fillStyle = '#6b4e2e'; g.fill();
+      }));
+    }
+  }
+
+  /* pointer: client coordinates stored; converted every frame from a fresh rect */
+  function pdown(e){ ptr.down = true; ptr.on = true; ptr.cx = ptr.lastCx = e.clientX; ptr.cy = e.clientY; if (e.pointerType !== 'mouse') ptr.vx = 0; try { cv.setPointerCapture(e.pointerId); } catch(_){} e.preventDefault(); if (!touched){ touched = true; hint.classList.add('gone'); } }
+  function pmove(e){ ptr.on = true; ptr.cx = e.clientX; ptr.cy = e.clientY; }
+  function pup(e){ ptr.down = false; if (e.pointerType !== 'mouse') ptr.on = false; }
+  cv.addEventListener('pointerdown', pdown);
+  cv.addEventListener('pointermove', pmove);
+  cv.addEventListener('pointerup', pup);
+  cv.addEventListener('pointercancel', pup);
+  cv.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse'){ ptr.on = false; ptr.down = false; } });
+  window.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' && e.target === cv) pmove(e); }, {passive: true});
+
+  /* drawing helpers */
+  function car(x, y, ang, s, body, packed, lightsOn){
+    ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.scale(s, s);
+    if (lightsOn){
+      ctx.globalCompositeOperation = 'lighter';
+      var g = ctx.createRadialGradient(22, 0, 2, 22, 0, 150);
+      g.addColorStop(0, 'rgba(255,226,150,.55)'); g.addColorStop(0.5, 'rgba(255,214,120,.16)'); g.addColorStop(1, 'rgba(255,214,120,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(20, -7); ctx.lineTo(170, -46); ctx.quadraticCurveTo(186, 0, 170, 46); ctx.lineTo(20, 7); ctx.closePath(); ctx.fill();
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    ctx.fillStyle = 'rgba(0,0,0,.35)'; rr(-21, -10, 46, 23, 8); ctx.fill();
+    ctx.fillStyle = body; rr(-23, -11.5, 46, 23, 8); ctx.fill();
+    ctx.fillStyle = '#1d2f36'; rr(-10, -9, 22, 18, 4); ctx.fill();               // cabin glass
+    ctx.fillStyle = body; rr(-6, -8, 13, 16, 3); ctx.fill();                       // roof
+    if (packed){ ctx.fillStyle = '#f6b638'; ctx.fillRect(-9, -7.5, 3, 6); ctx.fillStyle = '#0a6337'; ctx.fillRect(-9, 1, 3, 6.5); }
+    ctx.fillStyle = '#fff4cf'; ctx.fillRect(21, -9, 2.5, 4); ctx.fillRect(21, 5, 2.5, 4);
+    ctx.fillStyle = '#e0303f'; ctx.fillRect(-23, -9, 2, 4); ctx.fillRect(-23, 5, 2, 4);
+    ctx.restore();
+  }
+  function rr(x, y, w, h, r){ ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
+  function airplane(x, y, s, d){
+    ctx.save(); ctx.translate(x, y); ctx.scale(s * d, s);
+    ctx.fillStyle = 'rgba(0,0,0,.18)'; planePath(10, 26); ctx.fill();          // shadow on the ground
+    ctx.fillStyle = '#dfe7ea'; planePath(0, 0); ctx.fill();
+    var blink = (T * 1.2) % 1 < 0.12;
+    ctx.fillStyle = blink ? '#ff4d4d' : 'rgba(255,77,77,.35)'; ctx.beginPath(); ctx.arc(-2, -27, 1.8, 0, 7); ctx.fill();
+    ctx.fillStyle = blink ? '#5dff8a' : 'rgba(93,255,138,.35)'; ctx.beginPath(); ctx.arc(-2, 27, 1.8, 0, 7); ctx.fill();
+    ctx.restore();
+  }
+  function planePath(ox, oy){
+    ctx.beginPath(); ctx.save(); ctx.translate(ox, oy);
+    ctx.moveTo(30, 0); ctx.quadraticCurveTo(28, -3, 20, -3.2); ctx.lineTo(4, -3.2); ctx.lineTo(-4, -27); ctx.lineTo(-9, -27); ctx.lineTo(-4, -3.2);
+    ctx.lineTo(-20, -3); ctx.lineTo(-26, -11); ctx.lineTo(-29, -11); ctx.lineTo(-27, 0);
+    ctx.lineTo(-29, 11); ctx.lineTo(-26, 11); ctx.lineTo(-20, 3); ctx.lineTo(-4, 3.2); ctx.lineTo(-9, 27); ctx.lineTo(-4, 27); ctx.lineTo(4, 3.2); ctx.lineTo(20, 3.2); ctx.quadraticCurveTo(28, 3, 30, 0);
+    ctx.restore(); ctx.closePath();
+  }
+  function house(x, y, flip){
+    ctx.save(); ctx.translate(x, y);
+    ctx.fillStyle = 'rgba(0,0,0,.3)'; ctx.fillRect(-20, -14, 44, 34);
+    ctx.fillStyle = '#7a5146'; ctx.fillRect(-22, -18, 44, 34);
+    ctx.fillStyle = '#5f3d34'; ctx.fillRect(-22, -1, 44, 17);
+    ctx.strokeStyle = '#4a2f28'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(-22, -1); ctx.lineTo(22, -1); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,214,120,.9)'; ctx.fillRect(flip ? 12 : -16, 16, 5, 3);
+    ctx.restore();
+  }
+  function stateSign(x, y, name){
+    var fs = phone ? 10.5 : 12.5;
+    ctx.font = '700 ' + fs + 'px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif';
+    var t1 = 'Welcome to', w = Math.max(ctx.measureText(t1).width, ctx.measureText(name).width) + 16, h = fs * 2 + 14;
+    ctx.fillStyle = '#4b5a5f'; ctx.fillRect(x - 1.5, y, 3, 10);
+    ctx.fillStyle = 'rgba(0,0,0,.35)'; rr(x - w / 2 + 2, y - h + 3, w, h, 4); ctx.fill();
+    ctx.fillStyle = '#0a6337'; rr(x - w / 2, y - h, w, h, 4); ctx.fill();
+    ctx.strokeStyle = '#f4f7f2'; ctx.lineWidth = 1.5; rr(x - w / 2 + 2.5, y - h + 2.5, w - 5, h - 5, 3); ctx.stroke();
+    ctx.fillStyle = '#f4f7f2'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(t1, x, y - h + fs + 4); ctx.fillText(name, x, y - 7);
+  }
+
+  function step(dt){
+    T += dt;
+    var rect = cv.getBoundingClientRect();
+    ptr.x = ptr.cx - rect.left; ptr.y = ptr.cy - rect.top;
+
+    // speed: drag sideways pushes the car; let go and it settles back to cruising
+    if (pause > 0){ pause -= dt; vel = 0; if (pause <= 0){ dir = -dir; vel = dir * 30; } }
+    else {
+      if (ptr.down){ var dx = ptr.cx - ptr.lastCx; vel += (dx / Math.max(dt, 0.008)) * 0.12 * dt * 18; }
+      vel += (dir * CRUISE - vel) * Math.min(1, dt * (ptr.down ? 0.6 : 1.4));
+      vel = Math.max(-MAX_SPEED, Math.min(MAX_SPEED, vel));
+      pos += vel * dt;
+      if (dir > 0 && pos >= L + 30){ pos = L + 30; pause = 2.2; }
+      if (dir < 0 && pos <= -30){ pos = -30; pause = 2.2; }
+      pos = Math.max(-30, Math.min(L + 30, pos));
+    }
+    ptr.lastCx = ptr.cx;
+    cam += (camTarget() - cam) * Math.min(1, dt * 3);
+
+    // steering: finger's height on the road picks the car's line; let go and it returns to its lane
+    var carX = pos - cam, cy = roadY(pos), home = dir * RW / 4;
+    var target = (ptr.down || (ptr.on && !phone)) ? Math.max(-RW / 2 + 9, Math.min(RW / 2 - 9, ptr.y - cy)) : home;
+    if (pause > 0) target = home;
+    laneV += ((target - lane) * 14 - laneV * 6) * dt; lane += laneV * dt;
+    var want = Math.atan(slope(pos)) + Math.atan2(laneV * 0.12, Math.max(40, Math.abs(vel)) * 0.12) * (dir) + (dir < 0 ? Math.PI : 0);
+    if (Math.abs(vel) < 5 && pause > 0) want = heading;
+    var dA = ((want - heading + Math.PI * 3) % (Math.PI * 2)) - Math.PI; heading += dA * Math.min(1, dt * 6);
+
+    // traffic in the other lane, a plane overhead now and then
+    nextCar -= dt;
+    if (nextCar <= 0){ nextCar = 2.5 + hash(T) * 4; oncoming.push({wx: cam + (dir > 0 ? W + 80 : -80), d: -dir, v: 150 + hash(T + 1) * 70, c: ['#c0392b', '#d8dde0', '#3a6ea5', '#5b6b70'][Math.floor(hash(T + 2) * 4)]}); }
+    oncoming.forEach(function(o){ o.wx += o.d * o.v * dt; });
+    oncoming = oncoming.filter(function(o){ return o.wx > cam - 200 && o.wx < cam + W + 200; });
+    nextPlane -= dt;
+    if (!plane && nextPlane <= 0) plane = {x: dir > 0 ? -60 : W + 60, y: H * (0.18 + hash(T) * 0.2), d: dir};
+    if (plane){ plane.x += plane.d * 160 * dt; if (plane.x > W + 80 || plane.x < -80){ plane = null; nextPlane = 14 + hash(T) * 8; } }
+
+    draw(carX, cy + lane, dt);
+  }
+
+  function draw(carX, carY, dt){
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // ground: cooler in Jersey, warmer in Florida
+    for (var x = 0; x < W; x += 24){
+      var t = smooth(0, 1, (cam + x) / L), g = Math.round(58 + 8 * t), b = Math.round(55 - 12 * t);
+      ctx.fillStyle = 'rgb(' + Math.round(22 + 6 * t) + ',' + g + ',' + b + ')'; ctx.fillRect(x, 0, 25, H);
+    }
+    // darker patches of grass so the ground isn't a flat sheet
+    for (var gi = Math.floor((cam - 120) / 110); gi * 110 < cam + W + 120; gi++){
+      var gy = hash(gi + 0.5) * H, gr = 40 + hash(gi + 0.9) * 60;
+      ctx.fillStyle = 'rgba(8,30,24,' + (0.06 + hash(gi + 0.2) * 0.08) + ')';
+      ctx.beginPath(); ctx.ellipse(gi * 110 - cam, gy, gr * 1.6, gr, hash(gi) * 3, 0, 7); ctx.fill();
+    }
+    // road edges
+    var top = [], bot = [], step = 8, start = Math.floor((cam - 20) / 48) * 48;
+    for (var wx = start; wx <= cam + W + 24; wx += step){
+      var y = roadY(wx), s = slope(wx), n = 1 / Math.sqrt(1 + s * s);
+      top.push([wx - cam + s * n * RW / 2, y - n * RW / 2]); bot.push([wx - cam - s * n * RW / 2, y + n * RW / 2]);
+    }
+    ctx.beginPath(); top.forEach(function(p, i){ i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); });
+    for (var i = bot.length - 1; i >= 0; i--) ctx.lineTo(bot[i][0], bot[i][1]);
+    ctx.closePath(); ctx.fillStyle = '#5b6a6c'; ctx.fill();                     // shoulder gravel
+    function line(off, color, w, dash){
+      ctx.beginPath();
+      for (var wx = start, k = 0; wx <= cam + W + 24; wx += step, k++){
+        var y = roadY(wx), s = slope(wx), n = 1 / Math.sqrt(1 + s * s), px = wx - cam - s * n * off, py = y + n * off;
+        k ? ctx.lineTo(px, py) : ctx.moveTo(px, py);
+      }
+      ctx.strokeStyle = color; ctx.lineWidth = w; ctx.setLineDash(dash || []); ctx.stroke(); ctx.setLineDash([]);
+    }
+    line(0, '#2c3439', RW - 8);                                               // asphalt
+    line(-RW / 2 + 7, 'rgba(244,247,242,.8)', 2);
+    line(RW / 2 - 7, 'rgba(244,247,242,.8)', 2);
+    line(0, '#f6b638', 2.2, [16, 16]);
+
+    // reflector posts light up in the headlights
+    for (var rx = Math.floor(cam / 64) * 64; rx < cam + W + 64; rx += 64){
+      var ahead = (rx - pos) * dir, lit = ahead > 10 && ahead < 190 ? 1 - ahead / 190 : 0;
+      [-1, 1].forEach(function(sd){
+        var y = roadY(rx), sl = slope(rx), n = 1 / Math.sqrt(1 + sl * sl), off = sd * (RW / 2 + 5);
+        ctx.fillStyle = lit ? 'rgba(255,' + Math.round(200 + 40 * lit) + ',140,' + (0.35 + 0.65 * lit) + ')' : 'rgba(244,247,242,.22)';
+        ctx.beginPath(); ctx.arc(rx - cam - sl * n * off, y + n * off, lit ? 2.2 : 1.6, 0, 7); ctx.fill();
+      });
+    }
+
+    // the two ends of the trip: a driveway in Jersey, a driveway in Florida
+    house(0 - cam - 60, roadY(-60) - RW / 2 - 34, false);
+    house(L - cam + 60, roadY(L + 60) + RW / 2 + 30, true);
+
+    // traffic
+    oncoming.forEach(function(o){
+      var oy = roadY(o.wx) + o.d * RW / 4, a = Math.atan(slope(o.wx)) + (o.d < 0 ? Math.PI : 0);
+      car(o.wx - cam, oy, a, phone ? 0.9 : 1.05, o.c, false, true);
+    });
+    car(carX, carY, heading, phone ? 1 : 1.2, '#e9e2cf', true, true);
+
+    // roadside trees, bending away from your finger
+    var px = ptr.x, py = ptr.y, act = ptr.on;
+    var i0 = Math.floor((cam - 60) / TREE_GAP), i1 = Math.ceil((cam + W + 60) / TREE_GAP);
+    for (var i = i0; i <= i1; i++){
+      var h1 = hash(i), h2 = hash(i + 0.37), h3 = hash(i + 0.71);
+      var wx = i * TREE_GAP + (h1 - 0.5) * TREE_GAP * 0.8, side = h2 < 0.5 ? -1 : 1;
+      var base = roadY(wx) + side * (RW / 2 + 18 + Math.pow(h3, 1.5) * H * 0.55), sx = wx - cam;
+      if (base < -20 || base > H + 20) continue;
+      var t = wx / L, kind;
+      var pPalm = smooth(0.6, 0.85, t), pPine = 1 - smooth(0.22, 0.5, t), r = hash(i + 0.13);
+      kind = r < pPalm ? 'palm' : (r < pPalm + pPine * (1 - pPalm) ? 'pine' : 'oak');
+      var b = bends[i] || (bends[i] = {x: 0, y: 0, vx: 0, vy: 0});
+      if (act){
+        var dx = sx - px, dy = base - py, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < PUSH_R && d > 0.1){ var f = (1 - d / PUSH_R) * 900; b.vx += dx / d * f * dt; b.vy += dy / d * f * dt; }
+      }
+      b.vx += (-b.x * SPRING - b.vx * DAMP) * dt; b.vy += (-b.y * SPRING - b.vy * DAMP) * dt;
+      b.x += b.vx * dt; b.y += b.vy * dt;
+      var sp = spr[kind][Math.floor(h3 * 3)], sway = Math.sin(T * 1.4 + i) * 1.2;
+      ctx.fillStyle = 'rgba(0,0,0,.28)'; ctx.beginPath(); ctx.arc(sx + 3, base + 4, sp.r * 0.8, 0, 7); ctx.fill();
+      ctx.drawImage(sp, sx + b.x + sway - sp.r, base + b.y - sp.r, sp.r * 2, sp.r * 2);
+    }
+    for (var k in bends) if (k < i0 - 4 || k > i1 + 4) delete bends[k];
+
+    // state lines
+    for (var s = 1; s < STATES.length; s++){
+      var bx = s * SEG, sx2 = bx - cam;
+      if (sx2 < -90 || sx2 > W + 90) continue;
+      stateSign(sx2, roadY(bx) + RW / 2 + (phone ? 40 : 46), dir > 0 ? STATES[s] : STATES[s - 1]);
+    }
+    if (plane) airplane(plane.x, plane.y, phone ? 0.7 : 0.9, plane.d);
+  }
+
+  size();
+  window.addEventListener('resize', size);
+  if (REDUCED){ cam = camTarget(); draw(pos - cam, roadY(pos) + dir * RW / 4, 0); return; }
+  var job = Loop.add(function(dt){ step(dt); });
+  watch(wrapEl, job);
+})();
+</script>
+</body>
+</html>
