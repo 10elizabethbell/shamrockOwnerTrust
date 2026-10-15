@@ -8,6 +8,21 @@
         "value": "roboto",
         "createdAt": "2026-10-14T13:57:41.092Z",
         "reason": "pitch-site house style (ellie-taste.md §2): system font stack; Roboto is only the Android fallback"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(240,138,80,.28)",
+        "createdAt": "2026-10-15T11:30:52.863Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#aab4b6",
+        "createdAt": "2026-10-15T11:30:52.931Z"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#6f7b80",
+        "createdAt": "2026-10-15T11:30:53.002Z"
       }
     ]
   }
