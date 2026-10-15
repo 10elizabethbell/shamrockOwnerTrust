@@ -68,9 +68,9 @@ p{margin:0}
 .hero{position:relative;padding-top:30px;background:linear-gradient(#0e2a33 0%,#173a52 55%,#2c4d6e 100%)}
 .hero-copy{position:relative;z-index:1;display:grid;gap:20px;width:auto;margin:0 34px;padding:24px 18px 28px;background:var(--sign);border:3px solid #f4f7f2;border-radius:16px;box-shadow:0 0 0 10px var(--sign),0 0 0 11px var(--sign-deep),0 22px 40px -10px rgba(5,15,25,.6)}
 /* Posts, treeline and a warm horizon glow behind them */
-.posts{position:relative;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}
+.posts{position:relative;z-index:2;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}
 .posts .trees{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}
-.posts i{position:absolute;top:0;bottom:0;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}
+.posts i{position:absolute;top:0;bottom:-26px;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}
 .posts i:first-of-type{left:30%}.posts i:last-of-type{left:70%}
 .ground{display:block;width:100%;height:150px}
 .hero .seam{margin-top:-44px}
@@ -186,7 +186,7 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .hero h1{font-size:clamp(3rem,6vw,4.4rem)}
   .posts{height:96px;margin-top:11px}
   .posts .trees{height:52px}
-  .posts i{width:14px;margin-left:-7px}
+  .posts i{width:14px;margin-left:-7px;bottom:-34px}
   .ground{height:200px}
   .hero .seam{margin-top:-64px}
   .hero-act{justify-items:start}
@@ -270,15 +270,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     </figure>
   </div>
   <div class="posts" aria-hidden="true">
-    <svg class="trees" viewBox="0 0 1000 50" preserveAspectRatio="none"><path fill="#0c2a24" d="M0 50V30l18-6 14 4 10-14 12 10 20-8 16 12 14-16 10 4 16 6 20-10 12 12 18-4 14-14 12 8 22 4 14-12 18 10 16-4 12 6 14-18 12 14 20 2 16-8 14 8 10-6 6 8 22 18V50zM676 50l24-14 10-6 20-6 14 6 12-14 16 10 18-6 14 12 20-16 12 8 14 2 18-10 14 12 16-4 12-12 14 10 22 2 12-8 16 10 18-6 14 4 10-8 14 10V50z"/></svg>
+    <svg class="trees" viewBox="0 0 1000 50" preserveAspectRatio="none"><path fill="#0c2a24" d="M0 50L0 19.9L10 21.0L18 17.5L26 21.2L34 27.7L44 18.0L58 22.7L68 19.4L82 19.6L90 29.4L98 25.6L112 20.6L122 20.9L132 23.7L142 26.6L154 27.1L164 23.0L174 26.0L182 28.0L192 27.7L206 30.7L220 29.4L234 27.9L244 32.0L254 26.3L266 30.5L278 32.5L290 32.0L298 28.5L312 29.4L324 29.8L338 32.4L346 35.1L358 32.6L370 34.8L384 32.0L392 38.0L406 37.0L414 33.5L426 37.6L440 36.2L454 40.3L466 36.4L480 39.2L488 40.5L498 47L508 42.1L522 39.2L536 36.6L550 37.5L562 39.5L576 38.8L588 37.3L600 36.7L614 37.8L624 31.7L634 32.2L644 30.3L654 31.6L662 30.4L674 33.2L686 35.4L694 31.4L708 30.4L722 27.5L736 26.6L744 33.9L758 26.5L770 29.9L778 24.3L788 28.7L800 29.0L808 31.2L822 24.0L834 31.3L846 26.3L854 29.7L868 25.7L880 21.2L888 27.8L900 24.7L910 24.8L920 29.2L932 20.1L940 26.6L952 28.8L960 25.4L972 23.0L982 20.8L992 22.6L1000 22.6L1000 50Z"/></svg>
     <i></i><i></i>
   </div>
   <svg class="ground" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
     <rect width="1000" height="150" fill="#173f2c"/>
-    <polygon points="300,0 700,0 1180,150 -180,150" fill="#2c3539"/>
-    <polygon points="303,0 309,0 -150,150 -172,150" fill="#e8ece6"/>
-    <polygon points="691,0 697,0 1172,150 1150,150" fill="#e8ece6"/>
-    <g fill="#f6b638"><polygon points="499,4 501,4 501.6,12 498.4,12"/><polygon points="497.8,24 502.2,24 503,40 497,40"/><polygon points="496,58 504,58 505.5,84 494.5,84"/><polygon points="493,106 507,106 509,150 491,150"/></g>
+    <polygon points="490,0 510,0 1180,150 -180,150" fill="#2c3539"/>
+    <polygon points="491,0 492.5,0 -150,150 -172,150" fill="#e8ece6"/>
+    <polygon points="507.5,0 509,0 1172,150 1150,150" fill="#e8ece6"/>
+    <g fill="#f6b638"><polygon points="499.7,3 500.3,3 500.5,7 499.5,7"/><polygon points="499,12 501,12 501.6,20 498.4,20"/><polygon points="497.8,30 502.2,30 503,44 497,44"/><polygon points="496,58 504,58 505.5,84 494.5,84"/><polygon points="493,106 507,106 509,150 491,150"/></g>
   </svg>
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
