@@ -16,7 +16,7 @@
   - How it works: Call for a quote → Arrange pickup → Receive your car, beside What I do.
   - Driven, not trucked: the packing point, with the side-view drawing of the packed car.
   - Questions, always visible: cost, packing, the spring trip home, when a truck carrier is better. A comment in the HTML marks where the insurance answer goes once Ed confirms.
-  - Close: the road strip, "Heading south this winter?", the phone number in large type, Call + Text.
+  - Close: the road strip, "Heading south this winter?", the phone number in large type (tap to call), and Send a text on phones. The yellow Call button there was removed (Ellie, 2026-10-15); the big number does that job.
   - Footer: name, Ed, service area, phone.
 - **Season-aware:** March–August the close reads "Heading home this spring?" and the car starts northbound.
 - **Contact:**

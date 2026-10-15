@@ -326,7 +326,7 @@ The palette is an interstate: guide-sign green, services-sign blue, a dusk sky, 
 ### Hierarchy
 - **Display** (850, clamp(3rem, 14vw, 5.2rem), 1, -0.02em; **Display Wide** clamp(3rem, 6vw, 4.4rem) from 760px, so it fits the 880px sign): mixed case, sign-white on the green hero sign. Only the hero headline ("You fly. / I'll drive."), one phrase per line.
 - **Headline** (850, clamp(2rem, 8.4vw, 3.4rem), 1.02, -0.015em, uppercase, balanced wrap): section headlines on aluminum, on night, and on the driver sign.
-- **Close Number** (850, clamp(30px, 9vw, 44px), -0.01em): the phone number in the close, set above the buttons as the biggest number on the page.
+- **Close Number** (850, clamp(30px, 9vw, 44px), -0.01em): the phone number in the close, the biggest number on the page and the close's call action (tap to call); there is no Call button in the close.
 - **Phone Number** (850, clamp(26px, 8vw, 40px), -0.01em): the cell number on the driver sign.
 - **Title** (750, clamp(21px, 5.6vw, 26px), 1.35): What I do list lines.
 - **Question** (750, 20px, 1.35, no tracking): the h3 of each question pair and of each How it works step.
@@ -359,7 +359,6 @@ On phones everything else stacks. At 760px and up:
 - How it works and What I do sit side by side, 1fr / 1fr with a 64px gap
 - Driven, not trucked splits 1.1fr / 1fr, copy beside the trunk drawing
 - the driver sign caps at 960px wide, with the portrait slot in a 240px column beside the text (40px gap) instead of above it
-- the close's buttons sit side by side at their own width
 - the Call pill is removed
 - the hero sign caps at 880px, the headline steps down to Display Wide, and the posts and road grow
 - at 960px, the hero sign face splits into copy and wide photo
@@ -402,7 +401,7 @@ Corners are soft. The services sign is 16px outside and 11px on the inset; the i
 ### Buttons
 Large, direct, and only for the thumb.
 - **Shape:** gently rounded (12px), 58px minimum height, 2px border, a 22px inline SVG icon (phone or chat) 10px before the label, no wrapping.
-- **Call (primary):** amber fill and border, ink text. The label is two lines, left-aligned: "Call for a free quote" in Button, the number beneath in Button Number. In the close it fills the column on phones and sizes to content from 760px.
+- **Call (primary):** amber fill and border, ink text. The label is two lines, left-aligned: "Call for a free quote" in Button, the number beneath in Button Number.
 - **Call, wide (hero):** the same button made bigger for the first viewport: 66px minimum height, 22px side padding, content aligned left.
 - **Send a text (ghost):** transparent fill, on-dark text, 2px border at on-dark-55. Opens `sms:` with a pre-filled message. Close only. Hidden on fine-pointer devices.
 - **Hover / Focus:** hover applies only under `(hover:hover)`. Call lightens to lit amber and its border turns shield blue. The ghost's border turns shield blue and its text goes white. Focus is a 3px outline at 3px offset: shield blue on night, sign-white in the header and on both signs. Transitions: background and border .2s, transform .15s; pressing nudges the button down 1px.
@@ -414,7 +413,7 @@ Large, direct, and only for the thumb.
 The one floating element, phones only.
 - **Shape:** fully rounded (999px), 56px minimum height, 20px side padding, a 20px phone icon 8px before "Call Ed" in Call Pill type. Its accessible name carries the full "Call Ed for a free quote, 732-300-3835".
 - **Colour:** amber fill, ink text, Pill Float shadow.
-- **Behaviour:** fixed bottom-right, 16px from the edges plus the bottom safe area. Hidden (transparent, 12px lower, not tappable) until the hero call group scrolls above the viewport, and again while the closing buttons are visible. It appears and leaves with a .25s opacity and position transition, which is removed under `prefers-reduced-motion`. Gone at 760px and up.
+- **Behaviour:** fixed bottom-right, 16px from the edges plus the bottom safe area. Hidden (transparent, 12px lower, not tappable) until the hero call group scrolls above the viewport, and again while the close number is visible. It appears and leaves with a .25s opacity and position transition, which is removed under `prefers-reduced-motion`. Gone at 760px and up.
 
 ### Signs (signature)
 The house component: a field of colour with a 3px sign-white inset border and sign-white legend. Two signs are on the page, and they never share a colour.
@@ -457,7 +456,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Desktop (760px and up):** three in-page links (Meet your driver / How it works / Questions) in Nav Link type, then the phone number in Bar Phone type with a 20px phone icon, all on-dark, 44px minimum height. Hover adds a 2px shield-blue bottom border, as on every other link on night; at rest the border is transparent.
 
 ### Close and Footer
-- **Close:** on night, under the road band. Headline (seasonal: "Heading south this winter?" / "Heading home this spring?"), a lede in dim haze, the Close Number in on-dark with a 3px on-dark-40 underline that turns shield blue on hover, the contact pair (max 520px), then the card tagline in italic body.
+- **Close:** on night, under the road band. Headline (seasonal: "Heading south this winter?" / "Heading home this spring?"), a lede in dim haze, the Close Number in on-dark with a 3px on-dark-40 underline that turns shield blue on hover, then, on touch devices only, a Send a text ghost button (max 520px; the row is hidden on mouse devices, where `sms:` does nothing), then the card tagline in italic body.
 - **Footer:** night shoulder ground, 16px dim haze lines: the name in on-dark at 18px, the owner line, the service-area line ("New Jersey and Florida, door to door"), and the phone link. Links have a 2px underline at 4px offset, 44px minimum height, and take a shield-blue underline on hover. Four columns spread apart at 760px and up.
 
 ## Do's and Don'ts

@@ -177,7 +177,7 @@ footer strong{color:var(--on-dark);font-size:18px}
 footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
 @media (hover:hover){footer a:hover{text-decoration-color:var(--focus)}}
 /* sms: links do nothing on most computers; the number is on the Call button */
-@media (hover:hover) and (pointer:fine){.js-sms{display:none}.ctas{grid-template-columns:auto}}
+@media (hover:hover) and (pointer:fine){.js-sms{display:none}.ctas{grid-template-columns:auto}.close .ctas{display:none}}
 
 /* ---------- Wider screens ---------- */
 @media (min-width:760px){
@@ -384,9 +384,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap">
     <h2 id="close-h">Heading south this winter?</h2>
     <p class="lede">I drive between New Jersey and Florida, door to door, for $1 per mile. Call me for a free quote.</p>
-    <p class="close-phone"><a href="tel:+17323003835">732-300-3835</a></p>
-    <div class="ctas" id="closeCtas">
-      <a class="btn btn-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg><span class="two-line">Call for a free quote<small>732-300-3835</small></span></a>
+    <p class="close-phone" id="closeCtas"><a href="tel:+17323003835">732-300-3835</a></p>
+    <div class="ctas">
       <a class="btn btn-ghost js-sms" href="sms:+17323003835"><svg aria-hidden="true"><use href="#chat"/></svg>Send a text</a>
     </div>
     <p class="tagline">Life is a highway… drive it all night long.</p>
