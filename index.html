@@ -66,8 +66,17 @@ p{margin:0}
 /* Posts, treeline and a warm horizon glow behind them */
 .posts{position:relative;z-index:2;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}
 .posts .trees{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}
-.posts i{position:absolute;top:0;bottom:-26px;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}
-.posts i:first-of-type{left:30%}.posts i:last-of-type{left:70%}
+/* Overhead gantry: a truss spans the road on two lattice legs; the sign hangs on its face.
+   Feet land beside the road's edge lines at depth --foot of the ground (0 = horizon, 1 = bottom);
+   --edge is where the outer edge line sits at that depth, as a % of the width. */
+.scene{display:grid;grid-template-columns:100%;--leg:12px;--edge:6.7%;--foot:54px}
+.scene > *{grid-column:1}
+.hero-copy{grid-row:1}.posts{grid-row:2}.ground{grid-row:3}
+.truss{grid-row:1;align-self:center;height:36px;margin:0 calc(var(--edge) - 6px - var(--leg) - 4px);background:linear-gradient(#aab4b6,#6f7b80) top/100% 3px no-repeat,linear-gradient(#aab4b6,#6f7b80) bottom/100% 3px no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 11L6 1L12 11' fill='none' stroke='%236f7b80' stroke-width='1.6'/%3E%3C/svg%3E") left/auto 100% repeat-x}
+.leg{position:relative;width:var(--leg);justify-self:start;margin-left:calc(var(--edge) - 6px - var(--leg));background:linear-gradient(90deg,#5d6a70,#aab4b6 50%,#6f7b80) left/2px 100% no-repeat,linear-gradient(90deg,#5d6a70,#aab4b6 50%,#6f7b80) right/2px 100% no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 16'%3E%3Cpath d='M1 0L11 8L1 16' fill='none' stroke='%236f7b80' stroke-width='1.6'/%3E%3C/svg%3E") center bottom/100% auto repeat-y}
+.leg.r{justify-self:end;margin-left:0;margin-right:calc(var(--edge) - 6px - var(--leg))}
+.leg.up{grid-row:1;align-self:end;height:calc(50% + 18px)}
+.leg.dn{grid-row:2 / 4;z-index:3;margin-bottom:var(--foot);background-position:left,right,center top}
 .ground{display:block;width:100%;height:150px}
 .hero .seam{margin-top:-44px}
 .hero-copy > *{max-width:680px}
@@ -119,9 +128,6 @@ section.pad{padding:44px 0 64px}
 .ed{padding:28px 0 56px}
 .ed-in{display:grid;gap:30px}
 .ed .lede{max-width:52ch}
-.ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:var(--sign);text-decoration:none;border-bottom:3px solid rgba(10,99,55,.35);padding-bottom:2px;min-height:48px}
-@media (hover:hover){.ed-call:hover{border-color:var(--focus-deep)}}
-.ed-call svg{width:30px;height:30px}
 .ed-photo{margin:0 14px 14px 0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(14,42,51,.35);border-radius:8px;background:#e2e8e3;box-shadow:14px 14px 0 var(--sign);display:grid;place-content:center;justify-items:center;gap:10px;color:var(--ink);overflow:hidden}
 .ed-photo svg{width:56px;height:56px;opacity:.55}
 .ed-photo figcaption{font-size:16px;font-weight:700}
@@ -179,7 +185,9 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .hero h1{font-size:clamp(3rem,6vw,4.4rem)}
   .posts{height:96px;margin-top:11px}
   .posts .trees{height:52px}
-  .posts i{width:14px;margin-left:-7px;bottom:-34px}
+  .scene{--leg:20px;--edge:9.3%;--foot:80px}
+  .truss{height:56px;background-size:100% 4px,100% 4px,auto 100%}
+  .leg.up{height:calc(50% + 28px)}
   .ground{height:200px}
   .hero .seam{margin-top:-64px}
   .hero-act{justify-items:start}
@@ -243,6 +251,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 <main id="top">
 <section class="hero" aria-labelledby="hero-h">
+  <div class="scene">
+  <div class="truss" aria-hidden="true"></div><i class="leg up" aria-hidden="true"></i><i class="leg up r" aria-hidden="true"></i>
   <div class="wrap hero-copy">
     <h1 id="hero-h"><span>You fly.</span><span>I'll drive.</span></h1>
     <div class="hero-act" id="heroCtas">
@@ -261,7 +271,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
   <div class="posts" aria-hidden="true">
     <svg class="trees" viewBox="0 0 1000 50" preserveAspectRatio="none"><path fill="#0c2a24" d="M0 50L0 19.9L10 21.0L18 17.5L26 21.2L34 27.7L44 18.0L58 22.7L68 19.4L82 19.6L90 29.4L98 25.6L112 20.6L122 20.9L132 23.7L142 26.6L154 27.1L164 23.0L174 26.0L182 28.0L192 27.7L206 30.7L220 29.4L234 27.9L244 32.0L254 26.3L266 30.5L278 32.5L290 32.0L298 28.5L312 29.4L324 29.8L338 32.4L346 35.1L358 32.6L370 34.8L384 32.0L392 38.0L406 37.0L414 33.5L426 37.6L440 36.2L454 40.3L466 36.4L480 39.2L488 40.5L498 47L508 42.1L522 39.2L536 36.6L550 37.5L562 39.5L576 38.8L588 37.3L600 36.7L614 37.8L624 31.7L634 32.2L644 30.3L654 31.6L662 30.4L674 33.2L686 35.4L694 31.4L708 30.4L722 27.5L736 26.6L744 33.9L758 26.5L770 29.9L778 24.3L788 28.7L800 29.0L808 31.2L822 24.0L834 31.3L846 26.3L854 29.7L868 25.7L880 21.2L888 27.8L900 24.7L910 24.8L920 29.2L932 20.1L940 26.6L952 28.8L960 25.4L972 23.0L982 20.8L992 22.6L1000 22.6L1000 50Z"/></svg>
-    <i></i><i></i>
   </div>
   <svg class="ground" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
     <rect width="1000" height="150" fill="#173f2c"/>
@@ -270,6 +279,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <polygon points="507.5,0 509,0 1172,150 1150,150" fill="#e8ece6"/>
     <g fill="#f6b638"><polygon points="499.7,3 500.3,3 500.5,7 499.5,7"/><polygon points="499,12 501,12 501.6,20 498.4,20"/><polygon points="497.8,30 502.2,30 503,44 497,44"/><polygon points="496,58 504,58 505.5,84 494.5,84"/><polygon points="493,106 507,106 509,150 491,150"/></g>
   </svg>
+  <i class="leg dn" aria-hidden="true"></i><i class="leg dn r" aria-hidden="true"></i>
+  </div>
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
 
@@ -284,7 +295,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div>
         <h2 id="ed-h">Meet your driver</h2>
         <p class="lede">Hi, I'm Ed Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. When you call, you get me on my cell, not a dispatcher.</p>
-        <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
         </div>
   </div>
 </section>
