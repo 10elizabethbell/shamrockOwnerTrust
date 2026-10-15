@@ -5,8 +5,6 @@ colors:
   night: "#0e2a33"
   night-0: "rgba(14,42,51,0)"
   night-2: "#12343f"
-  dusk-mid: "#173a52"
-  dusk-low: "#2c4d6e"
   sign: "#0a6337"
   sign-deep: "#084d2b"
   sign-white: "#f4f7f2"
@@ -31,7 +29,50 @@ colors:
   road-band: "#173c33"
   road-band-2: "#163a37"
   shadow-pill: "rgba(5,20,25,0.55)"
-  shadow-roadside: "rgba(5,15,25,0.6)"
+  scene-dusk-35: "#10283b"
+  scene-dusk-70: "#1b3955"
+  scene-dusk-horizon: "#2d4a68"
+  scene-star: "#dfe8f0"
+  scene-sign-sheen: "rgba(255,255,255,0.08)"
+  scene-sign-sheen-clear: "rgba(255,255,255,0)"
+  scene-sign-shade: "rgba(0,0,0,0.14)"
+  scene-sign-shade-clear: "rgba(0,0,0,0)"
+  scene-sign-top-light: "rgba(255,255,255,0.12)"
+  scene-sign-shadow: "rgba(0,0,0,0.6)"
+  scene-glow-core: "rgba(255,178,104,0.62)"
+  scene-glow-mid: "rgba(232,124,96,0.3)"
+  scene-glow-outer: "rgba(150,96,120,0.12)"
+  scene-glow-clear: "rgba(150,96,120,0)"
+  scene-hills: "#24394a"
+  scene-trees: "#0a1f1b"
+  scene-grass-far: "#2b4640"
+  scene-grass-mid: "#1b3a2d"
+  scene-grass-near: "#0c2418"
+  scene-road-far: "#6e6670"
+  scene-road-2: "#424a50"
+  scene-road-3: "#2a3236"
+  scene-road-near: "#1b2225"
+  scene-road-sheen: "#ffb070"
+  scene-haze: "#c9a294"
+  scene-near-shade: "#000"
+  scene-shoulder: "#33403a"
+  scene-edge-line: "#e8ece6"
+  scene-steel-hi: "#b4bec1"
+  scene-steel-side: "#9aa5a9"
+  scene-steel-mid: "#8e999d"
+  scene-steel-web: "#566369"
+  scene-steel-lo: "#5b676d"
+  scene-steel-edge: "#4f5b61"
+  scene-steel-dark: "#4a555b"
+  scene-concrete-top: "#9aa29c"
+  scene-concrete-base: "#6c746f"
+  scene-footing-shadow: "rgba(0,0,0,0.35)"
+  scene-tail-light: "#ff4a3d"
+  scene-tail-halo: "rgba(255,74,61,0.45)"
+  scene-tail-clear: "rgba(255,74,61,0)"
+  scene-head-light: "#fff3d2"
+  scene-head-halo: "rgba(255,236,190,0.45)"
+  scene-head-clear: "rgba(255,236,190,0)"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif"
@@ -130,6 +171,7 @@ typography:
     fontWeight: 700
 rounded:
   sign: "16px"
+  sign-inset: "8px"
   control: "12px"
   brand: "8px"
   focus: "6px"
@@ -148,8 +190,9 @@ spacing:
   column-gap-wide: "64px"
   hero-top: "30px"
   hero-top-wide: "48px"
-  hero-sign-margin: "34px"
+  hero-sign-margin: "24px"
   hero-sign-rim: "10px"
+  hero-sign-rim-wide: "13px"
   close-top: "36px"
   close-bottom: "56px"
   pill-inset: "16px"
@@ -184,13 +227,13 @@ components:
     backgroundColor: "{colors.sign}"
     textColor: "{colors.sign-white}"
     rounded: "{rounded.sign}"
-    padding: "24px 18px 28px"
+    padding: "37px 31px 41px"
   hero-sign-wide:
     backgroundColor: "{colors.sign}"
     textColor: "{colors.sign-white}"
     rounded: "{rounded.sign}"
-    padding: "40px 44px 44px"
-    width: "880px"
+    padding: "53px 57px 57px"
+    width: "906px"
   photo-slot-wide:
     backgroundColor: "{colors.sign-deep}"
     textColor: "{colors.sign-white}"
@@ -228,7 +271,7 @@ components:
 
 **Creative North Star: "The Night Drive Down I-95"**
 
-The whole page is one drive down I-95. It opens at the roadside at dusk: a green interstate guide sign hangs from an overhead steel gantry spanning the road, under a sky fading up from night blue, and interstate green is also shamrock green, so the mark and the road share one colour. The sign appears once. Ed introduces himself plainly on aluminum, with his cell number in sign green. The light "sign-back aluminum" run reads like the back of a road sign: cool, matte, plain. The close is the highway after dark: blue-green, never black, with the car driving it. Headlight amber is the only warm light on the page. At rest it belongs to calling and to the road's centre line, and nothing else in the interface; the dusk glow on the hero's horizon is scenery.
+The whole page is one drive down I-95. It opens at the roadside at dusk: a green interstate guide sign hangs from an overhead steel gantry spanning the road, under a starlit sky fading from night blue to a warm glow on the horizon, and interstate green is also shamrock green, so the mark and the road share one colour. The sign appears once. Ed introduces himself plainly on aluminum. The light "sign-back aluminum" run reads like the back of a road sign: cool, matte, plain. The close is the highway after dark: blue-green, never black, with the car driving it. Headlight amber is the only warm light on the page. At rest it belongs to calling and to the road's centre line, and nothing else in the interface; the dusk glow on the hero's horizon is scenery.
 
 The page is calm and plainly structured. Its readers are mostly 40 to 70, on a phone, often inside Facebook's in-app browser. After a UX research brief for that audience, Ellie kept the I-95 world and adopted a plainer structure. On 2026-10-15 she asked for more colour, which put the hero on a green guide sign that now stands in a still roadside scene at dusk. A blue services sign for the driver, tried the same day, was dropped: "the blue goes with nothing and the repeated signs feel ugly". Later that day she replaced the amber hero Call button, "obnoxiously bright", with the clickable number itself, and removed the number from the header. The hero sign holds a large headline (its second line, "I'll drive.", in sign yellow), the phone number lettered on the sign as the call itself, a plain "or send a text" link, and the owner's name, in sign yellow, beside a slot for his photo. Then come a plain meet-the-driver block, three numbered steps, plain questions including cost, and a close that opens on the road band with the car driving it, then a big phone number. On phones a small Call pill is never far away. The car is the one moving thing on the page. The road is scenery to watch, not a toy: it takes no touch, the page scrolls straight over it, and nothing on the page asks to be tapped open. Body text is 18px, every call and text control is at least 48px tall (the Send a text button 58px), every word is visible on arrival, and nothing depends on hover.
 
@@ -250,8 +293,8 @@ The world rejects the trucking-company template: no fleet photos, no quote forms
 The palette is an interstate: guide-sign green with sign-white and sign-yellow lettering, a dusk sky, cool aluminum, a blue-green night ground, one headlight amber, and a shield blue that appears only on interaction.
 
 ### Primary
-- **Interstate Guide Green** (sign): the hero guide sign, green inside its sign-white border and again as a 10px rim outside it, like a real guide sign. Also the state-line signs drawn on the canvas, the numbered discs in How it works, and the small square bullets in What I do. It is also shamrock green. Use it for signage and wayfinding marks, never as a button fill.
-- **Sign Edge Green** (sign-deep): the ground of the two hero photo slots (the wide desktop photo and the round phone face), and the 1px outer edge of the hero sign's green rim. It also draws the roof-box straps in the trunk illustration.
+- **Interstate Guide Green** (sign): the hero guide sign: one sheet of green with a 10px margin (13px from 760px) outside its inset sign-white border, like a real guide sign. Also the state-line signs drawn on the canvas, the numbered discs in How it works, and the small square bullets in What I do. It is also shamrock green. Use it for signage and wayfinding marks, never as a button fill.
+- **Sign Edge Green** (sign-deep): the ground of the two hero photo slots (the wide desktop photo and the round phone face), and the 1px outer edge of the hero sign. It also draws the roof-box straps in the trunk illustration.
 - **Sign White** (sign-white): legend colour on the hero sign: the hero headline's first line, the hero's 3px inset border, the hero number (its underline at 50%, sign-white-50), the owner line; also the clover in the favicon, the step numbers, focus rings in the header and the hero, and canvas road-edge lines (80% alpha) and reflector dots (30%). At 60% (sign-white-60) it is the dashed border of the two hero photo slots; at full strength, their icon and caption. It is a raw literal in the source, not a `:root` property.
 
 ### Secondary
@@ -265,7 +308,7 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 
 ### Neutral
 - **I-95 Night** (night): the page ground (the header sits on it), the top of the hero sky, and the close, where the road band runs. The same value is **Ink** (ink): all text on aluminum (headlines, ledes, steps, services, questions and answers) and text on amber. There is no secondary grey text on light grounds. **Night Clear** (night-0) is night at zero alpha, the top stop of the fade that dissolves the road band into the close.
-- **Dusk Sky** (night, dusk-mid, dusk-low): the hero's vertical sky gradient behind the sign: night at the top, dusk-mid at 55%, dusk-low at the horizon. Used nowhere else.
+- **Hero Scene palette** (the `scene-*` tokens): the still illustration of the hero, registered so the detector knows them; they are scenery, never interface colours, and appear nowhere outside the hero. Sky: night at the top, scene-dusk-35 at 35%, scene-dusk-70 at 70%, scene-dusk-horizon at the bottom, with scene-star dots in the upper 60% fading out toward the horizon. Glow: a radial dusk glow above the horizon, scene-glow-core through scene-glow-mid and scene-glow-outer to clear. Horizon: scene-hills (far hills) behind scene-trees (a pine and round-crown treeline). Ground: grass scene-grass-far to scene-grass-mid (18%) to scene-grass-near; gravel shoulders in scene-shoulder; road scene-road-far, scene-road-2 (14%), scene-road-3 (60%), scene-road-near; a warm road sheen at the vanishing point (scene-road-sheen, 38% to 0); a horizon haze (scene-haze, 32% to 0) over the top 26 units; a near darkening (scene-near-shade, 0 at 55% to 28%); edge lines scene-edge-line. Gantry: steel scene-steel-* (chords light-to-dark top to bottom, a scene-steel-web lattice), concrete footings scene-concrete-top to scene-concrete-base, and a blurred scene-footing-shadow. Traffic: two far cars as radial-gradient dots, tail lights scene-tail-light with scene-tail-halo and headlights scene-head-light with scene-head-halo. The sign face uses scene-sign-sheen/-shade for its diagonal sheen, scene-sign-top-light for a 1px inner top highlight, and scene-sign-shadow for its drop.
 - **Night Shoulder** (night-2): footer ground, one step lighter than the page.
 - **Sign-back Aluminum** (paper): the one light ground. Meet your driver, How it works / What I do, Driven not trucked, and Questions sit on one continuous aluminum run.
 - **Photo Slot Aluminum** (paper-deep): one step darker than paper, the ground of the portrait slot. Its placeholder dashes are ink at 35% (ink-35).
@@ -273,14 +316,14 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 - **White** (white): the Text button's label on hover only.
 - **Guardrail** (rule): solid 2px rules framing the question pairs. **Guardrail Dotted** (rule-dotted): 2px dotted rules between services.
 - **Road Band** (road-band to road-band-2): the vertical gradient behind the canvas, visible before the first frame paints. Road-band is also the fill of the seam that leads into the close, so the lane line runs straight onto the road.
-- **Shadow tints** (shadow-roadside, shadow-pill): the only two shadow colours outside the canvas, both night-tinted: 60% under the hero sign, 55% under the Call pill.
+- **Shadow tints** (shadow-pill, scene-sign-shadow, scene-footing-shadow): the Call pill takes a night-tinted 55%; the hero sign a tight neutral black 60%; the gantry footings a blurred black 35% on the grass.
 
 ### Named Rules
 **The One Headlight Rule.** At rest, amber is used only for the phone Call pill and the road centre lines (the canvas centre dash, the centre dashes of the hero road, and the lane line on the seams). Its one other interface job is a response: the hero number and the hero text link take an amber hover underline, because they sit on the green sign, where shield blue would sink. Every other link hovers in shield blue (deep shield blue on aluminum). Don't use amber at rest for buttons, links, borders, icons or headings. Outside the interface amber appears only as scenery: the warm end of the dusk glow behind the hero's treeline, and the cargo in the two car drawings, which is what "packed" looks like at that size.
 
 **The Shield Blue Only Responds Rule.** Interstate-shield blue appears only as a response to the pointer or keyboard: hover borders and underlines, focus outlines (shield blue on night, deep shield blue on aluminum). It is never at rest: never a ground, a fill, or a link colour.
 
-**The Never Black Rule.** Dark grounds are blue-green night (night, night-2), or guide green, never #000. Black appears only inside the canvas; the hero sign's and the Call pill's shadows are night-tinted.
+**The Never Black Rule.** Dark grounds are blue-green night (night, night-2), or guide green, never #000. Black appears only as low-alpha shading: inside the canvas, and in the hero scene as the sign's tight drop shadow, its sheen's shaded corner, the footing shadows, and the near darkening of the ground. The Call pill's shadow is night-tinted.
 
 ## Typography
 
@@ -318,7 +361,7 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 
 A single column of full-bleed bands inside a 1120px container with a 20px gutter. The page runs, top to bottom: the header on night; the hero, a roadside scene at dusk with the green guide sign on its gantry; a seam onto aluminum; Meet your driver (plain, on aluminum); How it works beside What I do; Driven, not trucked; Questions; a seam onto the road; the close, which opens with the road band and then carries the headline, lede, phone number and buttons; the footer. One roadside sign, one light run, one dark close.
 
-The header sits on night and pads 14px 20px 4px. The hero below it is a still roadside scene: a sky gradient, the guide sign on its overhead gantry, and the road. The scene is one single-column grid in three rows (sign, posts band, ground) so the gantry can span them. The sign starts 30px below the header (48px at 760px and up). Its face is a sign-green panel with a 3px sign-white border at 16px radius, 34px in from each screen edge on phones (padding 24/18/28), capped at 880px and centred from 760px (padding 40/44/44); the 10px green rim and 1px edge sit outside the border. Inside the face is one left-aligned column, each child capped at 680px, 20px apart: headline, then the call group (6px above, 6px inside: the hero number, then the text link), then the owner line with its round face slot. At 960px and up the face splits into two equal columns 56px apart: copy on the left, the wide photo slot on the right spanning the copy's rows and centred against it; the round face slot steps aside. Under the sign, 11px down to clear the rim, the posts band is 64px tall (96px from 760px): a single continuous treeline along its foot (34px tall, 52px from 760px) that shrinks toward the centre and opens a small notch where the road disappears, and a warm horizon glow behind it. Then the ground, 150px (200px from 760px): grass, a road in perspective that starts as a point on the horizon at the centre (the vanishing point) and widens past the screen edges, its edge lines converging on that point, and amber centre dashes that grow toward the viewer. The gantry: a truss 36px tall (56px from 760px) runs behind the sign at its vertical centre, two steel chords (3px, 4px from 760px) with a zigzag lattice between, and spans just past two lattice legs. Each leg is 12px wide (20px from 760px), a 2px chord each side with a zigzag between. It rises from the top of the truss in the sign row and runs down through the posts band and the ground, drawn above the ground. The legs stand just outside the road's outer edge lines (6px outside the line at 6.7% of the width, 9.3% from 760px) and their feet stop 54px above the bottom of the ground (80px from 760px), so they read as planted beside the road in perspective. The scene exposes `--leg`, `--edge` and `--foot` on `.scene` for this geometry. The seam onto aluminum overlaps the foot of the road by its own height (-44px, -64px from 760px).
+The header sits on night and pads 14px 20px 4px. The hero below it is a still roadside scene: a starlit sky gradient, the guide sign on its overhead gantry, a glowing horizon, and the road with two far cars. The scene is one single-column grid in three rows (sign, horizon band, ground) so the gantry can span them. The sign starts 30px below the header (48px at 760px and up). Its face is one sheet: a sign-green panel at 16px radius, 24px in from each screen edge on phones (padding 37/31/41), capped at 906px and centred from 760px (padding 53/57/57). The white border is a `::before` inset 10px (13px from 760px), 3px wide (4px from 760px) at 8px radius, so the green margin is inside the element. A soft diagonal sheen (170deg, light top-left, shaded bottom-right) lies over the green. The hero has `isolation: isolate` and `overflow-x: clip`. Inside the face is one left-aligned column, each child capped at 680px, 20px apart: headline, then the call group (6px above, 6px inside: the hero number, then the text link), then the owner line with its round face slot. At 960px and up the face splits into two equal columns 56px apart: copy on the left, the wide photo slot on the right spanning the copy's rows and centred against it; the round face slot steps aside. Under the sign, 11px down, the horizon band is 64px tall (96px from 760px): a radial dusk glow rising three times its height behind it, and along its foot a 2000×60 horizon drawing (40px tall, 60px from 760px; `xMidYMax slice`, so it crops rather than stretches) of far hills behind a pine and round-crown treeline. Then the ground, 150px (200px from 760px): graded grass, gravel shoulders wider than the road, a graded road in perspective that starts as a point on the horizon at the centre (the vanishing point) and widens past the screen edges with a warm sheen at that point, edge lines converging on it, amber centre dashes that grow toward the viewer, a horizon haze, and a darkening toward the near edge. Two far cars sit near the vanishing point as pairs of radial-gradient dots: headlights coming north on the left, tail lights going south on the right (14px and scaled 1.3 from 760px). They are physical lights in the drawing, not UI glow, and they do not move. The gantry, in darker backlit steel: a truss 36px tall (52px from 760px) runs behind the sign at its vertical centre, two chords (3px, 4px from 760px; the top lit, the bottom darker) with a fine Warren web with verticals between, spanning to the legs' outer sides. Each leg is 12px wide (20px from 760px): twin chords (3px, 4px from 760px) with a diagonal-and-rung web. It rises from 24px above the truss centre (34px from 760px) in the sign row and runs down through the horizon band and the ground, drawn above the ground, and stands on a concrete footing 4px wider each side with a blurred elliptical shadow on the grass. The legs stand just outside the road's outer edge lines (6px outside the line at 6.7% of the width, 9.3% from 760px) and their feet stop 54px above the bottom of the ground (80px from 760px), so they read as planted beside the road in perspective. The scene exposes `--leg`, `--edge` and `--foot` on `.scene` for this geometry. The seam onto aluminum overlaps the foot of the road by its own height (-44px, -64px from 760px).
 
 On phones everything else stacks. At 760px and up:
 - the header adds a three-link section nav (Meet your driver / How it works / Questions), 22px apart, with the brand lockup pushed left
@@ -326,7 +369,7 @@ On phones everything else stacks. At 760px and up:
 - Driven, not trucked splits 1.1fr / 1fr, copy beside the trunk drawing
 - Meet your driver puts the portrait slot in a 260px column beside the text (64px gap, centred) instead of above it
 - the Call pill is removed
-- the hero sign caps at 880px, the headline steps down to Display Wide, and the gantry, treeline and road grow
+- the hero sign caps at 880px, the headline steps down to Display Wide, and the gantry, horizon and road grow
 - at 960px, the hero sign face splits into copy and wide photo
 
 Questions cap at 760px wide so answers keep a readable measure on desktop.
@@ -348,10 +391,11 @@ Breakpoints:
 
 ## Elevation & Depth
 
-The page is flat except for the hero sign and the pill. Aluminum and night sections use no shadows: depth comes from the change of ground and from the seams. The hero sign is lifted because a real sign stands off its post: it hangs in front of its gantry, over the road, on a long night-tinted drop. The portrait in Meet your driver currently sits on a hard 14px offset block of sign green (`box-shadow: 14px 14px 0`, no blur). That is not elevation and not part of the shadow vocabulary: it is a carried exception, not a device to reuse. The Call pill is lifted because it floats over the page. Inside the road canvas, the car, trees, houses and state signs cast small offset shadows at 28–35% black. That is the canvas's own top-down lighting, not UI elevation.
+The page is flat except for the hero sign and the pill. Aluminum and night sections use no shadows: depth comes from the change of ground and from the seams. The hero sign is lifted because a real sign stands off its post: it hangs in front of its gantry, over the road, on a tight neutral drop. The portrait in Meet your driver currently sits on a hard 14px offset block of sign green (`box-shadow: 14px 14px 0`, no blur). That is not elevation and not part of the shadow vocabulary: it is a carried exception, not a device to reuse. The Call pill is lifted because it floats over the page. Inside the road canvas, the car, trees, houses and state signs cast small offset shadows at 28–35% black. That is the canvas's own top-down lighting, not UI elevation.
 
 ### Shadow Vocabulary
-- **Roadside Sign** (`box-shadow: 0 0 0 10px #0a6337, 0 0 0 11px #084d2b, 0 22px 40px -10px rgba(5,15,25,.6)`): the hero sign only. The first two layers are not elevation: they paint the 10px green rim outside the white border and its 1px sign-deep metal edge. The third is a night-tinted drop that lifts the sign off the dusk sky.
+- **Roadside Sign** (`box-shadow: 0 0 0 1px #084d2b, inset 0 1px 0 rgba(255,255,255,.12), 0 16px 22px -14px rgba(0,0,0,.6)`): the hero sign only. A 1px sign-deep metal edge, a 1px inner top highlight, and a tight drop close under the sheet. Over the green, a 170deg sheen from 8% white through clear to 14% black.
+- **Footing Shadow** (`rgba(0,0,0,.35)`, 8px tall, 50% radius, `blur(3px)`): under each gantry footing only, part of the drawing's ground contact.
 - **Pill Float** (`box-shadow: 0 8px 20px -6px rgba(5,20,25,.55)`): the Call pill only, a night-tinted diffuse shadow that separates it from whatever scrolls beneath.
 
 ### Named Rules
@@ -359,7 +403,7 @@ The page is flat except for the hero sign and the pill. Aluminum and night secti
 
 ## Shapes
 
-Corners are soft. The hero sign's face is a 3px sign-white border at 16px on green; its 10px green rim and 1px edge are spread shadows, so they follow the same curve outward. The gantry's chords and legs are plain square-ended steel. Photo slots are 12px (the wide hero photo), 8px (the portrait), or a full circle (the face). Buttons are 12px. The brand link is 8px, so its focus ring hugs the lockup. Focus rings are 6px. Service bullets are 12px squares at 3px. Step numbers sit in 44px circles. The Call pill is the only fully rounded control (999px), which marks it as a different object from the in-page buttons. Section edges are never straight lines: each change of ground is a wavy edge drawn by a seam.
+Corners are soft. The hero sign is 16px outside; its inset sign-white border is 8px, set 10px in (13px from 760px). The gantry's chords and legs are plain square-ended steel. Photo slots are 12px (the wide hero photo), 8px (the portrait), or a full circle (the face). Buttons are 12px. The brand link is 8px, so its focus ring hugs the lockup. Focus rings are 6px. Service bullets are 12px squares at 3px. Step numbers sit in 44px circles. The Call pill is the only fully rounded control (999px), which marks it as a different object from the in-page buttons. Section edges are never straight lines: each change of ground is a wavy edge drawn by a seam.
 
 ## Components
 
@@ -384,7 +428,7 @@ The one floating element, phones only.
 
 ### Guide Sign (signature)
 The house component, used once: a field of sign green with a 3px sign-white inset border and sign-white legend.
-- **Hero guide sign (roadside):** a sign-green panel with a 3px sign-white border at 16px radius, a 10px green rim and 1px sign-deep edge outside the border, and the Roadside Sign drop, hung on the face of an overhead lattice gantry that spans a road in perspective at dusk (sizes in Layout). The hero text link takes an amber hover underline; every focus outline in the hero is sign-white. The whole scene is still.
+- **Hero guide sign (roadside):** one sheet: a sign-green panel at 16px radius with its inset sign-white border (`::before`, 3px at 8px radius, 10px in; 4px and 13px in from 760px), a soft diagonal sheen, a 1px sign-deep edge and the Roadside Sign drop, hung on the face of an overhead lattice gantry that spans a road in perspective at dusk (sizes in Layout). The hero text link takes an amber hover underline; every focus outline in the hero is sign-white. The whole scene is still.
 - **Canvas variant:** the state-line signs drawn in the road ("Welcome to / Georgia"): guide green, a 1.5px sign-white inset stroke, 4px radius, Canvas Sign type, mixed case.
 
 ### Meet Your Driver
@@ -415,7 +459,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Running:** one shared requestAnimationFrame loop (frame time capped at 50ms), paused whenever the band is off screen. Road width 60px when the canvas is under 700px wide, 78px otherwise; devicePixelRatio capped at 2.
 - **Reduced motion:** draws one still frame.
 
-**The One Moving Thing Rule.** Only the car in the close moves. The hero roadside scene (sky, sign, gantry, treeline, road), seams, text, illustrations and sections never animate, reveal on scroll, or loop. The only other changes on the page are state feedback (colour shifts and a 1px press) in direct response to a touch, hover or keyboard focus, and the Call pill's short fade in and out, which is switched off under reduced motion.
+**The One Moving Thing Rule.** Only the car in the close moves. The hero roadside scene (sky and stars, glow, sign, gantry, hills and treeline, road, the two far cars), seams, text, illustrations and sections never animate, reveal on scroll, or loop. The only other changes on the page are state feedback (colour shifts and a 1px press) in direct response to a touch, hover or keyboard focus, and the Call pill's short fade in and out, which is switched off under reduced motion.
 
 ### Lists
 - **What I do:** Title-style lines between 2px dotted guardrail rules, each led by a 12px sign-green square (3px radius).
@@ -432,7 +476,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 ## Do's and Don'ts
 
 ### Do:
-- **Do** sign the page like I-95, once: the hero as a green guide sign hung on an overhead gantry over the road, with a 3px sign-white face border at 16px and a 10px green rim outside it.
+- **Do** sign the page like I-95, once: the hero as a green guide sign hung on an overhead gantry over the road, as one sheet of green with its sign-white border set 10px inside the edge.
 - **Do** keep amber at rest for the Call pill and the centre lines; the hero number and text link, on the green sign, take an amber hover underline, and every other link hovers in shield blue. Text on amber is always ink.
 - **Do** keep sign yellow as lettering on the hero sign only: the headline's second line, the phone icon, the owner's name.
 - **Do** write the phone number out wherever the page asks for a call, and make the number itself the link.
@@ -451,7 +495,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Don't** add a full-width sticky or fixed bar or banner, ever. The one allowed floating element is the small labeled Call pill on phones.
 - **Don't** put more than two contact controls in a group, bring back an amber Call button, or use amber at rest for anything but the Call pill and the centre lines.
 - **Don't** use shield blue at rest as a link colour, accent, fill or ground.
-- **Don't** add a second sign panel (a blue driver sign was tried and dropped), or animate anything in the hero scene: the sign, gantry, treeline and road are a still drawing.
+- **Don't** add a second sign panel (a blue driver sign was tried and dropped), or animate anything in the hero scene: the sign, gantry, horizon, road and far cars are a still drawing.
 - **Don't** hand the site over with a dashed placeholder still in a photo slot.
 - **Don't** use sign yellow off the hero sign, as a fill, border or underline, or in place of amber for calling.
 - **Don't** use #000 or near-black as a ground. Night is blue-green.

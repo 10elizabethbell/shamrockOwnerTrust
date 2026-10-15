@@ -60,7 +60,7 @@ p{margin:0}
 
 /* ---------- Hero ---------- */
 /* The hero is a roadside scene at dusk: an I-95 guide sign hung on an overhead gantry, seen down the road.
-   The sign face is one sheet: a green margin, an inset white border, faint panel seams and a soft sheen. */
+   The sign face is one sheet: a green margin, an inset white border and a soft sheen. */
 .hero{position:relative;isolation:isolate;overflow-x:clip;padding-top:30px;background:linear-gradient(#0e2a33 0%,#10283b 35%,#1b3955 70%,#2d4a68 100%)}
 .hero::before{content:"";position:absolute;inset:0 0 40% 0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220'%3E%3Cg fill='%23dfe8f0'%3E%3Ccircle cx='24' cy='30' r='.9' opacity='.7'/%3E%3Ccircle cx='96' cy='12' r='.6' opacity='.5'/%3E%3Ccircle cx='150' cy='70' r='1' opacity='.6'/%3E%3Ccircle cx='212' cy='28' r='.7' opacity='.8'/%3E%3Ccircle cx='280' cy='96' r='.8' opacity='.45'/%3E%3Ccircle cx='60' cy='130' r='.6' opacity='.4'/%3E%3Ccircle cx='250' cy='170' r='.7' opacity='.35'/%3E%3Ccircle cx='182' cy='150' r='.5' opacity='.4'/%3E%3C/g%3E%3C/svg%3E") 0 0/320px 220px;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
 .hero-copy{position:relative;z-index:1;display:grid;gap:20px;width:auto;margin:0 24px;padding:37px 31px 41px;border-radius:16px;background:linear-gradient(170deg,rgba(255,255,255,.08),rgba(255,255,255,0) 38%,rgba(0,0,0,0) 62%,rgba(0,0,0,.14)),var(--sign);box-shadow:0 0 0 1px var(--sign-deep),inset 0 1px 0 rgba(255,255,255,.12),0 16px 22px -14px rgba(0,0,0,.6)}
