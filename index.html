@@ -23,8 +23,6 @@
   --night-2:#12343f;
   --sign:#0a6337;         /* interstate guide-sign green = shamrock green */
   --sign-deep:#084d2b;
-  --svc:#17508f;          /* blue I-95 services sign, for Meet your driver */
-  --svc-deep:#0f3c6c;
   --leaf:#3dbb6c;         /* the shamrock itself */
   --amber:#f6b638;        /* headlights, center line, primary button */
   --focus:#3d9bff;        /* one accent for hover/focus outlines (interstate-shield blue) */
@@ -48,7 +46,7 @@ p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
 .light :focus-visible{outline-color:var(--focus-deep)}
-.ed :focus-visible,.bar :focus-visible,.hero :focus-visible{outline-color:#f4f7f2}
+.bar :focus-visible,.hero :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
 .bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
@@ -86,8 +84,6 @@ p{margin:0}
 .owner-face svg{width:26px;height:26px;color:#f4f7f2}
 .owner-face img{width:100%;height:100%;object-fit:cover}
 .hero-photo{display:none}
-.sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep)}
-.sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:14px 18px 18px}
 .promise{font-size:clamp(19px,5.2vw,22px);line-height:1.5;color:var(--on-dark);max-width:30ch}
 .ctas{display:grid;grid-template-columns:1fr;gap:10px}
 .two-line{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
@@ -120,17 +116,15 @@ section.pad{padding:44px 0 64px}
 .trunk{width:100%;max-width:420px;height:auto}
 
 /* Ed: the sign-shaped trust block */
-.ed{background:var(--paper);padding:8px 0 64px}
-.ed .sign{background:var(--svc);box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--svc-deep)}
-.ed .sign-in{padding:24px 20px 26px}
-.ed h2{color:#f4f7f2}
-.ed .lede{color:#f4f7f2}
-.ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
-@media (hover:hover){.ed-call:hover{border-color:var(--amber)}}
+/* Meet your driver: plain on aluminum, no sign. Ed's photo sits on a shamrock-green block. */
+.ed{padding:28px 0 56px}
+.ed-in{display:grid;gap:30px}
+.ed .lede{max-width:52ch}
+.ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:var(--sign);text-decoration:none;border-bottom:3px solid rgba(10,99,55,.35);padding-bottom:2px;min-height:48px}
+@media (hover:hover){.ed-call:hover{border-color:var(--focus-deep)}}
 .ed-call svg{width:30px;height:30px}
-.ed-in{display:grid;gap:22px}
-.ed-photo{margin:0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(244,247,242,.6);border-radius:8px;background:var(--svc-deep);display:grid;place-content:center;justify-items:center;gap:10px;color:#f4f7f2;overflow:hidden}
-.ed-photo svg{width:56px;height:56px;opacity:.8}
+.ed-photo{margin:0 14px 14px 0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(14,42,51,.35);border-radius:8px;background:#e2e8e3;box-shadow:14px 14px 0 var(--sign);display:grid;place-content:center;justify-items:center;gap:10px;color:var(--ink);overflow:hidden}
+.ed-photo svg{width:56px;height:56px;opacity:.55}
 .ed-photo figcaption{font-size:16px;font-weight:700}
 .ed-photo img{width:100%;height:100%;object-fit:cover}
 
@@ -199,9 +193,8 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .sh{margin-top:0}
   section.pad{padding:56px 0 88px}
   .seam{height:64px}
-  .ed .sign{max-width:960px}
-  .ed .sign-in{padding:40px 44px}
-  .ed-in{grid-template-columns:240px 1fr;gap:40px;align-items:center}
+  .ed{padding:48px 0 72px}
+  .ed-in{grid-template-columns:260px 1fr;gap:64px;align-items:center}
   .ed-photo{width:100%}
   footer .wrap{grid-template-columns:auto auto auto auto;justify-content:space-between;align-items:center}
 }
@@ -283,10 +276,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
 
-<section class="ed" id="driver" aria-labelledby="ed-h">
-  <div class="wrap">
-    <div class="sign">
-      <div class="sign-in ed-in">
+<section class="ed light" id="driver" aria-labelledby="ed-h">
+  <div class="wrap ed-in">
         <!-- Placeholder until Ed sends a photo. Swap the svg + figcaption for:
              <img src="ed.jpg" alt="Ed Brannagan" width="480" height="600"> -->
         <figure class="ed-photo" aria-hidden="true">
@@ -298,8 +289,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <p class="lede">Hi, I'm Ed Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. When you call, you get me on my cell, not a dispatcher.</p>
         <a class="ed-call" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
         </div>
-      </div>
-    </div>
   </div>
 </section>
 

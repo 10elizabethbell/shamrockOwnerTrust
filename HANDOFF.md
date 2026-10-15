@@ -3,16 +3,16 @@
 **Live:** https://10elizabethbell.github.io/shamrockOwnerTrust/ · **Repo:** https://github.com/10elizabethbell/shamrockOwnerTrust · **Built:** 2026-10-14 from Muse brief of 2026-10-13 (Vibe 2, owner-operator trust, approved by Ellie 2026-10-14)
 
 ## What's built
-- **The look: a roadside scene on I-95 at dusk.** The hero is a green guide sign (shamrock green `#0a6337`, a green rim outside its white border) standing on two steel posts, seen down the road: dusk sky (night blue fading to twilight), a warm glow on the horizon, a treeline, and the road running toward the sign with white edge lines and an amber centre line. All of it is still; nothing moves. "Meet your driver" is a blue I-95 services sign (`#17508f`). The rest of the page is pale aluminum and blue-green night (`#0e2a33`, not black). Amber only for Call buttons and road centre lines.
+- **The look: a roadside scene on I-95 at dusk.** The hero is a green guide sign (shamrock green `#0a6337`, a green rim outside its white border) standing on two steel posts, seen down the road: dusk sky (night blue fading to twilight), a warm glow on the horizon, a treeline, and the road running toward the sign with white edge lines and an amber centre line. All of it is still; nothing moves. The hero is the only sign on the page. The rest of the page is pale aluminum and blue-green night (`#0e2a33`, not black). Amber only for Call buttons and road centre lines.
 - **Roadside sign hero (Ellie, 2026-10-15):** "make it look like it's actually a road sign on a road", with scenery outside the sign and the sign farther away. Scene parts: `.posts` (treeline, glow, posts at 30%/70% where the road edges meet the horizon) and `svg.ground` (grass, road). Sign size: `.hero-copy` margin/max-width.
-- **More color (Ellie, 2026-10-15: "I hate the lack of color"):** the hero went from night blue to the green sign, and the driver sign went blue so the two signs don't repeat. Easy to revert: `--sign`/`--svc` tokens and the `.bar`, `.hero`, `.ed .sign` rules.
+- **More color (Ellie, 2026-10-15: "I hate the lack of color"):** the hero became the green sign. The driver sign briefly went blue, then Ellie dropped it ("the blue goes with nothing and the repeated signs feel ugly"), so Meet your driver is now plain on aluminum.
 - **Quiet hero (Ellie, 2026-10-14):** headline, one line ("I drive your car between New Jersey and Florida, door to door."), one big "Call for a free quote / 732-300-3835" button, an "or send a text" link, and "Owner & driver: Ed Brannagan". No sign panel and no motion in the hero.
 - **The one moving part:** a short road strip just above the closing call. A packed cream car drives steadily south past "Welcome to Delaware … Florida" signs, house to house, pauses, then drives back north. Nothing else moves and nothing needs touching. Speed and spacing (`CRUISE`, `SEG`, `TREE_GAP`) are at the top of the road script.
 - **Section edges:** still dashed lane lines.
 - **Sections, following the 40–70 research brief (Ellie, 2026-10-14):**
   - Header: name; on desktop also "Meet your driver / How it works / Questions" and the phone number.
   - Hero (above). **Two photo spots for Ed, both standing still (Ellie, 2026-10-15):** on desktop a wide "Photo of Ed with a car" placeholder fills the right half; on phones a small round face sits beside "Owner & driver". To add photos, swap each placeholder for the `<img>` line in the HTML comment above it: `ed-wide.jpg` (wide, 4:3) and `ed.jpg` (head and shoulders, used for both the round face and the sign).
-  - Meet your driver: green sign, a dashed "Portrait of Ed" placeholder card (above the text on phones, beside it on desktop), Ed in his own words, tap-to-call number. To add the photo, drop `ed.jpg` in the folder and swap the placeholder for the `<img>` line in the HTML comment above it.
+  - Meet your driver: no sign, plain on the pale background. A dashed "Portrait of Ed" placeholder sits on an offset shamrock-green block (above the text on phones, beside it on desktop), then dark headline and text, and the phone number in shamrock green. Ed in his own words, tap-to-call number. To add the photo, drop `ed.jpg` in the folder and swap the placeholder for the `<img>` line in the HTML comment above it.
   - How it works: Call for a quote → Arrange pickup → Receive your car, beside What I do.
   - Driven, not trucked: the packing point, with the side-view drawing of the packed car.
   - Questions, always visible: cost, packing, the spring trip home, when a truck carrier is better. A comment in the HTML marks where the insurance answer goes once Ed confirms.
@@ -38,7 +38,7 @@
 - **I picked the look myself, from 6 options I listed.** The run was unattended, so there was no Impeccable decision page and no comparison against other directions.
 
 ## Placeholders and gaps
-- **No photos at all.** Nothing of Ed, his vehicle, or any job. Three visible placeholders wait for Ed's photos (desktop hero, phone owner line, Meet your driver sign); don't hand the site over with any still empty.
+- **No photos at all.** Nothing of Ed, his vehicle, or any job. Three visible placeholders wait for Ed's photos (desktop hero, phone owner line, Meet your driver); don't hand the site over with any still empty.
 - **No logo file** (the card emblem isn't cleared).
 - **No email and no Facebook.** So, against the usual rules: no footer email, and no "see more of my work" Facebook link. Add both if Ed has them.
 - **Rates:** $1 per mile (Ed, via Ellie, 2026-10-15), shown in How it works step 1, the "What does it cost?" answer and the closing line. The hero doesn't show it. The page doesn't say what the price includes, and gives no example trip total.
