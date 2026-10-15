@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shamrock Transportation · You fly, I'll drive</title>
 <meta name="description" content="Ed Brannagan drives your car between New Jersey and Florida, door to door, so you can fly and still have your own car down there. Call 732-300-3835.">
-<meta name="theme-color" content="#0a6337">
+<meta name="theme-color" content="#0e2a33">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shamrock Transportation · You fly, I'll drive">
 <meta property="og:description" content="I drive your own car between New Jersey and Florida, door to door. Call Ed: 732-300-3835.">
@@ -51,9 +51,9 @@ p{margin:0}
 .ed :focus-visible,.bar :focus-visible,.hero :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
-.bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto;background:var(--sign);box-shadow:0 0 0 100vmax var(--sign);clip-path:inset(0 -100vmax)}
+.bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;border-radius:8px}
-.brand svg{width:34px;height:34px;flex:none;color:#f4f7f2}
+.brand svg{width:34px;height:34px;flex:none;color:var(--leaf)}
 .nav{gap:22px}
 .nav a,.bar-phone{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
 .bar-phone{gap:8px;font-weight:850;font-size:20px}
@@ -63,9 +63,17 @@ p{margin:0}
 .bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
 
 /* ---------- Hero ---------- */
-/* The hero is an I-95 guide sign: shamrock green with a white inset border */
-.hero{position:relative;padding-top:18px;background:var(--sign)}
-.hero-copy{display:grid;gap:20px;width:auto;margin:0 10px;padding:26px 20px 32px;border:3px solid #f4f7f2;border-radius:16px}
+/* The hero is a roadside scene: an I-95 guide sign on two posts, seen down the road at dusk.
+   The sign is green with a green rim outside its white border, like a real guide sign. */
+.hero{position:relative;padding-top:30px;background:linear-gradient(#0e2a33 0%,#173a52 55%,#2c4d6e 100%)}
+.hero-copy{position:relative;z-index:1;display:grid;gap:20px;width:auto;margin:0 34px;padding:24px 18px 28px;background:var(--sign);border:3px solid #f4f7f2;border-radius:16px;box-shadow:0 0 0 10px var(--sign),0 0 0 11px var(--sign-deep),0 22px 40px -10px rgba(5,15,25,.6)}
+/* Posts, treeline and a warm horizon glow behind them */
+.posts{position:relative;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}
+.posts .trees{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}
+.posts i{position:absolute;top:0;bottom:0;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}
+.posts i:first-of-type{left:30%}.posts i:last-of-type{left:70%}
+.ground{display:block;width:100%;height:150px}
+.hero .seam{margin-top:-44px}
 .hero-copy > *{max-width:680px}
 .hero h1{font-size:clamp(3rem,14vw,5.2rem);color:#f4f7f2;letter-spacing:-.02em;line-height:1}
 .hero h1 span{display:block}
@@ -98,7 +106,6 @@ p{margin:0}
 
 /* ---------- Seams: a lane line along the top of the next section ---------- */
 .seam{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:44px;margin-bottom:-1px}
-.hero .seam{margin-top:18px}
 .seam path.fill{fill:var(--next)}
 .seam path.lane{fill:none;stroke:var(--lane);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}
 
@@ -174,8 +181,14 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
 
 /* ---------- Wider screens ---------- */
 @media (min-width:760px){
-  .hero{padding-top:24px}
-  .hero-copy{margin:0 auto;max-width:1120px;padding:48px 48px 52px}
+  .hero{padding-top:48px}
+  .hero-copy{margin:0 auto;max-width:880px;padding:40px 44px 44px}
+  .hero h1{font-size:clamp(3rem,6vw,4.4rem)}
+  .posts{height:96px;margin-top:11px}
+  .posts .trees{height:52px}
+  .posts i{width:14px;margin-left:-7px}
+  .ground{height:200px}
+  .hero .seam{margin-top:-64px}
   .hero-act{justify-items:start}
   .ctas{align-self:start;grid-template-columns:auto auto;justify-content:start}
   .nav{display:flex}.bar-phone{display:inline-flex}
@@ -256,6 +269,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <figcaption>Photo of Ed with a car</figcaption>
     </figure>
   </div>
+  <div class="posts" aria-hidden="true">
+    <svg class="trees" viewBox="0 0 1000 50" preserveAspectRatio="none"><path fill="#0c2a24" d="M0 50V30l18-6 14 4 10-14 12 10 20-8 16 12 14-16 10 4 16 6 20-10 12 12 18-4 14-14 12 8 22 4 14-12 18 10 16-4 12 6 14-18 12 14 20 2 16-8 14 8 10-6 6 8 22 18V50zM676 50l24-14 10-6 20-6 14 6 12-14 16 10 18-6 14 12 20-16 12 8 14 2 18-10 14 12 16-4 12-12 14 10 22 2 12-8 16 10 18-6 14 4 10-8 14 10V50z"/></svg>
+    <i></i><i></i>
+  </div>
+  <svg class="ground" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
+    <rect width="1000" height="150" fill="#173f2c"/>
+    <polygon points="300,0 700,0 1180,150 -180,150" fill="#2c3539"/>
+    <polygon points="303,0 309,0 -150,150 -172,150" fill="#e8ece6"/>
+    <polygon points="691,0 697,0 1172,150 1150,150" fill="#e8ece6"/>
+    <g fill="#f6b638"><polygon points="499,4 501,4 501.6,12 498.4,12"/><polygon points="497.8,24 502.2,24 503,40 497,40"/><polygon points="496,58 504,58 505.5,84 494.5,84"/><polygon points="493,106 507,106 509,150 491,150"/></g>
+  </svg>
   <svg class="seam" viewBox="0 0 1200 64" preserveAspectRatio="none" style="--next:var(--paper);--lane:var(--amber)" aria-hidden="true"><path class="fill"/><path class="lane"/></svg>
 </section>
 
