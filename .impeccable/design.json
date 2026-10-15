@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T23:34:21.173994+00:00",
+  "generatedAt": "2026-10-15T23:57:17.460432+00:00",
   "title": "Design System: Shamrock Transportation",
   "extensions": {
     "colorMeta": {
@@ -138,6 +138,38 @@
           "oklch(85% 0.159 152.0)",
           "oklch(95% 0.159 152.0)"
         ]
+      },
+      "brand-ivory": {
+        "role": "tertiary",
+        "displayName": "Brand Ivory",
+        "canonical": "#f6f1e6",
+        "tonalRamp": [
+          "oklch(15% 0.016 86.4)",
+          "oklch(26% 0.016 86.4)",
+          "oklch(38% 0.016 86.4)",
+          "oklch(50% 0.016 86.4)",
+          "oklch(62% 0.016 86.4)",
+          "oklch(74% 0.016 86.4)",
+          "oklch(85% 0.016 86.4)",
+          "oklch(95% 0.016 86.4)"
+        ],
+        "purpose": "Favicon and home-screen icon line only."
+      },
+      "brand-deep-green": {
+        "role": "tertiary",
+        "displayName": "Brand Deep Green",
+        "canonical": "#0f4434",
+        "tonalRamp": [
+          "oklch(15% 0.062 168.6)",
+          "oklch(26% 0.062 168.6)",
+          "oklch(38% 0.062 168.6)",
+          "oklch(50% 0.062 168.6)",
+          "oklch(62% 0.062 168.6)",
+          "oklch(74% 0.062 168.6)",
+          "oklch(85% 0.062 168.6)",
+          "oklch(95% 0.062 168.6)"
+        ],
+        "purpose": "Favicon and home-screen icon rounded square only."
       },
       "amber": {
         "role": "secondary",
@@ -1314,7 +1346,7 @@
       },
       "wordmark": {
         "displayName": "Wordmark",
-        "purpose": "Business name beside the leaf-green clover in the header lockup."
+        "purpose": "Business name beside the leaf-green shamrock mark in the header lockup."
       },
       "text-link": {
         "displayName": "Text Link",
@@ -1543,6 +1575,11 @@
         "date": "2026-10-15",
         "by": "Ellie",
         "decision": "The two far cars get bodies: small inline SVG cars (oncoming front view with headlights, departing rear view with tail lights) sized to their lane at depth, replacing the radial-gradient light dots."
+      },
+      {
+        "date": "2026-10-15",
+        "by": "Ellie",
+        "decision": "Brand mark is the shared engraved-line shamrock used on every Shamrock site, replacing the filled clover symbol: header uses shamrock-small-ivory.svg recoloured to leaf; favicon and apple-touch icon are exact copies (ivory on deep green)."
       }
     ],
     "photoSlots": [
@@ -1583,6 +1620,13 @@
     "portraitOffsetBlock": {
       "value": "box-shadow: 14px 14px 0 #0a6337 on .ed-photo, with margin 0 14px 14px 0",
       "status": "Carried exception, not canonized: a hard offset block (no blur) is outside this world's vocabulary. Not elevation; do not reuse."
+    },
+    "brandMark": {
+      "source": "/Users/ellie/Projects/freelance/shamrockElegant/brand/ (README.md)",
+      "header": "shamrock-small-ivory.svg inlined byte for byte, only color changed to #3dbb6c; 34px; no frame or tile",
+      "favicon": "favicon.svg and apple-touch-icon.png exact copies: ivory #f6f1e6 line on a deep green #0f4434 rounded square",
+      "sizes": "shamrock-small-*.svg for 16-48px; shamrock-deep-green.svg / shamrock-ivory.svg from about 64px",
+      "rules": "copy exactly; change only the color attribute; no line-weight changes, fill, glow, shadow, frame, badge or tile on the page; only the favicon and home-screen icon sit on a rounded square"
     }
   },
   "components": [
@@ -1662,9 +1706,9 @@
       "name": "Header (desktop)",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "On night: brand lockup link (leaf-green clover + wordmark) and three section links with shield-blue hover underlines and sign-white focus; no phone number. On phones only the lockup shows. Not sticky.",
-      "html": "<header class=\"ds-bar\"><a class=\"ds-brand\" href=\"#top\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><g fill=\"currentColor\"><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(118 32 32)\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(-118 32 32)\"/></g><path d=\"M33 34c2 9 6 16 13 23\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg><b>Shamrock Transportation</b></a><nav class=\"ds-nav\"><a href=\"#driver\">Meet your driver</a><a href=\"#how\">How it works</a><a href=\"#questions\">Questions</a></nav></header>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--sun:#ffd166;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;background:var(--night);color:var(--on-dark)}.ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin-right:auto;border-radius:8px}.ds-brand svg{width:34px;height:34px;flex:none;color:var(--leaf)}.ds-brand b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-nav{display:flex;gap:22px}.ds-nav a{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}@media (hover:hover){.ds-nav a:hover{border-bottom-color:var(--focus)}}.ds-bar a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-brand:focus-visible{border-radius:8px}"
+      "description": "On night: brand lockup link (leaf-green engraved shamrock (shared brand file, only color changed) + wordmark) and three section links with shield-blue hover underlines and sign-white focus; no phone number. On phones only the lockup shows. Not sticky.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-brand\" href=\"#top\"><svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" color=\"#3dbb6c\"><defs>\n  <!-- the shamrock, engraved: one fine outline of three heart leaves and a stem, with a vein in each leaf; drawn in currentColor -->\n  <path id=\"lf\" d=\"M50 51C45 46 32 40 30.5 28 29.5 19 35 13.5 41 13.5 45.5 13.5 49 16.5 50 21 51 16.5 54.5 13.5 59 13.5 65 13.5 70.5 19 69.5 28 68 40 55 46 50 51Z\"/>\n  <g id=\"sham-shape\">\n    <use href=\"#lf\"/><use href=\"#lf\" transform=\"rotate(120 50 52)\"/><use href=\"#lf\" transform=\"rotate(-120 50 52)\"/>\n    <path id=\"sham-stem\" d=\"M47.6 54C48.2 67 51.6 80.5 59.6 93.4c1.2 1.9 4.2.9 3.6-1.3C59.5 79.2 55.8 66.6 53.6 53.6Z\"/>\n    <circle cx=\"50\" cy=\"52\" r=\"4.6\"/>\n  </g>\n  <filter id=\"sham-line\" x=\"-10%\" y=\"-10%\" width=\"120%\" height=\"120%\"><feMorphology in=\"SourceGraphic\" operator=\"dilate\" radius=\"3.6\" result=\"d\"/><feComposite in=\"d\" in2=\"SourceAlpha\" operator=\"out\"/></filter>\n  <g id=\"shamrock\">\n    <g filter=\"url(#sham-line)\" fill=\"currentColor\"><use href=\"#sham-shape\"/></g>\n    <mask id=\"sham-under\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"100\" height=\"100\"><use href=\"#sham-stem\" fill=\"#fff\"/><circle cx=\"50\" cy=\"52\" r=\"5.2\" fill=\"#000\"/></mask>\n    <g mask=\"url(#sham-under)\"><g filter=\"url(#sham-line)\" fill=\"currentColor\"><use href=\"#lf\" transform=\"rotate(120 50 52)\"/><use href=\"#lf\" transform=\"rotate(-120 50 52)\"/></g></g>\n    <g stroke=\"currentColor\" stroke-width=\"3.4\" stroke-linecap=\"round\" fill=\"none\" opacity=\".75\"><path id=\"vein\" d=\"M50 47V25\"/><use href=\"#vein\" transform=\"rotate(120 50 52)\"/><use href=\"#vein\" transform=\"rotate(-120 50 52)\"/></g>\n  </g>\n</defs>\n<use href=\"#shamrock\"/></svg><b>Shamrock Transportation</b></a><nav class=\"ds-nav\"><a href=\"#driver\">Meet your driver</a><a href=\"#how\">How it works</a><a href=\"#questions\">Questions</a></nav></header>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--sun:#ffd166;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;background:var(--night);color:var(--on-dark)}.ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin-right:auto;border-radius:8px}.ds-brand svg{width:34px;height:34px;flex:none}.ds-brand b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-nav{display:flex;gap:22px}.ds-nav a{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}@media (hover:hover){.ds-nav a:hover{border-bottom-color:var(--focus)}}.ds-bar a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-brand:focus-visible{border-radius:8px}"
     },
     {
       "name": "Photo Slots",
@@ -1739,6 +1783,11 @@
         "name": "The One Moving Thing Rule",
         "body": "Only the car in the close moves. The hero roadside scene (sky and stars, glow, sign, gantry, hills and treeline, road, the two far cars), seams, text, illustrations and sections never animate, reveal on scroll, or loop. The only other changes on the page are state feedback (colour shifts and a 1px press) in direct response to a touch, hover or keyboard focus, and the Call pill's short fade in and out, which is switched off under reduced motion.",
         "section": "components"
+      },
+      {
+        "name": "The Exact Shamrock Rule",
+        "body": "Copy the brand files exactly and change only the `color` attribute. Don't change the line weights, thicken the veins, or add a fill, glow or shadow, and don't put the mark inside a frame, badge or tile on the page. Use the small files (`shamrock-small-*.svg`) from 16 to 48px and the large files (`shamrock-deep-green.svg`, `shamrock-ivory.svg`) from about 64px up.",
+        "section": "components"
       }
     ],
     "dos": [
@@ -1752,7 +1801,8 @@
       "**Do** keep reading text at 18px or larger, tap targets at 48px or more, the Send a text button at 58px and the Call pill at 56px.",
       "**Do** show every answer and every step in full, on arrival.",
       "**Do** keep the car the only moving thing: run it on the shared loop, pause it off screen, and draw a still frame under `prefers-reduced-motion`.",
-      "**Do** write icons as inline SVG symbols that inherit `currentColor`."
+      "**Do** write icons as inline SVG symbols that inherit `currentColor`.",
+      "**Do** use the shared shamrock files byte for byte, changing only `color`: the small file from 16 to 48px, the large file from about 64px."
     ],
     "donts": [
       "**Don't** add a second moving thing: no rolling seams, scroll reveals, marquees, looping illustrations, or extra traffic in the road.",
@@ -1767,7 +1817,8 @@
       "**Don't** use #000 or near-black as a ground. Night is blue-green.",
       "**Don't** put a tracked uppercase label above a headline. The page has no tracked uppercase text.",
       "**Don't** add shadows to buttons, links, step discs, lists, question pairs or sections. Only the hero sign and the Call pill stand up, and don't spread hard offset blocks like the one behind the portrait to other elements.",
-      "**Don't** use stock fleet photos, quote forms, or trust badges."
+      "**Don't** use stock fleet photos, quote forms, or trust badges.",
+      "**Don't** redraw, refill, thicken, glow, shadow, frame, badge or tile the shamrock on the page; only the favicon and home-screen icon sit on a rounded square."
     ]
   }
 }

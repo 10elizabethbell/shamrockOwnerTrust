@@ -11,6 +11,8 @@ colors:
   sign-white-50: "rgba(244,247,242,0.5)"
   sign-white-60: "rgba(244,247,242,0.6)"
   leaf: "#3dbb6c"
+  brand-ivory: "#f6f1e6"
+  brand-deep-green: "#0f4434"
   amber: "#f6b638"
   sun: "#ffd166"
   focus: "#3d9bff"
@@ -304,7 +306,7 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 ### Primary
 - **Interstate Guide Green** (sign): the hero guide sign: one sheet of green with a 10px margin (13px from 760px) outside its inset sign-white border, like a real guide sign. Also the state-line signs drawn on the canvas, the numbered discs in How it works, and the small square bullets in What I do. It is also shamrock green. Use it for signage and wayfinding marks, never as a button fill.
 - **Sign Edge Green** (sign-deep): the ground of the two hero photo slots (the wide desktop photo and the round phone face), and the 1px outer edge of the hero sign. It also draws the roof-box straps in the trunk illustration.
-- **Sign White** (sign-white): legend colour on the hero sign: the hero headline's first line, the hero's 3px inset border, the hero number (its underline at 50%, sign-white-50), the owner line; also the clover in the favicon, the step numbers, focus rings in the header and the hero, and canvas road-edge lines (80% alpha) and reflector dots (30%). At 60% (sign-white-60) it is the dashed border of the two hero photo slots; at full strength, their icon and caption. It is a raw literal in the source, not a `:root` property.
+- **Sign White** (sign-white): legend colour on the hero sign: the hero headline's first line, the hero's 3px inset border, the hero number (its underline at 50%, sign-white-50), the owner line; also the step numbers, focus rings in the header and the hero, and canvas road-edge lines (80% alpha) and reflector dots (30%). At 60% (sign-white-60) it is the dashed border of the two hero photo slots; at full strength, their icon and caption. It is a raw literal in the source, not a `:root` property.
 
 ### Secondary
 - **Sign Yellow** (sun): the second lettering colour on the hero sign, added by Ellie on 2026-10-15 ("add some color to the text on the sign"). Used only there: the headline's second line ("I'll drive."), the hero phone icon, and the owner's name. 4.9:1 on sign green. It is lettering, softer than amber, and never a fill, border, underline or interaction colour; amber keeps calling (the pill) and the centre lines.
@@ -313,7 +315,8 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 ### Tertiary
 - **Interstate Shield Blue** (focus): hover borders and underlines on the Send a text button, the close number, the header nav and footer links; `:focus-visible` outlines on night.
 - **Deep Shield Blue** (focus-deep): the focus role on aluminum, dark enough for 3:1 against paper.
-- **Shamrock Leaf** (leaf): the clover in the header lockup only. Not an interface colour.
+- **Shamrock Leaf** (leaf): the colour of the shamrock mark in the header lockup, set through the mark's `color` attribute, and nothing else. Not an interface colour.
+- **Brand Ivory** (brand-ivory) and **Brand Deep Green** (brand-deep-green): the favicon and home-screen icon only, an ivory line on a deep green rounded square, copied unchanged from the shared Shamrock brand folder.
 
 ### Neutral
 - **I-95 Night** (night): the page ground (the header sits on it), the top of the hero sky, and the close, where the road band runs. The same value is **Ink** (ink): all text on aluminum (headlines, ledes, steps, services, questions and answers) and text on amber. There is no secondary grey text on light grounds. **Night Clear** (night-0) is night at zero alpha, the top stop of the fade that dissolves the road band into the close.
@@ -357,7 +360,7 @@ The palette is an interstate: guide-sign green with sign-white and sign-yellow l
 - **Owner Line** (400, 17px): "Owner & driver: Ed Brannagan" in sign-white at the foot of the hero, 14px after the round face slot on phones. **Owner Name** (800, 17px, no wrapping): "Ed Brannagan" within it, in sign yellow.
 - **Call Pill** (850, 18px): "Call Ed".
 - **Nav Link** (700, 17px): the desktop header.
-- **Wordmark** (800, 17px, 0.01em): "Shamrock Transportation" beside the leaf-green clover.
+- **Wordmark** (800, 17px, 0.01em): "Shamrock Transportation" beside the leaf-green shamrock mark.
 - **Small** (400, 16px): footer lines. The footer's name steps back up to 18px.
 - **Canvas Sign** (700, 13.5px; 12.5px when the canvas is under 700px wide): state-line sign lettering drawn in the road.
 
@@ -474,8 +477,15 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **What I do:** Title-style lines between 2px dotted guardrail rules, each led by a 12px sign-green square (3px radius).
 - **Questions:** plain question/answer pairs in a block capped at 760px: a Question h3 (20px/750) above a body paragraph, with a 2px solid guardrail rule above the first pair and below every answer. Cost is answered first, with the rate stated plainly: $1 per mile, the same figure as How it works step one and the close lede. Always open; no toggle, no icon.
 
+### Brand Mark
+The engraved-line shamrock Ellie chose for every Shamrock site (2026-10-15): one fine outline of three heart leaves and a stem, a vein in each leaf, the stem tucked behind the lower leaf, all drawn in `currentColor`. The source files live in `/Users/ellie/Projects/freelance/shamrockElegant/brand/`.
+- **Header:** `shamrock-small-ivory.svg` inlined byte for byte, with only its `color` attribute changed to leaf (#3dbb6c). 34px, no frame or tile.
+- **Favicon and home-screen icon:** `favicon.svg` and `apple-touch-icon.png` are exact copies: the ivory line on a deep green rounded square. These two are the only places the mark sits on a shape.
+
+**The Exact Shamrock Rule.** Copy the brand files exactly and change only the `color` attribute. Don't change the line weights, thicken the veins, or add a fill, glow or shadow, and don't put the mark inside a frame, badge or tile on the page. Use the small files (`shamrock-small-*.svg`) from 16 to 48px and the large files (`shamrock-deep-green.svg`, `shamrock-ivory.svg`) from about 64px up.
+
 ### Navigation
-- **Header:** not sticky, on night (14px 20px 4px padding). The brand lockup is a link back to the top: a 34px leaf-green clover and "Shamrock Transportation" in Wordmark, 8px radius for its focus ring. On phones that is all the header holds. Focus outlines in the header are sign-white.
+- **Header:** not sticky, on night (14px 20px 4px padding). The brand lockup is a link back to the top: the 34px leaf-green shamrock mark and "Shamrock Transportation" in Wordmark, 8px radius for its focus ring. On phones that is all the header holds. Focus outlines in the header are sign-white.
 - **Desktop (760px and up):** three in-page links (Meet your driver / How it works / Questions) in Nav Link type, on-dark, 44px minimum height. The header carries no phone number. Hover adds a 2px shield-blue bottom border, as on every other link on night; at rest the border is transparent.
 
 ### Close and Footer
@@ -496,6 +506,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Do** show every answer and every step in full, on arrival.
 - **Do** keep the car the only moving thing: run it on the shared loop, pause it off screen, and draw a still frame under `prefers-reduced-motion`.
 - **Do** write icons as inline SVG symbols that inherit `currentColor`.
+- **Do** use the shared shamrock files byte for byte, changing only `color`: the small file from 16 to 48px, the large file from about 64px.
 
 ### Don't:
 - **Don't** add a second moving thing: no rolling seams, scroll reveals, marquees, looping illustrations, or extra traffic in the road.
@@ -511,3 +522,4 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Don't** put a tracked uppercase label above a headline. The page has no tracked uppercase text.
 - **Don't** add shadows to buttons, links, step discs, lists, question pairs or sections. Only the hero sign and the Call pill stand up, and don't spread hard offset blocks like the one behind the portrait to other elements.
 - **Don't** use stock fleet photos, quote forms, or trust badges.
+- **Don't** redraw, refill, thicken, glow, shadow, frame, badge or tile the shamrock on the page; only the favicon and home-screen icon sit on a rounded square.
