@@ -24,7 +24,7 @@
   --sign:#0a6337;         /* interstate guide-sign green = shamrock green */
   --sign-deep:#084d2b;
   --leaf:#3dbb6c;         /* the shamrock itself */
-  --amber:#f6b638;        /* headlights, center line, primary button */
+  --amber:#f6b638;--sun:#ffd166;        /* headlights, center line, primary button */
   --focus:#3d9bff;        /* one accent for hover/focus outlines (interstate-shield blue) */
   --focus-deep:#1a5fb4;   /* the same blue, deep enough for 3:1 on light grounds */
   --paper:#eef2ee;        /* light sections: sign-back aluminum, cool */
@@ -73,6 +73,9 @@ p{margin:0}
 .hero-copy > *{max-width:680px}
 .hero h1{font-size:clamp(3rem,14vw,5.2rem);color:#f4f7f2;letter-spacing:-.02em;line-height:1}
 .hero h1 span{display:block}
+.hero h1 span+span{color:var(--sun)}
+.hero-call svg{color:var(--sun)}
+.owner b{font-weight:800;color:var(--sun);white-space:nowrap}
 .hero-act{display:grid;gap:6px;margin-top:6px}
 /* The hero call is the number itself, lettered on the sign */
 .hero-call{justify-self:start;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-size:clamp(26px,7.6vw,44px);font-weight:850;letter-spacing:-.01em;line-height:1.1;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
@@ -85,7 +88,6 @@ p{margin:0}
 .owner-face svg{width:26px;height:26px;color:#f4f7f2}
 .owner-face img{width:100%;height:100%;object-fit:cover}
 .hero-photo{display:none}
-.promise{font-size:clamp(19px,5.2vw,22px);line-height:1.5;color:var(--on-dark);max-width:30ch}
 .ctas{display:grid;grid-template-columns:1fr;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font-weight:800;font-size:18px;text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .btn svg{width:22px;height:22px;flex:none}
@@ -243,14 +245,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap hero-copy">
     <h1 id="hero-h"><span>You fly.</span><span>I'll drive.</span></h1>
-    <p class="promise">I drive your car between New Jersey and Florida, door to door.</p>
     <div class="hero-act" id="heroCtas">
       <a class="hero-call" href="tel:+17323003835" aria-label="Call Ed for a free quote, 732-300-3835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
       <a class="text-link js-sms" href="sms:+17323003835">or send a text</a>
     </div>
     <!-- Placeholder until Ed sends a head-and-shoulders photo. Swap the svg for:
          <img src="ed.jpg" alt="" width="112" height="112"> -->
-    <p class="owner"><span class="owner-face" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#person"/></svg></span>Owner &amp; driver: Ed Brannagan</p>
+    <p class="owner"><span class="owner-face" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#person"/></svg></span><span>Owner &amp; driver: <b>Ed Brannagan</b></span></p>
     <!-- Placeholder until Ed sends a wide photo (him with a car, or at the wheel). Swap the svg + figcaption for:
          <img src="ed-wide.jpg" alt="Ed Brannagan with a customer's car" width="1200" height="900"> -->
     <figure class="hero-photo" aria-hidden="true">
