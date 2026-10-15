@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T11:30:15.461196+00:00",
+  "generatedAt": "2026-10-15T11:44:24.128793+00:00",
   "title": "Design System: Shamrock Transportation",
   "extensions": {
     "colorMeta": {
@@ -109,34 +109,19 @@
           "oklch(95% 0.087 155.2)"
         ]
       },
-      "svc": {
+      "sign-35": {
         "role": "primary",
-        "displayName": "Services Sign Blue",
-        "canonical": "#17508f",
+        "displayName": "Sign Green 35 (driver-number underline)",
+        "canonical": "rgba(10,99,55,0.35)",
         "tonalRamp": [
-          "oklch(15% 0.119 254.2)",
-          "oklch(26% 0.119 254.2)",
-          "oklch(38% 0.119 254.2)",
-          "oklch(50% 0.119 254.2)",
-          "oklch(62% 0.119 254.2)",
-          "oklch(74% 0.119 254.2)",
-          "oklch(85% 0.119 254.2)",
-          "oklch(95% 0.119 254.2)"
-        ]
-      },
-      "svc-deep": {
-        "role": "primary",
-        "displayName": "Services Edge Blue",
-        "canonical": "#0f3c6c",
-        "tonalRamp": [
-          "oklch(15% 0.096 253.5)",
-          "oklch(26% 0.096 253.5)",
-          "oklch(38% 0.096 253.5)",
-          "oklch(50% 0.096 253.5)",
-          "oklch(62% 0.096 253.5)",
-          "oklch(74% 0.096 253.5)",
-          "oklch(85% 0.096 253.5)",
-          "oklch(95% 0.096 253.5)"
+          "oklch(15% 0.106 154.6)",
+          "oklch(26% 0.106 154.6)",
+          "oklch(38% 0.106 154.6)",
+          "oklch(50% 0.106 154.6)",
+          "oklch(62% 0.106 154.6)",
+          "oklch(74% 0.106 154.6)",
+          "oklch(85% 0.106 154.6)",
+          "oklch(95% 0.106 154.6)"
         ]
       },
       "sign-white": {
@@ -156,7 +141,7 @@
       },
       "sign-white-50": {
         "role": "primary",
-        "displayName": "Sign White 50%",
+        "displayName": "Sign White 50 (hero number underline)",
         "canonical": "rgba(244,247,242,0.5)",
         "tonalRamp": [
           "oklch(15% 0.007 132.4)",
@@ -214,21 +199,6 @@
           "oklch(95% 0.152 79.7)"
         ]
       },
-      "amber-hover": {
-        "role": "secondary",
-        "displayName": "Lit Amber",
-        "canonical": "#ffc75a",
-        "tonalRamp": [
-          "oklch(15% 0.140 81.5)",
-          "oklch(26% 0.140 81.5)",
-          "oklch(38% 0.140 81.5)",
-          "oklch(50% 0.140 81.5)",
-          "oklch(62% 0.140 81.5)",
-          "oklch(74% 0.140 81.5)",
-          "oklch(85% 0.140 81.5)",
-          "oklch(95% 0.140 81.5)"
-        ]
-      },
       "focus": {
         "role": "tertiary",
         "displayName": "Interstate Shield Blue",
@@ -274,10 +244,40 @@
           "oklch(95% 0.007 145.5)"
         ]
       },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Photo Slot Aluminum",
+        "canonical": "#e2e8e3",
+        "tonalRamp": [
+          "oklch(15% 0.009 150.7)",
+          "oklch(26% 0.009 150.7)",
+          "oklch(38% 0.009 150.7)",
+          "oklch(50% 0.009 150.7)",
+          "oklch(62% 0.009 150.7)",
+          "oklch(74% 0.009 150.7)",
+          "oklch(85% 0.009 150.7)",
+          "oklch(95% 0.009 150.7)"
+        ]
+      },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
         "canonical": "#0e2a33",
+        "tonalRamp": [
+          "oklch(15% 0.037 222.0)",
+          "oklch(26% 0.037 222.0)",
+          "oklch(38% 0.037 222.0)",
+          "oklch(50% 0.037 222.0)",
+          "oklch(62% 0.037 222.0)",
+          "oklch(74% 0.037 222.0)",
+          "oklch(85% 0.037 222.0)",
+          "oklch(95% 0.037 222.0)"
+        ]
+      },
+      "ink-35": {
+        "role": "neutral",
+        "displayName": "Ink 35 (portrait placeholder dashes)",
+        "canonical": "rgba(14,42,51,0.35)",
         "tonalRamp": [
           "oklch(15% 0.037 222.0)",
           "oklch(26% 0.037 222.0)",
@@ -424,21 +424,6 @@
           "oklch(95% 0.042 188.0)"
         ]
       },
-      "shadow-sign": {
-        "role": "neutral",
-        "displayName": "Sign Shadow",
-        "canonical": "rgba(0,0,0,0.55)",
-        "tonalRamp": [
-          "oklch(15% 0.000 0.0)",
-          "oklch(26% 0.000 0.0)",
-          "oklch(38% 0.000 0.0)",
-          "oklch(50% 0.000 0.0)",
-          "oklch(62% 0.000 0.0)",
-          "oklch(74% 0.000 0.0)",
-          "oklch(85% 0.000 0.0)",
-          "oklch(95% 0.000 0.0)"
-        ]
-      },
       "shadow-pill": {
         "role": "neutral",
         "displayName": "Pill Shadow (night-tinted)",
@@ -481,15 +466,19 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headlines, uppercase, balanced wrap; on aluminum, night, and the driver sign."
+        "purpose": "Section headlines, uppercase, balanced wrap; on aluminum and night."
+      },
+      "hero-number": {
+        "displayName": "Hero Number",
+        "purpose": "The phone number lettered on the hero sign in sign-white; the hero's call action. No wrapping."
       },
       "close-number": {
         "displayName": "Close Number",
-        "purpose": "The phone number in the close, above the buttons; the biggest number on the page."
+        "purpose": "The phone number in the close: the biggest number on the page and the close's call action (no Call button there)."
       },
       "phone-number": {
         "displayName": "Phone Number",
-        "purpose": "Ed's cell on the Meet your driver sign."
+        "purpose": "Ed's cell in Meet your driver, in sign green with a sign-35 underline."
       },
       "title": {
         "displayName": "Title",
@@ -517,11 +506,7 @@
       },
       "button": {
         "displayName": "Button",
-        "purpose": "Call and Send a text labels."
-      },
-      "button-number": {
-        "displayName": "Button Number",
-        "purpose": "Second line of the Call button: the number, 85% opacity."
+        "purpose": "The Send a text label (the page's only button)."
       },
       "call-pill": {
         "displayName": "Call Pill",
@@ -531,17 +516,13 @@
         "displayName": "Nav Link",
         "purpose": "Desktop header section links."
       },
-      "bar-phone": {
-        "displayName": "Bar Phone",
-        "purpose": "Phone number in the desktop header."
-      },
       "wordmark": {
         "displayName": "Wordmark",
         "purpose": "Business name beside the leaf-green clover in the header lockup."
       },
       "text-link": {
         "displayName": "Text Link",
-        "purpose": "'or send a text' under the hero Call button."
+        "purpose": "'or send a text' under the hero number."
       },
       "owner-line": {
         "displayName": "Owner Line",
@@ -562,11 +543,6 @@
     },
     "shadows": [
       {
-        "name": "sign-lift",
-        "value": "0 14px 30px -12px rgba(0,0,0,.55), 0 2px 0 #0f3c6c",
-        "purpose": "The blue services sign: diffuse lift plus a 2px metal edge in the sign's own deep tone (svc-deep)."
-      },
-      {
         "name": "roadside-sign",
         "value": "0 0 0 10px #0a6337, 0 0 0 11px #084d2b, 0 22px 40px -10px rgba(5,15,25,.6)",
         "purpose": "Hero sign only: a 10px green rim and 1px sign-deep edge outside the white border (paint, not elevation), then a night-tinted drop off the dusk sky."
@@ -586,7 +562,7 @@
       {
         "name": "button-state",
         "value": "background-color .2s, border-color .2s, transform .15s; :active translateY(1px)",
-        "purpose": "Call/Text hover and press feedback. Response to touch, not ambient motion."
+        "purpose": "Send a text hover and press feedback. Response to touch, not ambient motion."
       },
       {
         "name": "call-pill-toggle",
@@ -727,6 +703,21 @@
         "date": "2026-10-15",
         "by": "Ellie",
         "decision": "Hero becomes a still roadside scene at dusk: the green guide sign (with an outer green rim and drop shadow) stands on two posts above a road. Header returns to night with the leaf-green clover; theme-color back to #0e2a33."
+      },
+      {
+        "date": "2026-10-15",
+        "by": "Ellie",
+        "decision": "Close: the amber Call button is removed; the big phone number is the call, with Send a text on touch devices only."
+      },
+      {
+        "date": "2026-10-15",
+        "by": "Ellie",
+        "decision": "Dropped the blue services sign for Meet your driver: \"the blue goes with nothing and the repeated signs feel ugly\". Meet your driver is plain on aluminum, Ed's number in sign green; the hero is the only sign."
+      },
+      {
+        "date": "2026-10-15",
+        "by": "Ellie",
+        "decision": "The yellow hero Call button was \"obnoxiously bright\": replaced by just the clickable phone number lettered on the sign (amber hover underline). The header phone number is removed. No Call button remains; amber at rest is only the phone Call pill and the road centre lines."
       }
     ],
     "photoSlots": [
@@ -745,45 +736,41 @@
       {
         "name": "driver-portrait",
         "selector": ".ed-photo",
-        "value": "on the services sign; aspect-ratio 4/5; radius 8px; ground #0f3c6c; min(200px,60%) wide on phones, 100% of a 240px column from 760px",
-        "placeholder": "2px dashed rgba(244,247,242,.6); 56px person icon at .8 opacity; caption 16px/700 'Portrait of Ed'; 10px gap"
+        "value": "in Meet your driver on aluminum; aspect-ratio 4/5; radius 8px; ground #e2e8e3; min(200px,60%) wide on phones, 100% of a 260px column from 760px; margin 0 14px 14px 0",
+        "placeholder": "2px dashed rgba(14,42,51,.35); ink 56px person icon at .55 opacity; caption 16px/700 'Portrait of Ed'; 10px gap"
       }
     ],
     "photoSlotsNote": "Placeholders are temporary until Ed sends photos; swap each for the <img> in the HTML comment above it (object-fit: cover). The slot geometry is the system, the dashed placeholder is not.",
     "heroScene": {
       "sky": "linear-gradient(#0e2a33 0%, #173a52 55%, #2c4d6e 100%) on .hero; padding-top 30px (48px from 760px)",
       "sign": "green panel, 3px #f4f7f2 border, 16px radius, roadside-sign shadow; margin 0 34px, padding 24/18/28 on phones; max-width 880px centred, padding 40/44/44 from 760px",
-      "posts": "64px band (96px from 760px), 11px below the sign; glow linear-gradient(rgba(240,138,80,0), rgba(240,138,80,.28) 75%, rgba(246,182,56,.42)); two steel posts 10px wide (14px) at 30% and 70%, linear-gradient(90deg, #5d6a70, #aab4b6 45%, #6f7b80)",
-      "treeline": "#0c2a24 svg along the posts band's foot, 34px (52px from 760px)",
-      "ground": "svg 150px (200px from 760px): grass #173f2c, road #2c3539 trapezoid from 30-70% at the horizon to past both edges, edge lines #e8ece6 meeting the posts, amber #f6b638 centre dashes growing toward the viewer",
+      "posts": "64px band (96px from 760px), 11px below the sign, above the ground (z-index 2); glow linear-gradient(rgba(240,138,80,0), rgba(240,138,80,.28) 75%, rgba(246,182,56,.42)); two steel posts 10px wide (14px) at 30% and 70%, feet running 26px (34px) into the grass, linear-gradient(90deg, #5d6a70, #aab4b6 45%, #6f7b80)",
+      "treeline": "one continuous #0c2a24 svg along the posts band's foot, 34px (52px from 760px), lower toward the centre with a notch at the vanishing point",
+      "ground": "svg 150px (200px from 760px): grass #173f2c, road #2c3539 from a 2%-wide vanishing point at the horizon centre to past both edges, edge lines #e8ece6 converging on it, amber #f6b638 centre dashes growing toward the viewer",
       "seam": "overlaps the road foot: margin-top -44px (-64px from 760px)",
       "motion": "none; the scene is still"
+    },
+    "portraitOffsetBlock": {
+      "value": "box-shadow: 14px 14px 0 #0a6337 on .ed-photo, with margin 0 14px 14px 0",
+      "status": "Carried exception, not canonized: a hard offset block (no blur) is outside this world's vocabulary. Not elevation; do not reuse."
     }
   },
   "components": [
-    {
-      "name": "Call Button",
-      "kind": "button",
-      "refersTo": "button-call",
-      "description": "The amber call action: 'Call for a free quote' with the number on a second line.",
-      "html": "<div class=\"ds-ground\"><a class=\"ds-btn ds-btn-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg><span class=\"ds-two\">Call for a free quote<small>732-300-3835</small></span></a></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}.ds-two{display:flex;flex-direction:column;align-items:flex-start}.ds-two small{font-size:16px;font-weight:700;opacity:.85}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
-    },
     {
       "name": "Send a Text Button (ghost)",
       "kind": "button",
       "refersTo": "button-ghost",
       "description": "Outline partner to Call in the close; opens sms: with a pre-filled message. Hidden on fine-pointer devices.",
       "html": "<div class=\"ds-ground\"><a class=\"ds-btn ds-btn-ghost\" href=\"sms:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16v11H9l-5 4z\"/></svg>Send a text</a></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}.ds-two{display:flex;flex-direction:column;align-items:flex-start}.ds-two small{font-size:16px;font-weight:700;opacity:.85}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--night);padding:24px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
     },
     {
       "name": "Contact Pair",
       "kind": "custom",
-      "refersTo": "button-call",
-      "description": "Close cluster: Call then Send a text, never more than two.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-ctas\"><a class=\"ds-btn ds-btn-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg><span class=\"ds-two\">Call for a free quote<small>732-300-3835</small></span></a><a class=\"ds-btn ds-btn-ghost\" href=\"sms:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16v11H9l-5 4z\"/></svg>Send a text</a></div></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--night);padding:24px}.ds-ctas{display:grid;grid-template-columns:auto auto;justify-content:start;gap:10px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}.ds-two{display:flex;flex-direction:column;align-items:flex-start}.ds-two small{font-size:16px;font-weight:700;opacity:.85}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}"
+      "refersTo": "button-ghost",
+      "description": "Close cluster: the big tappable number (the close's call action), then Send a text on touch devices. Never more than two.",
+      "html": "<div class=\"ds-ground\"><p class=\"ds-num\"><a href=\"tel:+17323003835\">732-300-3835</a></p><div class=\"ds-ctas\"><a class=\"ds-btn ds-btn-ghost\" href=\"sms:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" d=\"M4 5h16v11H9l-5 4z\"/></svg>Send a text</a></div></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--night);padding:24px}.ds-ctas{display:grid;grid-template-columns:auto auto;justify-content:start;gap:10px}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}.ds-btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}@media (hover:hover){.ds-btn-ghost:hover{border-color:var(--focus);color:#fff}}.ds-num{margin:0}.ds-num a{font-size:clamp(30px,9vw,44px);font-weight:850;letter-spacing:-.01em;color:var(--on-dark);text-decoration:none;border-bottom:3px solid rgba(242,246,241,.4)}.ds-num a:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}@media (hover:hover){.ds-num a:hover{border-bottom-color:var(--focus)}}.ds-ctas{margin-top:22px}"
     },
     {
       "name": "Call Pill",
@@ -791,23 +778,23 @@
       "refersTo": "call-pill",
       "description": "Phones-only floating 'Call Ed' pill; shown between the hero and closing buttons. Per-site exception (Ellie, 2026-10-14).",
       "html": "<div class=\"ds-ground\"><a class=\"ds-pill\" href=\"tel:+17323003835\" aria-label=\"Call Ed for a free quote, 732-300-3835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>Call Ed</a></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);padding:32px;display:flex;justify-content:flex-end}.ds-pill{display:inline-flex;align-items:center;gap:8px;min-height:56px;padding:0 20px;border-radius:999px;background:var(--amber);color:var(--ink);font:850 18px/1 var(--font);text-decoration:none;box-shadow:0 8px 20px -6px rgba(5,20,25,.55);transition:opacity .25s,transform .25s}.ds-pill svg{width:20px;height:20px}.ds-pill:focus-visible{outline:3px solid var(--focus-deep);outline-offset:3px}@media (prefers-reduced-motion:reduce){.ds-pill{transition:none}}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);padding:32px;display:flex;justify-content:flex-end}.ds-pill{display:inline-flex;align-items:center;gap:8px;min-height:56px;padding:0 20px;border-radius:999px;background:var(--amber);color:var(--ink);font:850 18px/1 var(--font);text-decoration:none;box-shadow:0 8px 20px -6px rgba(5,20,25,.55);transition:opacity .25s,transform .25s}.ds-pill svg{width:20px;height:20px}.ds-pill:focus-visible{outline:3px solid var(--focus-deep);outline-offset:3px}@media (prefers-reduced-motion:reduce){.ds-pill{transition:none}}"
     },
     {
       "name": "Hero Guide Sign",
       "kind": "custom",
-      "refersTo": "hero-sign",
-      "description": "Still roadside scene at dusk: the green guide sign (white face border, green rim, drop shadow) on two steel posts above a road in perspective; wide amber Call, text link, owner line with the round face slot.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-face\"><h1 class=\"ds-h1\"><span>You fly.</span><span>I'll drive.</span></h1><p class=\"ds-promise\">I drive your car between New Jersey and Florida, door to door.</p><div class=\"ds-act\"><a class=\"ds-btn ds-btn-call ds-wide\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg><span class=\"ds-two\">Call for a free quote<small>732-300-3835</small></span></a><a class=\"ds-tl\" href=\"sms:+17323003835\">or send a text</a></div><p class=\"ds-owner\"><span class=\"ds-face-slot\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg></span>Owner &amp; driver: Ed Brannagan</p></div><div class=\"ds-posts\"><svg class=\"ds-trees\" viewBox=\"0 0 1000 50\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path fill=\"#0c2a24\" d=\"M0 50V30l18-6 14 4 10-14 12 10 20-8 16 12 14-16 10 4 16 6 20-10 12 12 18-4 14-14 12 8 22 4 14-12 18 10 16-4 12 6 14-18 12 14 20 2 16-8 14 8 10-6 6 8 22 18V50zM676 50l24-14 10-6 20-6 14 6 12-14 16 10 18-6 14 12 20-16 12 8 14 2 18-10 14 12 16-4 12-12 14 10 22 2 12-8 16 10 18-6 14 4 10-8 14 10V50z\"/></svg><i></i><i></i></div><svg class=\"ds-groundsvg\" viewBox=\"0 0 1000 150\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><rect width=\"1000\" height=\"150\" fill=\"#173f2c\"/><polygon points=\"300,0 700,0 1180,150 -180,150\" fill=\"#2c3539\"/><polygon points=\"303,0 309,0 -150,150 -172,150\" fill=\"#e8ece6\"/><polygon points=\"691,0 697,0 1172,150 1150,150\" fill=\"#e8ece6\"/><g fill=\"#f6b638\"><polygon points=\"499,4 501,4 501.6,12 498.4,12\"/><polygon points=\"497.8,24 502.2,24 503,40 497,40\"/><polygon points=\"496,58 504,58 505.5,84 494.5,84\"/><polygon points=\"493,106 507,106 509,150 491,150\"/></g></svg></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:linear-gradient(#0e2a33 0%,#173a52 55%,#2c4d6e 100%);color:var(--on-dark);padding-top:30px}.ds-face{position:relative;z-index:1;display:grid;gap:20px;margin:0 34px;padding:24px 18px 28px;background:var(--sign);border:3px solid #f4f7f2;border-radius:16px;box-shadow:0 0 0 10px var(--sign),0 0 0 11px var(--sign-deep),0 22px 40px -10px rgba(5,15,25,.6)}.ds-face>*{max-width:680px;margin:0}.ds-h1{font-size:clamp(3rem,14vw,5.2rem);font-weight:850;line-height:1;letter-spacing:-.02em;color:#f4f7f2}.ds-h1 span{display:block}.ds-promise{font-size:clamp(19px,5.2vw,22px);line-height:1.5;max-width:30ch}.ds-act{display:grid;gap:6px;margin-top:6px;justify-items:start}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font:800 18px/1.2 var(--font);text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;cursor:pointer}.ds-btn svg{width:22px;height:22px;flex:none}.ds-btn:active{transform:translateY(1px)}.ds-two{display:flex;flex-direction:column;align-items:flex-start}.ds-two small{font-size:16px;font-weight:700;opacity:.85}.ds-btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}@media (hover:hover){.ds-btn-call:hover{background:#ffc75a;border-color:var(--focus)}}.ds-wide{justify-content:flex-start;padding:0 22px;min-height:66px}.ds-tl{display:inline-flex;align-items:center;min-height:48px;padding:0 4px;font-size:18px;font-weight:700;color:var(--on-dark);text-underline-offset:5px;text-decoration-thickness:2px}@media (hover:hover){.ds-tl:hover{text-decoration-color:var(--amber)}}.ds-face a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-owner{font-size:17px;color:#f4f7f2;margin-top:6px;display:flex;align-items:center;gap:14px}.ds-face-slot{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(244,247,242,.6);background:var(--sign-deep);display:grid;place-items:center;overflow:hidden}.ds-face-slot svg{width:26px;height:26px;color:#f4f7f2}.ds-posts{position:relative;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}.ds-trees{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}.ds-posts i{position:absolute;top:0;bottom:0;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}.ds-posts i:first-of-type{left:30%}.ds-posts i:last-of-type{left:70%}.ds-groundsvg{display:block;width:100%;height:150px}@media (min-width:760px){.ds-ground{padding-top:48px}.ds-face{margin:0 auto;max-width:880px;padding:40px 44px 44px}.ds-h1{font-size:clamp(3rem,6vw,4.4rem)}.ds-posts{height:96px}.ds-trees{height:52px}.ds-posts i{width:14px;margin-left:-7px}.ds-groundsvg{height:200px}}"
+      "refersTo": "hero-call",
+      "description": "Still roadside scene at dusk: the green guide sign (white face border, green rim, drop shadow) on two steel posts above a road in perspective; the phone number lettered on the sign as the call, a text link, owner line with the round face slot.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-face\"><h1 class=\"ds-h1\"><span>You fly.</span><span>I'll drive.</span></h1><p class=\"ds-promise\">I drive your car between New Jersey and Florida, door to door.</p><div class=\"ds-act\"><a class=\"ds-hero-call\" href=\"tel:+17323003835\" aria-label=\"Call Ed for a free quote, 732-300-3835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>732-300-3835</a><a class=\"ds-tl\" href=\"sms:+17323003835\">or send a text</a></div><p class=\"ds-owner\"><span class=\"ds-face-slot\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg></span>Owner &amp; driver: Ed Brannagan</p></div><div class=\"ds-posts\"><svg class=\"ds-trees\" viewBox=\"0 0 1000 50\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path fill=\"#0c2a24\" d=\"M0 50L0 19.9L10 21.0L18 17.5L26 21.2L34 27.7L44 18.0L58 22.7L68 19.4L82 19.6L90 29.4L98 25.6L112 20.6L122 20.9L132 23.7L142 26.6L154 27.1L164 23.0L174 26.0L182 28.0L192 27.7L206 30.7L220 29.4L234 27.9L244 32.0L254 26.3L266 30.5L278 32.5L290 32.0L298 28.5L312 29.4L324 29.8L338 32.4L346 35.1L358 32.6L370 34.8L384 32.0L392 38.0L406 37.0L414 33.5L426 37.6L440 36.2L454 40.3L466 36.4L480 39.2L488 40.5L498 47L508 42.1L522 39.2L536 36.6L550 37.5L562 39.5L576 38.8L588 37.3L600 36.7L614 37.8L624 31.7L634 32.2L644 30.3L654 31.6L662 30.4L674 33.2L686 35.4L694 31.4L708 30.4L722 27.5L736 26.6L744 33.9L758 26.5L770 29.9L778 24.3L788 28.7L800 29.0L808 31.2L822 24.0L834 31.3L846 26.3L854 29.7L868 25.7L880 21.2L888 27.8L900 24.7L910 24.8L920 29.2L932 20.1L940 26.6L952 28.8L960 25.4L972 23.0L982 20.8L992 22.6L1000 22.6L1000 50Z\"/></svg><i></i><i></i></div><svg class=\"ds-groundsvg\" viewBox=\"0 0 1000 150\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><rect width=\"1000\" height=\"150\" fill=\"#173f2c\"/><polygon points=\"490,0 510,0 1180,150 -180,150\" fill=\"#2c3539\"/><polygon points=\"491,0 492.5,0 -150,150 -172,150\" fill=\"#e8ece6\"/><polygon points=\"507.5,0 509,0 1172,150 1150,150\" fill=\"#e8ece6\"/><g fill=\"#f6b638\"><polygon points=\"499.7,3 500.3,3 500.5,7 499.5,7\"/><polygon points=\"499,12 501,12 501.6,20 498.4,20\"/><polygon points=\"497.8,30 502.2,30 503,44 497,44\"/><polygon points=\"496,58 504,58 505.5,84 494.5,84\"/><polygon points=\"493,106 507,106 509,150 491,150\"/></g></svg></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:linear-gradient(#0e2a33 0%,#173a52 55%,#2c4d6e 100%);color:var(--on-dark);padding-top:30px}.ds-face{position:relative;z-index:1;display:grid;gap:20px;margin:0 34px;padding:24px 18px 28px;background:var(--sign);border:3px solid #f4f7f2;border-radius:16px;box-shadow:0 0 0 10px var(--sign),0 0 0 11px var(--sign-deep),0 22px 40px -10px rgba(5,15,25,.6)}.ds-face>*{max-width:680px;margin:0}.ds-h1{font-size:clamp(3rem,14vw,5.2rem);font-weight:850;line-height:1;letter-spacing:-.02em;color:#f4f7f2}.ds-h1 span{display:block}.ds-promise{font-size:clamp(19px,5.2vw,22px);line-height:1.5;max-width:30ch}.ds-act{display:grid;gap:6px;margin-top:6px;justify-items:start}.ds-hero-call{justify-self:start;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-size:clamp(26px,7.6vw,44px);font-weight:850;letter-spacing:-.01em;line-height:1.1;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}.ds-hero-call svg{width:30px;height:30px;flex:none}@media (hover:hover){.ds-hero-call:hover{border-color:var(--amber)}}.ds-tl{display:inline-flex;align-items:center;min-height:48px;padding:0 4px;font-size:18px;font-weight:700;color:var(--on-dark);text-underline-offset:5px;text-decoration-thickness:2px}@media (hover:hover){.ds-tl:hover{text-decoration-color:var(--amber)}}.ds-face a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-owner{font-size:17px;color:#f4f7f2;margin-top:6px;display:flex;align-items:center;gap:14px}.ds-face-slot{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(244,247,242,.6);background:var(--sign-deep);display:grid;place-items:center;overflow:hidden}.ds-face-slot svg{width:26px;height:26px;color:#f4f7f2}.ds-posts{position:relative;z-index:2;height:64px;margin-top:11px;background:linear-gradient(rgba(240,138,80,0) 0%,rgba(240,138,80,.28) 75%,rgba(246,182,56,.42) 100%)}.ds-trees{position:absolute;left:0;right:0;bottom:0;width:100%;height:34px}.ds-posts i{position:absolute;top:0;bottom:-26px;width:10px;margin-left:-5px;background:linear-gradient(90deg,#5d6a70,#aab4b6 45%,#6f7b80);z-index:1}.ds-posts i:first-of-type{left:30%}.ds-posts i:last-of-type{left:70%}.ds-groundsvg{display:block;width:100%;height:150px}@media (min-width:760px){.ds-ground{padding-top:48px}.ds-face{margin:0 auto;max-width:880px;padding:40px 44px 44px}.ds-h1{font-size:clamp(3rem,6vw,4.4rem)}.ds-posts{height:96px}.ds-trees{height:52px}.ds-posts i{width:14px;margin-left:-7px;bottom:-34px}.ds-groundsvg{height:200px}}"
     },
     {
-      "name": "Services Sign (Meet your driver)",
+      "name": "Meet Your Driver",
       "kind": "custom",
-      "refersTo": "services-sign",
-      "description": "Blue I-95 services sign on aluminum: portrait slot, uppercase headline, sign-white lede, Ed's cell with an amber hover underline.",
-      "html": "<div class=\"ds-ground\"><div class=\"ds-sign\"><div class=\"ds-sign-in\"><figure class=\"ds-photo\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Portrait of Ed</figcaption></figure><div><h2 class=\"ds-h2\">Meet your driver</h2><p class=\"ds-lede\">Hi, I'm Ed Brannagan. When you call, you get me on my cell, not a dispatcher.</p><a class=\"ds-ed-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>732-300-3835</a></div></div></div></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);padding:24px}.ds-sign{background:var(--svc);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--svc-deep)}.ds-sign-in{border:3px solid #f4f7f2;border-radius:11px;padding:24px 20px 26px;color:#f4f7f2;display:grid;gap:22px}.ds-photo{margin:0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(244,247,242,.6);border-radius:8px;background:var(--svc-deep);display:grid;place-content:center;justify-items:center;gap:10px;color:#f4f7f2;overflow:hidden}.ds-photo svg{width:56px;height:56px;opacity:.8}.ds-photo figcaption{font-size:16px;font-weight:700}.ds-h2{margin:0;font-size:clamp(2rem,8.4vw,3.4rem);font-weight:850;line-height:1.02;letter-spacing:-.015em;text-transform:uppercase}.ds-lede{margin:18px 0 0;font-size:clamp(18px,4.8vw,21px);line-height:1.5;max-width:38ch}.ds-ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}.ds-ed-call svg{width:30px;height:30px}.ds-ed-call:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}@media (hover:hover){.ds-ed-call:hover{border-color:var(--amber)}}@media (min-width:760px){.ds-sign-in{padding:40px 44px;grid-template-columns:240px 1fr;gap:40px;align-items:center}.ds-photo{width:100%}}"
+      "refersTo": "driver-call",
+      "description": "Plain on aluminum, no panel: portrait slot, ink headline and lede (max 52ch), Ed's cell in sign green with a sign-35 underline that turns deep shield blue on hover. The build's hard offset green block behind the portrait is shown as built but not canonized.",
+      "html": "<div class=\"ds-ground\"><div class=\"ds-ed\"><figure class=\"ds-photo\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Portrait of Ed</figcaption></figure><div><h2 class=\"ds-h2\">Meet your driver</h2><p class=\"ds-lede\">Hi, I'm Ed Brannagan. I own Shamrock Transportation and I'm the one behind the wheel. When you call, you get me on my cell, not a dispatcher.</p><a class=\"ds-ed-call\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>732-300-3835</a></div></div></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:28px 20px 56px}.ds-ed{display:grid;gap:30px}.ds-photo{margin:0 14px 14px 0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(14,42,51,.35);border-radius:8px;background:#e2e8e3;box-shadow:14px 14px 0 var(--sign);display:grid;place-content:center;justify-items:center;gap:10px;color:var(--ink);overflow:hidden}.ds-photo svg{width:56px;height:56px;opacity:.55}.ds-photo figcaption{font-size:16px;font-weight:700}.ds-h2{margin:0;font-size:clamp(2rem,8.4vw,3.4rem);font-weight:850;line-height:1.02;letter-spacing:-.015em;text-transform:uppercase}.ds-lede{margin:18px 0 0;font-size:clamp(18px,4.8vw,21px);line-height:1.5;max-width:52ch}.ds-ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:var(--sign);text-decoration:none;border-bottom:3px solid rgba(10,99,55,.35);padding-bottom:2px;min-height:48px}.ds-ed-call svg{width:30px;height:30px}.ds-ed-call:focus-visible{outline:3px solid var(--focus-deep);outline-offset:3px;border-radius:6px}@media (hover:hover){.ds-ed-call:hover{border-color:var(--focus-deep)}}@media (min-width:760px){.ds-ground{padding:48px 20px 72px}.ds-ed{grid-template-columns:260px 1fr;gap:64px;align-items:center}.ds-photo{width:100%}}"
     },
     {
       "name": "How It Works Steps",
@@ -815,7 +802,7 @@
       "refersTo": "step-disc",
       "description": "Three static numbered steps on sign-green discs.",
       "html": "<div class=\"ds-ground\"><ol class=\"ds-steps\"><li><h3>Call for a quote</h3><p>Tell me about the car, where it is, where it's going, and your dates. I charge $1 per mile, so I'll work out the exact price.</p></li><li><h3>Arrange pickup</h3><p>We agree on a pickup day and place. I come to your door.</p></li><li><h3>Receive your car</h3><p>I drive it myself, door to door.</p></li></ol></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font-size:18px;line-height:1.55}.ds-steps{list-style:none;margin:0;padding:0;display:grid;gap:22px;counter-reset:s}.ds-steps li{display:grid;grid-template-columns:48px 1fr;column-gap:14px;counter-increment:s}.ds-steps li::before{content:counter(s);grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sign);color:#f4f7f2;font-weight:850;font-size:20px}.ds-steps h3{font-size:20px;font-weight:750;line-height:1.35;margin:8px 0 4px}.ds-steps p{margin:0;max-width:46ch}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font-size:18px;line-height:1.55}.ds-steps{list-style:none;margin:0;padding:0;display:grid;gap:22px;counter-reset:s}.ds-steps li{display:grid;grid-template-columns:48px 1fr;column-gap:14px;counter-increment:s}.ds-steps li::before{content:counter(s);grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--sign);color:#f4f7f2;font-weight:850;font-size:20px}.ds-steps h3{font-size:20px;font-weight:750;line-height:1.35;margin:8px 0 4px}.ds-steps p{margin:0;max-width:46ch}"
     },
     {
       "name": "Lane-line Seam",
@@ -823,7 +810,7 @@
       "refersTo": "",
       "description": "Still wavy lane line at each change of ground (the hero road onto aluminum, aluminum onto the road band). Drawn once, never animated.",
       "html": "<div class=\"ds-ground\"><svg class=\"ds-seam\" viewBox=\"0 0 1200 64\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path class=\"ds-fill\" d=\"M0 41.8L100 43.5L200 34.9L300 25.7L400 26.6L500 36.6L600 43.2L700 38.6L800 28.9L900 25.1L1000 31.5L1100 40.9L1200 42.3L1200 64L0 64Z\"/><path class=\"ds-lane\" d=\"M0 41.8L100 43.5L200 34.9L300 25.7L400 26.6L500 36.6L600 43.2L700 38.6L800 28.9L900 25.1L1000 31.5L1100 40.9L1200 42.3\"/></svg><div class=\"ds-next\"></div></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:#2c3539;padding-top:40px}.ds-seam{display:block;width:100%;height:44px;margin-bottom:-1px}.ds-fill{fill:var(--paper)}.ds-lane{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}.ds-next{background:var(--paper);height:40px}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:#2c3539;padding-top:40px}.ds-seam{display:block;width:100%;height:44px;margin-bottom:-1px}.ds-fill{fill:var(--paper)}.ds-lane{fill:none;stroke:var(--amber);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}.ds-next{background:var(--paper);height:40px}"
     },
     {
       "name": "What I Do List",
@@ -831,7 +818,7 @@
       "refersTo": "",
       "description": "Title-weight lines between dotted guardrails, led by sign-green squares.",
       "html": "<div class=\"ds-ground\"><ul class=\"ds-services\"><li>New Jersey to Florida, and back</li><li>Local &amp; long distance</li><li>Airport services anywhere in Florida</li><li>Door to door</li></ul></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px}.ds-services{list-style:none;margin:0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.35}.ds-services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}.ds-services li:first-child{border-top:2px dotted #b9c8be}.ds-services li::before{content:\"\";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px}.ds-services{list-style:none;margin:0;padding:0;font-size:clamp(21px,5.6vw,26px);font-weight:750;line-height:1.35}.ds-services li{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:2px dotted #b9c8be}.ds-services li:first-child{border-top:2px dotted #b9c8be}.ds-services li::before{content:\"\";flex:none;width:12px;height:12px;border-radius:3px;background:var(--sign);transform:translateY(-2px)}"
     },
     {
       "name": "Questions",
@@ -839,34 +826,34 @@
       "refersTo": "qa-pair",
       "description": "Always-open question pairs between solid guardrails, block capped at 760px; cost first.",
       "html": "<div class=\"ds-ground\"><div class=\"ds-qa\"><h3>What does it cost?</h3><p>$1 per mile. Call me with where the car is and where it's going, and I'll work out the miles and give you the exact price.</p><h3>Can I pack the car?</h3><p>Yes. Tell me what's going in when you call and I'll tell you what fits.</p></div></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font-size:18px;line-height:1.55}.ds-qa{border-top:2px solid #c8d4cb;max-width:760px}.ds-qa h3{font-size:20px;font-weight:750;line-height:1.35;letter-spacing:0;margin:20px 0 8px}.ds-qa p{margin:0;padding-bottom:20px;border-bottom:2px solid #c8d4cb}"
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-ground{background:var(--paper);color:var(--ink);padding:24px;font-size:18px;line-height:1.55}.ds-qa{border-top:2px solid #c8d4cb;max-width:760px}.ds-qa h3{font-size:20px;font-weight:750;line-height:1.35;letter-spacing:0;margin:20px 0 8px}.ds-qa p{margin:0;padding-bottom:20px;border-bottom:2px solid #c8d4cb}"
     },
     {
       "name": "Header (desktop)",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "On night: brand lockup link (leaf-green clover + wordmark), three section links and the phone number with amber hover underlines and sign-white focus; on phones only the lockup shows. Not sticky.",
-      "html": "<header class=\"ds-bar\"><a class=\"ds-brand\" href=\"#top\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><g fill=\"currentColor\"><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(118 32 32)\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(-118 32 32)\"/></g><path d=\"M33 34c2 9 6 16 13 23\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg><b>Shamrock Transportation</b></a><nav class=\"ds-nav\"><a href=\"#driver\">Meet your driver</a><a href=\"#how\">How it works</a><a href=\"#questions\">Questions</a></nav><a class=\"ds-phone\" href=\"tel:+17323003835\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z\"/></svg>732-300-3835</a></header>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;background:var(--night);color:var(--on-dark)}.ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin-right:auto;border-radius:8px}.ds-brand svg{width:34px;height:34px;flex:none;color:var(--leaf)}.ds-brand b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-nav{display:flex;gap:22px}.ds-nav a,.ds-phone{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}.ds-phone{gap:8px;font-weight:850;font-size:20px}.ds-phone svg{width:20px;height:20px}@media (hover:hover){.ds-nav a:hover,.ds-phone:hover{border-bottom-color:var(--amber)}}.ds-bar a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-brand:focus-visible{border-radius:8px}"
+      "description": "On night: brand lockup link (leaf-green clover + wordmark) and three section links with shield-blue hover underlines and sign-white focus; no phone number. On phones only the lockup shows. Not sticky.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-brand\" href=\"#top\"><svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><g fill=\"currentColor\"><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(118 32 32)\"/><path d=\"M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z\" transform=\"rotate(-118 32 32)\"/></g><path d=\"M33 34c2 9 6 16 13 23\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"/></svg><b>Shamrock Transportation</b></a><nav class=\"ds-nav\"><a href=\"#driver\">Meet your driver</a><a href=\"#how\">How it works</a><a href=\"#questions\">Questions</a></nav></header>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;background:var(--night);color:var(--on-dark)}.ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;margin-right:auto;border-radius:8px}.ds-brand svg{width:34px;height:34px;flex:none;color:var(--leaf)}.ds-brand b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}.ds-nav{display:flex;gap:22px}.ds-nav a{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}@media (hover:hover){.ds-nav a:hover{border-bottom-color:var(--focus)}}.ds-bar a:focus-visible{outline:3px solid #f4f7f2;outline-offset:3px;border-radius:6px}.ds-brand:focus-visible{border-radius:8px}"
     },
     {
       "name": "Photo Slots",
       "kind": "custom",
       "refersTo": "photo-slot-wide",
-      "description": "Ed's three photo slots shown with their temporary dashed placeholders: desktop hero wide (4:3, 12px), phone owner face (56px circle), driver-sign portrait (4:5, 8px). Swap each for an <img> with object-fit: cover.",
-      "html": "<div class=\"ds-row\"><div class=\"ds-g ds-g-sign\"><figure class=\"ds-wide-slot\" aria-hidden=\"true\"><svg class=\"ds-i72\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Photo of Ed with a car</figcaption></figure><span class=\"ds-face-slot\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg></span></div><div class=\"ds-g ds-g-svc\"><figure class=\"ds-portrait\" aria-hidden=\"true\"><svg class=\"ds-i56\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Portrait of Ed</figcaption></figure></div></div>",
-      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--svc:#17508f;--svc-deep:#0f3c6c;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-row{display:flex;gap:16px;flex-wrap:wrap}.ds-g{padding:20px;border-radius:12px;display:flex;gap:20px;align-items:center}.ds-g-sign{background:var(--sign)}.ds-g-svc{background:var(--svc)}figure{margin:0}.ds-wide-slot,.ds-portrait{display:grid;place-content:center;justify-items:center;border:2px dashed rgba(244,247,242,.6);color:#f4f7f2;overflow:hidden}.ds-wide-slot{width:280px;aspect-ratio:4/3;border-radius:12px;background:var(--sign-deep);gap:12px}.ds-portrait{width:160px;aspect-ratio:4/5;border-radius:8px;background:var(--svc-deep);gap:10px}.ds-i72{width:72px;height:72px;opacity:.8}.ds-i56{width:56px;height:56px;opacity:.8}figcaption{font-size:16px;font-weight:700}.ds-face-slot{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(244,247,242,.6);background:var(--sign-deep);display:grid;place-items:center;color:#f4f7f2}.ds-face-slot svg{width:26px;height:26px}"
+      "description": "Ed's three photo slots with their temporary dashed placeholders: desktop hero wide (4:3, 12px, sign-deep), phone owner face (56px circle, sign-deep), Meet your driver portrait (4:5, 8px, paper-deep on aluminum). Swap each for an <img> with object-fit: cover.",
+      "html": "<div class=\"ds-row\"><div class=\"ds-g ds-g-sign\"><figure class=\"ds-wide-slot\" aria-hidden=\"true\"><svg class=\"ds-i72\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Photo of Ed with a car</figcaption></figure><span class=\"ds-face-slot\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg></span></div><div class=\"ds-g ds-g-paper\"><figure class=\"ds-portrait\" aria-hidden=\"true\"><svg class=\"ds-i56\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\" fill=\"currentColor\"/><path d=\"M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z\" fill=\"currentColor\"/></svg><figcaption>Portrait of Ed</figcaption></figure></div></div>",
+      "css": ":host{--night:#0e2a33;--night-2:#12343f;--sign:#0a6337;--sign-deep:#084d2b;--leaf:#3dbb6c;--amber:#f6b638;--focus:#3d9bff;--focus-deep:#1a5fb4;--paper:#eef2ee;--ink:#0e2a33;--on-dark:#f2f6f1;--on-dark-soft:#b9cdc7;--font:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;font-family:var(--font)}.ds-row{display:flex;gap:16px;flex-wrap:wrap}.ds-g{padding:20px;border-radius:12px;display:flex;gap:20px;align-items:center}.ds-g-sign{background:var(--sign)}.ds-g-paper{background:var(--paper)}figure{margin:0}.ds-wide-slot,.ds-portrait{display:grid;place-content:center;justify-items:center;border:2px dashed rgba(244,247,242,.6);color:#f4f7f2;overflow:hidden}.ds-portrait{border-color:rgba(14,42,51,.35);color:var(--ink)}.ds-wide-slot{width:280px;aspect-ratio:4/3;border-radius:12px;background:var(--sign-deep);gap:12px}.ds-portrait{width:160px;aspect-ratio:4/5;border-radius:8px;background:#e2e8e3;gap:10px}.ds-i72{width:72px;height:72px;opacity:.8}.ds-i56{width:56px;height:56px;opacity:.55}figcaption{font-size:16px;font-weight:700}.ds-face-slot{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(244,247,242,.6);background:var(--sign-deep);display:grid;place-items:center;color:#f4f7f2}.ds-face-slot svg{width:26px;height:26px}"
     }
   ],
   "narrative": {
     "northStar": "The Night Drive Down I-95",
-    "overview": "**Creative North Star: \"The Night Drive Down I-95\"**\n\nThe whole page is one drive down I-95. It opens at the roadside at dusk: a green interstate guide sign stands on two steel posts above the road, under a sky fading up from night blue, and interstate green is also shamrock green, so the mark and the road share one colour. The driver gets his own sign in the blue of an I-95 services sign, so the two signs never repeat. The light \"sign-back aluminum\" run reads like the back of a road sign: cool, matte, plain. The close is the highway after dark: blue-green, never black, with the car driving it. Headlight amber is the only warm light on the page. At rest it belongs to calling and to the road's centre line, and nothing else in the interface; the dusk glow on the hero's horizon is scenery.\n\nThe page is calm and plainly structured. Its readers are mostly 40 to 70, on a phone, often inside Facebook's in-app browser. After a UX research brief for that audience, Ellie kept the I-95 world and adopted a plainer structure. On 2026-10-15 she asked for more colour, which turned the driver sign blue and put the hero on a green guide sign, which now stands in a still roadside scene at dusk. The hero sign holds a large sign-white headline, a one-line promise, one wide Call button with the number written under \"Call for a free quote\", a plain \"or send a text\" link, and the owner's name beside a slot for his photo. Then come the blue meet-the-driver sign, three numbered steps, plain questions including cost, and a close that opens on the road band with the car driving it, then a big phone number. On phones a small Call pill is never far away. The car is the one moving thing on the page. The road is scenery to watch, not a toy: it takes no touch, the page scrolls straight over it, and nothing on the page asks to be tapped open. Body text is 18px, buttons are 58px tall (the hero Call is 66px), every word is visible on arrival, and nothing depends on hover.\n\nThe world rejects the trucking-company template: no fleet photos, no quote forms, no badges. Type is the system font stack set heavy (700–850), which is Ellie's pitch-site house style. Section headlines are uppercase; the hero headline is mixed case.",
+    "overview": "**Creative North Star: \"The Night Drive Down I-95\"**\n\nThe whole page is one drive down I-95. It opens at the roadside at dusk: a green interstate guide sign stands on two steel posts above the road, under a sky fading up from night blue, and interstate green is also shamrock green, so the mark and the road share one colour. The sign appears once. Ed introduces himself plainly on aluminum, with his cell number in sign green. The light \"sign-back aluminum\" run reads like the back of a road sign: cool, matte, plain. The close is the highway after dark: blue-green, never black, with the car driving it. Headlight amber is the only warm light on the page. At rest it belongs to calling and to the road's centre line, and nothing else in the interface; the dusk glow on the hero's horizon is scenery.\n\nThe page is calm and plainly structured. Its readers are mostly 40 to 70, on a phone, often inside Facebook's in-app browser. After a UX research brief for that audience, Ellie kept the I-95 world and adopted a plainer structure. On 2026-10-15 she asked for more colour, which put the hero on a green guide sign that now stands in a still roadside scene at dusk. A blue services sign for the driver, tried the same day, was dropped: \"the blue goes with nothing and the repeated signs feel ugly\". Later that day she replaced the amber hero Call button, \"obnoxiously bright\", with the clickable number itself, and removed the number from the header. The hero sign holds a large sign-white headline, a one-line promise, the phone number lettered on the sign as the call itself, a plain \"or send a text\" link, and the owner's name beside a slot for his photo. Then come a plain meet-the-driver block, three numbered steps, plain questions including cost, and a close that opens on the road band with the car driving it, then a big phone number. On phones a small Call pill is never far away. The car is the one moving thing on the page. The road is scenery to watch, not a toy: it takes no touch, the page scrolls straight over it, and nothing on the page asks to be tapped open. Body text is 18px, every call and text control is at least 48px tall (the Send a text button 58px), every word is visible on arrival, and nothing depends on hover.\n\nThe world rejects the trucking-company template: no fleet photos, no quote forms, no badges. Type is the system font stack set heavy (700–850), which is Ellie's pitch-site house style. Section headlines are uppercase; the hero headline is mixed case.",
     "keyCharacteristics": [
-      "Two interstate signs carry the colour: the hero is a green guide sign on two posts above a road at dusk, and Meet your driver is a blue services sign. The header sits on night above the scene; then come one long cool-aluminum run and a blue-green night close. No pure black anywhere as a surface.",
-      "Every sign face is drawn the same way: a 3px sign-white inset border on a full field of colour, rounded.",
-      "One warm colour, amber, reserved at rest for calling and for the centre line.",
-      "Shield blue appears only when something is hovered or focused; services-sign blue is only ever a ground.",
-      "Three photo slots wait for Ed: a wide photo in the desktop hero, a round face beside the owner line on phones, a portrait on the driver sign.",
+      "One interstate sign carries the colour: the hero is a green guide sign on two posts above a road at dusk. The header sits on night above the scene; then come one long cool-aluminum run (Meet your driver included) and a blue-green night close. No pure black anywhere as a surface.",
+      "One sign, once: the green guide sign with its 3px sign-white face border is the hero, and nothing else on the page is a sign panel.",
+      "One warm colour, amber, reserved at rest for the phone Call pill and the road centre lines. There is no Call button: wherever the page asks for a call, the number itself is the link.",
+      "Shield blue appears only when something is hovered or focused.",
+      "Three photo slots wait for Ed: a wide photo in the desktop hero, a round face beside the owner line on phones, a portrait beside Ed's introduction.",
       "Only the car in the close moves. The hero's roadside scene, seams, sections and text are still.",
       "Everything is visible: no accordions, no tabs, no tap-to-reveal.",
       "The phone number is always written out, and on phones a small Call pill is never far away.",
@@ -875,17 +862,17 @@
     "rules": [
       {
         "name": "The One Headlight Rule",
-        "body": "At rest, amber is used only for calling (the Call buttons and the Call pill) and the road centre line (the canvas centre dash, the centre dashes of the hero road, and the lane line on the seams). Its one other interface job is a response: the hero text link and the driver-sign number take an amber hover underline, because they sit on the signs, where shield blue would sink into the green and the services blue. Links on night, the header included, hover in shield blue. Don't use amber at rest for links, borders, icons, headings, or a non-call button. Outside the interface amber appears only as scenery: the warm end of the dusk glow behind the hero's posts, and the cargo in the two car drawings, which is what \"packed\" looks like at that size.",
+        "body": "At rest, amber is used only for the phone Call pill and the road centre lines (the canvas centre dash, the centre dashes of the hero road, and the lane line on the seams). Its one other interface job is a response: the hero number and the hero text link take an amber hover underline, because they sit on the green sign, where shield blue would sink. Every other link hovers in shield blue (deep shield blue on aluminum). Don't use amber at rest for buttons, links, borders, icons or headings. Outside the interface amber appears only as scenery: the warm end of the dusk glow behind the hero's posts, and the cargo in the two car drawings, which is what \"packed\" looks like at that size.",
         "section": "colors"
       },
       {
         "name": "The Shield Blue Only Responds Rule",
-        "body": "The page has two blues with opposite jobs. Interstate-shield blue (focus, focus-deep) appears only as a response to the pointer or keyboard: hover borders on the Call and Text buttons, hover underlines on night, focus outlines on night and aluminum. It is never at rest. Services-sign blue (svc, svc-deep) is a ground: the Meet your driver sign and its portrait slot, always at rest, never a hover, focus, link or button colour. Don't let one stand in for the other.",
+        "body": "Interstate-shield blue appears only as a response to the pointer or keyboard: hover borders and underlines, focus outlines (shield blue on night, deep shield blue on aluminum). It is never at rest: never a ground, a fill, or a link colour.",
         "section": "colors"
       },
       {
         "name": "The Never Black Rule",
-        "body": "Dark grounds are blue-green night (night, night-2), guide green or services blue, never #000. Black appears only as low-alpha shadow under the driver sign and inside the canvas; the hero sign's shadow is night-tinted.",
+        "body": "Dark grounds are blue-green night (night, night-2), or guide green, never #000. Black appears only inside the canvas; the hero sign's and the Call pill's shadows are night-tinted.",
         "section": "colors"
       },
       {
@@ -895,17 +882,17 @@
       },
       {
         "name": "The Number Is Written Out Rule",
-        "body": "Wherever the page asks someone to call, the number 732-300-3835 is visible in text: the header (desktop), the second line of every Call button, the driver sign, the close, and the footer. The Call pill is the one place it lives only in the accessible label, because the pill must stay small.",
+        "body": "Wherever the page asks someone to call, the number 732-300-3835 is visible in text and is itself the tap-to-call link: on the hero sign, in Meet your driver, in the close, and in the footer. It is not in the header and not inside a button. The Call pill is the one place it lives only in the accessible label, because the pill must stay small.",
         "section": "typography"
       },
       {
         "name": "The Two Buttons Max Rule",
-        "body": "A contact group holds at most two controls: Call (amber, stacked \"Call for a free quote\" over the number), then text. The hero pairs the wide Call with a plain \"or send a text\" link; the close pairs Call with a Send a text outline button. Don't add a third channel or a duplicate to a group.",
+        "body": "A contact group holds at most two controls: the phone number as a link first, then, on touch devices only, a way to text. The hero pairs the number lettered on the sign with a plain \"or send a text\" link; the close pairs the big number with a Send a text outline button. Text controls are hidden on mouse devices, where `sms:` does nothing. Don't add a third channel, a duplicate, or a Call button to a group.",
         "section": "layout"
       },
       {
         "name": "The No Sticky Bar, One Small Pill Rule",
-        "body": "No full-width sticky or fixed bars or banners, ever. A single small labeled Call pill is allowed on phones only: amber, fully rounded, \"Call Ed\", pinned 16px from the bottom-right corner (plus the safe-area inset). It shows only after the hero call group has scrolled away and hides while the closing buttons are on screen, so it never doubles a visible Call. This is a deliberate per-site exception Ellie made on 2026-10-14 for this 40–70 audience; it does not carry to other sites.",
+        "body": "No full-width sticky or fixed bars or banners, ever. A single small labeled Call pill is allowed on phones only: amber, fully rounded, \"Call Ed\", pinned 16px from the bottom-right corner (plus the safe-area inset). It shows only after the hero call group has scrolled away and hides while the close number is on screen, so it never doubles a visible call. This is a deliberate per-site exception Ellie made on 2026-10-14 for this 40–70 audience; it does not carry to other sites.",
         "section": "layout"
       },
       {
@@ -914,8 +901,8 @@
         "section": "layout"
       },
       {
-        "name": "The Only Signs And The Pill Stand Up Rule",
-        "body": "Only sign panels and the floating Call pill get elevation. Buttons, links, step discs, lists, question pairs and sections stay flat.",
+        "name": "The Sign And The Pill Stand Up Rule",
+        "body": "Only the hero sign and the floating Call pill get elevation. Buttons, links, step discs, lists, question pairs, photo slots and sections stay flat.",
         "section": "elevation"
       },
       {
@@ -925,13 +912,13 @@
       }
     ],
     "dos": [
-      "**Do** sign the page like I-95: the hero as a green guide sign on two posts above the road, with a 3px sign-white face border at 16px and a 10px green rim outside it, and the driver on a blue services sign (16/11px concentric radii, Sign Lift with a services-edge lip).",
-      "**Do** keep amber at rest for calling and the centre line; the hero text link and driver-sign number take an amber hover underline (they sit on the green and blue signs); links on night hover in shield blue. Text on amber is always ink.",
-      "**Do** write the phone number out wherever the page asks for a call, and put it on the second line of every Call button.",
-      "**Do** show shield blue only on hover (gated behind `(hover:hover)`) and focus. Use deep shield blue on aluminum and sign-white focus on both signs.",
+      "**Do** sign the page like I-95, once: the hero as a green guide sign on two posts above the road, with a 3px sign-white face border at 16px and a 10px green rim outside it.",
+      "**Do** keep amber at rest for calling and the centre line; the hero text link, on the green sign, takes an amber hover underline, and every other link hovers in shield blue. Text on amber is always ink.",
+      "**Do** write the phone number out wherever the page asks for a call, and make the number itself the link.",
+      "**Do** show shield blue only on hover (gated behind `(hover:hover)`) and focus. Use deep shield blue on aluminum and sign-white focus in the header and the hero.",
       "**Do** keep each photo slot's shape when Ed's photo lands: 4:3 at 12px for the wide hero photo, a 56px circle for the face, 4:5 at 8px for the portrait, image set to cover.",
       "**Do** stitch every change of ground with a still seam whose fill is the next ground's colour.",
-      "**Do** keep reading text at 18px or larger and buttons at 58px tall or more (the Call pill at 56px).",
+      "**Do** keep reading text at 18px or larger, tap targets at 48px or more, the Send a text button at 58px and the Call pill at 56px.",
       "**Do** show every answer and every step in full, on arrival.",
       "**Do** keep the car the only moving thing: run it on the shared loop, pause it off screen, and draw a still frame under `prefers-reduced-motion`.",
       "**Do** write icons as inline SVG symbols that inherit `currentColor`."
@@ -941,13 +928,13 @@
       "**Don't** make the road band interactive or capture touch on it. It is scenery; the page must scroll over it.",
       "**Don't** hide text behind a tap: no accordions, tabs, carousels or \"read more\".",
       "**Don't** add a full-width sticky or fixed bar or banner, ever. The one allowed floating element is the small labeled Call pill on phones.",
-      "**Don't** put more than two contact controls in a group, or use amber at rest for anything that isn't calling.",
-      "**Don't** use shield blue at rest as a link colour, accent, or fill, and don't use services blue for anything but the driver sign's ground.",
-      "**Don't** give both signs the same colour, or animate anything in the hero scene: the sign, posts, treeline and road are a still drawing.",
+      "**Don't** put more than two contact controls in a group, bring back an amber Call button, or use amber at rest for anything but the Call pill and the centre lines.",
+      "**Don't** use shield blue at rest as a link colour, accent, fill or ground.",
+      "**Don't** add a second sign panel (a blue driver sign was tried and dropped), or animate anything in the hero scene: the sign, posts, treeline and road are a still drawing.",
       "**Don't** hand the site over with a dashed placeholder still in a photo slot.",
       "**Don't** use #000 or near-black as a ground. Night is blue-green.",
       "**Don't** put a tracked uppercase label above a headline. The page has no tracked uppercase text.",
-      "**Don't** add shadows to buttons, links, step discs, lists, question pairs or sections. Only signs and the Call pill stand up.",
+      "**Don't** add shadows to buttons, links, step discs, lists, question pairs or sections. Only the hero sign and the Call pill stand up, and don't spread hard offset blocks like the one behind the portrait to other elements.",
       "**Don't** use stock fleet photos, quote forms, or trust badges."
     ]
   }
