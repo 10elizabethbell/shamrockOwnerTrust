@@ -25,7 +25,7 @@
   - "Send a text" opens a text that's already filled in: "Hi Ed, I'd like my car driven from ___ to ___ around ___." Hidden on computers, where `sms:` links do nothing.
 - **Page details:**
   - About 33 KB, single file, no photos.
-  - Favicon and iPhone home-screen icon: a white clover on sign green.
+  - Logo (Ellie's pick, OK'd here 2026-10-15): the engraved line shamrock shared by all Shamrock sites, copied byte for byte from `shamrockElegant/brand/`. The header uses `shamrock-small-ivory.svg` inlined, with only its `color` changed to leaf green `#3dbb6c`. `favicon.svg` and `apple-touch-icon.png` are exact copies (ivory line on deep green `#0f4434`). Don't redraw, thicken or frame it; see that folder's README.
   - Link-preview image: `og.png` (1200x630), regenerated for the new hero.
 ## Assumptions I made
 - **Packing the car ("Driven, not trucked") is a selling point.** The brief made it the #1 differentiator. It's inferred from how driveaway works, not from Ed. **Confirm he's fine with packed cars and whether there are weight or contents limits.**
@@ -34,7 +34,7 @@
 - **The airport line is the card's verbatim wording ("Airport services anywhere in Florida").** I left what that means vague on purpose (meeting the customer with their car? passenger rides?).
 - **The Questions answer about when a truck carrier is better** comes from the competitor pattern the brief pointed to (drivecartoflorida.com), written in Ed's voice.
 - **Colors:** I didn't have the card photo, so I used sign green `#0a6337` and leaf green `#3dbb6c` for the clover. Sample the real green from the card once it's cleared.
-- **The clover mark is my own drawing**, not the card's emblem. The brief says to check with Ellie before using a card scan publicly.
+- **The shamrock is the shared engraved-line logo Ellie chose**, not the card's emblem. The brief says to check with Ellie before using a card scan publicly.
 - **I picked the look myself, from 6 options I listed.** The run was unattended, so there was no Impeccable decision page and no comparison against other directions.
 
 ## Placeholders and gaps
