@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shamrock Transportation · You fly, I'll drive</title>
 <meta name="description" content="Ed Brannagan drives your car between New Jersey and Florida, door to door, so you can fly and still have your own car down there. Call 732-300-3835.">
-<meta name="theme-color" content="#0e2a33">
+<meta name="theme-color" content="#0a6337">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shamrock Transportation · You fly, I'll drive">
 <meta property="og:description" content="I drive your own car between New Jersey and Florida, door to door. Call Ed: 732-300-3835.">
@@ -23,6 +23,8 @@
   --night-2:#12343f;
   --sign:#0a6337;         /* interstate guide-sign green = shamrock green */
   --sign-deep:#084d2b;
+  --svc:#17508f;          /* blue I-95 services sign, for Meet your driver */
+  --svc-deep:#0f3c6c;
   --leaf:#3dbb6c;         /* the shamrock itself */
   --amber:#f6b638;        /* headlights, center line, primary button */
   --focus:#3d9bff;        /* one accent for hover/focus outlines (interstate-shield blue) */
@@ -46,33 +48,34 @@ p{margin:0}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
 .light :focus-visible{outline-color:var(--focus-deep)}
-.ed :focus-visible{outline-color:#f4f7f2}
+.ed :focus-visible,.bar :focus-visible,.hero :focus-visible{outline-color:#f4f7f2}
 
 /* ---------- Top bar ---------- */
-.bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto}
+.bar{display:flex;align-items:center;gap:24px;padding:14px 20px 4px;max-width:1120px;margin:0 auto;background:var(--sign);box-shadow:0 0 0 100vmax var(--sign);clip-path:inset(0 -100vmax)}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;border-radius:8px}
-.brand svg{width:34px;height:34px;flex:none}
+.brand svg{width:34px;height:34px;flex:none;color:#f4f7f2}
 .nav{gap:22px}
 .nav a,.bar-phone{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
 .bar-phone{gap:8px;font-weight:850;font-size:20px}
 .bar-phone svg{width:20px;height:20px}
-@media (hover:hover){.nav a:hover,.bar-phone:hover{border-bottom-color:var(--focus)}}
+@media (hover:hover){.nav a:hover,.bar-phone:hover{border-bottom-color:var(--amber)}}
 .nav,.bar-phone{display:none}
 .bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;padding-top:34px}
-.hero-copy{display:grid;gap:20px;padding-bottom:28px}
+/* The hero is an I-95 guide sign: shamrock green with a white inset border */
+.hero{position:relative;padding-top:18px;background:var(--sign)}
+.hero-copy{display:grid;gap:20px;width:auto;margin:0 10px;padding:26px 20px 32px;border:3px solid #f4f7f2;border-radius:16px}
 .hero-copy > *{max-width:680px}
 .hero h1{font-size:clamp(3rem,14vw,5.2rem);color:#f4f7f2;letter-spacing:-.02em;line-height:1}
 .hero h1 span{display:block}
 .hero-act{display:grid;gap:6px;margin-top:6px}
 .btn-wide{justify-content:flex-start;padding:0 22px;min-height:66px}
 .text-link{justify-self:start;display:inline-flex;align-items:center;min-height:48px;padding:0 4px;font-size:18px;font-weight:700;color:var(--on-dark);text-underline-offset:5px;text-decoration-thickness:2px}
-@media (hover:hover){.text-link:hover{text-decoration-color:var(--focus)}}
-.owner{font-size:17px;color:var(--on-dark-soft);margin-top:6px;display:flex;align-items:center;gap:14px}
-.owner-face{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(185,205,199,.6);background:var(--night-2);display:grid;place-items:center;overflow:hidden}
-.owner-face svg{width:26px;height:26px;color:var(--on-dark-soft)}
+@media (hover:hover){.text-link:hover{text-decoration-color:var(--amber)}}
+.owner{font-size:17px;color:#f4f7f2;margin-top:6px;display:flex;align-items:center;gap:14px}
+.owner-face{flex:none;width:56px;height:56px;border-radius:50%;border:2px dashed rgba(244,247,242,.6);background:var(--sign-deep);display:grid;place-items:center;overflow:hidden}
+.owner-face svg{width:26px;height:26px;color:#f4f7f2}
 .owner-face img{width:100%;height:100%;object-fit:cover}
 .hero-photo{display:none}
 .sign{background:var(--sign);border-radius:16px;padding:7px;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--sign-deep)}
@@ -95,7 +98,7 @@ p{margin:0}
 
 /* ---------- Seams: a lane line along the top of the next section ---------- */
 .seam{position:relative;z-index:1;pointer-events:none;display:block;width:100%;height:44px;margin-bottom:-1px}
-.hero .seam{margin-top:0}
+.hero .seam{margin-top:18px}
 .seam path.fill{fill:var(--next)}
 .seam path.lane{fill:none;stroke:var(--lane);stroke-width:3;stroke-dasharray:26 22;stroke-linecap:round}
 
@@ -111,14 +114,15 @@ section.pad{padding:44px 0 64px}
 
 /* Ed: the sign-shaped trust block */
 .ed{background:var(--paper);padding:8px 0 64px}
+.ed .sign{background:var(--svc);box-shadow:0 14px 30px -12px rgba(0,0,0,.55),0 2px 0 var(--svc-deep)}
 .ed .sign-in{padding:24px 20px 26px}
 .ed h2{color:#f4f7f2}
 .ed .lede{color:#f4f7f2}
 .ed-call{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:clamp(26px,8vw,40px);font-weight:850;letter-spacing:-.01em;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
-@media (hover:hover){.ed-call:hover{border-color:var(--focus)}}
+@media (hover:hover){.ed-call:hover{border-color:var(--amber)}}
 .ed-call svg{width:30px;height:30px}
 .ed-in{display:grid;gap:22px}
-.ed-photo{margin:0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(244,247,242,.6);border-radius:8px;background:var(--sign-deep);display:grid;place-content:center;justify-items:center;gap:10px;color:#f4f7f2;overflow:hidden}
+.ed-photo{margin:0;width:min(200px,60%);aspect-ratio:4/5;border:2px dashed rgba(244,247,242,.6);border-radius:8px;background:var(--svc-deep);display:grid;place-content:center;justify-items:center;gap:10px;color:#f4f7f2;overflow:hidden}
 .ed-photo svg{width:56px;height:56px;opacity:.8}
 .ed-photo figcaption{font-size:16px;font-weight:700}
 .ed-photo img{width:100%;height:100%;object-fit:cover}
@@ -170,8 +174,8 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
 
 /* ---------- Wider screens ---------- */
 @media (min-width:760px){
-  .hero{padding-top:56px}
-  .hero-copy{padding-bottom:44px}
+  .hero{padding-top:24px}
+  .hero-copy{margin:0 auto;max-width:1120px;padding:48px 48px 52px}
   .hero-act{justify-items:start}
   .ctas{align-self:start;grid-template-columns:auto auto;justify-content:start}
   .nav{display:flex}.bar-phone{display:inline-flex}
@@ -192,7 +196,7 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
 @media (min-width:960px){
   .hero-copy{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;align-items:center}
   .hero-copy > *{grid-column:1}
-  .hero-copy > .hero-photo{grid-column:2;grid-row:1 / span 4;display:grid;margin:0;width:100%;aspect-ratio:4/3;border:2px dashed rgba(185,205,199,.6);border-radius:16px;background:var(--night-2);place-content:center;justify-items:center;gap:12px;color:var(--on-dark-soft);overflow:hidden}
+  .hero-copy > .hero-photo{grid-column:2;grid-row:1 / span 4;display:grid;margin:0;width:100%;aspect-ratio:4/3;border:2px dashed rgba(244,247,242,.6);border-radius:12px;background:var(--sign-deep);place-content:center;justify-items:center;gap:12px;color:#f4f7f2;overflow:hidden}
   .hero-photo svg{width:72px;height:72px;opacity:.8}
   .hero-photo figcaption{font-size:16px;font-weight:700}
   .hero-photo img{width:100%;height:100%;object-fit:cover}
@@ -214,12 +218,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="clover" viewBox="0 0 64 64">
-      <g fill="#3dbb6c">
+      <g fill="currentColor">
         <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z"/>
         <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z" transform="rotate(118 32 32)"/>
         <path d="M32 31C27 26 17 24 15 15c-1.6-7 6-11.5 11-7.5 2.6 2 4.4 5 6 8.5 1.6-3.5 3.4-6.5 6-8.5 5-4 12.6.5 11 7.5C47 24 37 26 32 31z" transform="rotate(-118 32 32)"/>
       </g>
-      <path d="M33 34c2 9 6 16 13 23" fill="none" stroke="#3dbb6c" stroke-width="4" stroke-linecap="round"/>
+      <path d="M33 34c2 9 6 16 13 23" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
     </symbol>
     <symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
     <symbol id="person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z" fill="currentColor"/></symbol>

@@ -3,7 +3,8 @@
 **Live:** https://10elizabethbell.github.io/shamrockOwnerTrust/ · **Repo:** https://github.com/10elizabethbell/shamrockOwnerTrust · **Built:** 2026-10-14 from Muse brief of 2026-10-13 (Vibe 2, owner-operator trust, approved by Ellie 2026-10-14)
 
 ## What's built
-- **The look: I-95 at night.** Blue-green night ground (`#0e2a33`, not black), interstate-sign green (= shamrock green) for the "Meet your driver" sign, amber only for Call buttons and the road's centre line. Headline **"You fly. I'll drive."**, taken from the domain on Ed's card (youflyilldrive.com).
+- **The look: I-95 signs and night road.** The header and hero are one big green guide sign (shamrock green `#0a6337`, white inset border, white clover); "Meet your driver" is a blue I-95 services sign (`#17508f`); the rest of the page is blue-green night (`#0e2a33`, not black) and pale aluminum. Amber only for Call buttons and the road's centre line. Headline **"You fly. I'll drive."**, taken from the domain on Ed's card (youflyilldrive.com).
+- **More color (Ellie, 2026-10-15: "I hate the lack of color"):** the hero went from night blue to the green sign, and the driver sign went blue so the two signs don't repeat. Easy to revert: `--sign`/`--svc` tokens and the `.bar`, `.hero`, `.ed .sign` rules.
 - **Quiet hero (Ellie, 2026-10-14):** headline, one line ("I drive your car between New Jersey and Florida, door to door."), one big "Call for a free quote / 732-300-3835" button, an "or send a text" link, and "Owner & driver: Ed Brannagan". No sign panel and no motion in the hero.
 - **The one moving part:** a short road strip just above the closing call. A packed cream car drives steadily south past "Welcome to Delaware … Florida" signs, house to house, pauses, then drives back north. Nothing else moves and nothing needs touching. Speed and spacing (`CRUISE`, `SEG`, `TREE_GAP`) are at the top of the road script.
 - **Section edges:** still dashed lane lines.
