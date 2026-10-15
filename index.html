@@ -53,11 +53,9 @@ p{margin:0}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;border-radius:8px}
 .brand svg{width:34px;height:34px;flex:none;color:var(--leaf)}
 .nav{gap:22px}
-.nav a,.bar-phone{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
-.bar-phone{gap:8px;font-weight:850;font-size:20px}
-.bar-phone svg{width:20px;height:20px}
-@media (hover:hover){.nav a:hover,.bar-phone:hover{border-bottom-color:var(--focus)}}
-.nav,.bar-phone{display:none}
+.nav a{color:var(--on-dark);text-decoration:none;font-weight:700;font-size:17px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+@media (hover:hover){.nav a:hover{border-bottom-color:var(--focus)}}
+.nav{display:none}
 .bar b{font-size:17px;font-weight:800;letter-spacing:.01em;line-height:1.1}
 
 /* ---------- Hero ---------- */
@@ -76,7 +74,10 @@ p{margin:0}
 .hero h1{font-size:clamp(3rem,14vw,5.2rem);color:#f4f7f2;letter-spacing:-.02em;line-height:1}
 .hero h1 span{display:block}
 .hero-act{display:grid;gap:6px;margin-top:6px}
-.btn-wide{justify-content:flex-start;padding:0 22px;min-height:66px}
+/* The hero call is the number itself, lettered on the sign */
+.hero-call{justify-self:start;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;font-size:clamp(26px,7.6vw,44px);font-weight:850;letter-spacing:-.01em;line-height:1.1;color:#f4f7f2;text-decoration:none;border-bottom:3px solid rgba(244,247,242,.5);padding-bottom:2px;min-height:48px}
+@media (hover:hover){.hero-call:hover{border-color:var(--amber)}}
+.hero-call svg{width:30px;height:30px;flex:none}
 .text-link{justify-self:start;display:inline-flex;align-items:center;min-height:48px;padding:0 4px;font-size:18px;font-weight:700;color:var(--on-dark);text-underline-offset:5px;text-decoration-thickness:2px}
 @media (hover:hover){.text-link:hover{text-decoration-color:var(--amber)}}
 .owner{font-size:17px;color:#f4f7f2;margin-top:6px;display:flex;align-items:center;gap:14px}
@@ -86,13 +87,9 @@ p{margin:0}
 .hero-photo{display:none}
 .promise{font-size:clamp(19px,5.2vw,22px);line-height:1.5;color:var(--on-dark);max-width:30ch}
 .ctas{display:grid;grid-template-columns:1fr;gap:10px}
-.two-line{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}
-.two-line small{font-size:16px;font-weight:700;opacity:.85}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 18px;border-radius:12px;font-weight:800;font-size:18px;text-decoration:none;border:2px solid transparent;transition:background-color .2s,border-color .2s,transform .15s;white-space:nowrap;-webkit-tap-highlight-color:transparent}
 .btn svg{width:22px;height:22px;flex:none}
 .btn:active{transform:translateY(1px)}
-.btn-call{background:var(--amber);color:var(--ink);border-color:var(--amber)}
-@media (hover:hover){.btn-call:hover{background:#ffc75a;border-color:var(--focus)}}
 .btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(242,246,241,.55)}
 @media (hover:hover){.btn-ghost:hover{border-color:var(--focus);color:#fff}}
 
@@ -185,7 +182,7 @@ footer a{color:var(--on-dark);text-decoration-thickness:2px;text-underline-offse
   .hero .seam{margin-top:-64px}
   .hero-act{justify-items:start}
   .ctas{align-self:start;grid-template-columns:auto auto;justify-content:start}
-  .nav{display:flex}.bar-phone{display:inline-flex}
+  .nav{display:flex}
   footer{padding-bottom:40px}
   .road{height:260px}
   .pack-grid{grid-template-columns:1.1fr 1fr;align-items:center}
@@ -240,7 +237,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <header class="bar">
   <a class="brand" href="#top" aria-label="Shamrock Transportation, back to top"><svg aria-hidden="true"><use href="#clover"/></svg><b>Shamrock Transportation</b></a>
   <nav class="nav" aria-label="Sections"><a href="#driver">Meet your driver</a><a href="#how">How it works</a><a href="#questions">Questions</a></nav>
-  <a class="bar-phone" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
 </header>
 
 <main id="top">
@@ -249,7 +245,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h1 id="hero-h"><span>You fly.</span><span>I'll drive.</span></h1>
     <p class="promise">I drive your car between New Jersey and Florida, door to door.</p>
     <div class="hero-act" id="heroCtas">
-      <a class="btn btn-call btn-wide" href="tel:+17323003835"><svg aria-hidden="true"><use href="#phone"/></svg><span class="two-line">Call for a free quote<small>732-300-3835</small></span></a>
+      <a class="hero-call" href="tel:+17323003835" aria-label="Call Ed for a free quote, 732-300-3835"><svg aria-hidden="true"><use href="#phone"/></svg>732-300-3835</a>
       <a class="text-link js-sms" href="sms:+17323003835">or send a text</a>
     </div>
     <!-- Placeholder until Ed sends a head-and-shoulders photo. Swap the svg for:
