@@ -9,8 +9,8 @@
 - **Section edges:** still dashed lane lines.
 - **Sections, following the 40–70 research brief (Ellie, 2026-10-14):**
   - Header: name; on desktop also "Meet your driver / How it works / Questions" and the phone number.
-  - Hero (above).
-  - Meet your driver: green sign, a dashed "Photo of Ed" placeholder card (above the text on phones, beside it on desktop), Ed in his own words, tap-to-call number. To add the photo, drop `ed.jpg` in the folder and swap the placeholder for the `<img>` line in the HTML comment above it.
+  - Hero (above). **Two photo spots for Ed, both standing still (Ellie, 2026-10-15):** on desktop a wide "Photo of Ed with a car" placeholder fills the right half; on phones a small round face sits beside "Owner & driver". To add photos, swap each placeholder for the `<img>` line in the HTML comment above it: `ed-wide.jpg` (wide, 4:3) and `ed.jpg` (head and shoulders, used for both the round face and the sign).
+  - Meet your driver: green sign, a dashed "Portrait of Ed" placeholder card (above the text on phones, beside it on desktop), Ed in his own words, tap-to-call number. To add the photo, drop `ed.jpg` in the folder and swap the placeholder for the `<img>` line in the HTML comment above it.
   - How it works: Call for a quote → Arrange pickup → Receive your car, beside What I do.
   - Driven, not trucked: the packing point, with the side-view drawing of the packed car.
   - Questions, always visible: cost, packing, the spring trip home, when a truck carrier is better. A comment in the HTML marks where the insurance answer goes once Ed confirms.
@@ -36,7 +36,7 @@
 - **I picked the look myself, from 6 options I listed.** The run was unattended, so there was no Impeccable decision page and no comparison against other directions.
 
 ## Placeholders and gaps
-- **No photos at all.** Nothing of Ed, his vehicle, or any job. The Meet your driver sign has a visible placeholder card waiting for Ed's photo; don't hand the site over with it still empty.
+- **No photos at all.** Nothing of Ed, his vehicle, or any job. Three visible placeholders wait for Ed's photos (desktop hero, phone owner line, Meet your driver sign); don't hand the site over with any still empty.
 - **No logo file** (the card emblem isn't cleared).
 - **No email and no Facebook.** So, against the usual rules: no footer email, and no "see more of my work" Facebook link. Add both if Ed has them.
 - **Rates:** $1 per mile (Ed, via Ellie, 2026-10-15), shown in How it works step 1, the "What does it cost?" answer and the closing line. The hero doesn't show it. The page doesn't say what the price includes, and gives no example trip total.
@@ -50,7 +50,7 @@
 4. Any packing limits (weight, valuables, nothing on the roof)?
 5. What does "Airport services anywhere in Florida" mean in practice?
 6. Do you drive every car yourself? Do you ever bring a second driver?
-7. Can we use the shamrock from your card? Do you have a photo of yourself, and of your car if you have one? It goes in the placeholder card on the Meet your driver sign.
+7. Can we use the shamrock from your card? We need two photos: a wide one of you with a car (or at the wheel) for the top of the page, and a head-and-shoulders portrait for Meet your driver. Plates and customers' faces will be blurred.
 8. Hours or season windows, years doing this, and any customers willing to be quoted.
 9. youflyilldrive.com is unregistered. Want it registered and pointed here?
 
@@ -67,7 +67,6 @@ From Ellie's "Website UX Research & Design Brief, ages 40–70": kept the look, 
 ## Ideas not built (yours to pick)
 - **Runner-up look: "Departure board."** A split-flap airport board for "You fly", with NJ → FL flights and the car as the "arrival". Less touchable than the road.
 - **Highway Gothic lettering:** self-host Overpass (open licence, based on Highway Gothic) for the sign text only. It breaks the system-font house rule, so I didn't.
-- **Desktop:** the hero's right half is empty and the Ed sign is capped at 860px. Ed's photo (the research brief's "Meet Ed first" hero) would fill both.
 - **A moving top edge for the road band**, like the other section edges (currently a straight edge).
 
 ## Impeccable pass
