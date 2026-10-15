@@ -39,12 +39,12 @@
 - **No photos at all.** Nothing of Ed, his vehicle, or any job. The Meet your driver sign has a visible placeholder card waiting for Ed's photo; don't hand the site over with it still empty.
 - **No logo file** (the card emblem isn't cleared).
 - **No email and no Facebook.** So, against the usual rules: no footer email, and no "see more of my work" Facebook link. Add both if Ed has them.
-- **Rates:** the page only says "Very reasonable rates" (card wording) and "call for a price". No numbers.
+- **Rates:** $1 per mile (Ed, via Ellie, 2026-10-15), shown in How it works step 1, the "What does it cost?" answer and the closing line. The hero doesn't show it. The page doesn't say what the price includes, and gives no example trip total.
 - **Insurance, driver vetting, hours, years in business, reviews:** none are on the page, on purpose.
 - **Texting:** the brief says "accepts texts: unknown". The Text button is a guess. If Ed doesn't text, delete both `.js-sms` buttons; Call can stand alone.
 
 ## Questions for Ed (Thursday)
-1. Rates: a flat NJ↔FL price, or per trip? Is that okay to publish? What does it include: fuel, tolls, lodging, your trip back?
+1. Rates: $1 per mile. Does that include fuel, tolls, lodging and your trip back? Is there a minimum? Can we print an example (e.g. a typical NJ to Florida total)?
 2. Insurance: what covers the car and the things inside it while you drive? (Snowbirds will ask first. It's the biggest gap.)
 3. Do you take texts?
 4. Any packing limits (weight, valuables, nothing on the roof)?

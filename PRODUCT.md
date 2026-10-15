@@ -32,7 +32,8 @@ Seasonal: southbound in fall, northbound in spring (Ellie, 2026-10-13). Customer
 - Contact: call 732-300-3835 (Ed's cell). Texting: unknown. Email: none. Booking form: none.
 - Services, verbatim from the card: "Local & Long Distance", "Airport Services Anywhere In Florida", "Very Reasonable Rates".
 - Area: NJ ↔ Florida, plus local and long distance. Exact towns unknown.
-- Undecided / unknown: rates, insurance, driver vetting, hours, years in business, reviews.
+- Rates: $1 per mile (Ed, via Ellie, 2026-10-15). What it includes is unknown.
+- Undecided / unknown: insurance, driver vetting, hours, years in business, reviews.
 
 ## Brand Commitments
 
@@ -43,7 +44,7 @@ Seasonal: southbound in fall, northbound in spring (Ellie, 2026-10-13). Customer
 
 ## Evidence on Hand
 
-Business-card facts only (via Muse brief 2026-10-13). No photos, no logo file, no reviews, no prices, no social accounts, no Facebook. None of these may be fabricated.
+Business-card facts only (via Muse brief 2026-10-13). No photos, no logo file, no reviews, no social accounts, no Facebook. None of these may be fabricated.
 
 ## Product Principles
 
