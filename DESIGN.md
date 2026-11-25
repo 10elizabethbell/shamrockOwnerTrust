@@ -478,7 +478,7 @@ A top-down night highway band that opens the close: scenery to watch, never a co
 - **Questions:** plain question/answer pairs in a block capped at 760px: a Question h3 (20px/750) above a body paragraph, with a 2px solid guardrail rule above the first pair and below every answer. Cost is answered first, with the rate stated plainly: $1 per mile, the same figure as How it works step one and the close lede. Always open; no toggle, no icon.
 
 ### Brand Mark
-The engraved-line shamrock Ellie chose for every Shamrock site (2026-10-15): one fine outline of three heart leaves and a stem, a vein in each leaf, the stem tucked behind the lower leaf, all drawn in `currentColor`. The source files live in `/Users/ellie/Projects/freelance/shamrockElegant/brand/`.
+The engraved-line shamrock Ellie chose for every Shamrock site (2026-10-15): one fine outline of three heart leaves and a stem, a vein in each leaf, the stem tucked behind the lower leaf, all drawn in `currentColor`. The source files live in `/Users/ellie/Projects/freelance/websites/shamrockElegant/brand/`.
 - **Header:** `shamrock-small-ivory.svg` inlined byte for byte, with only its `color` attribute changed to leaf (#3dbb6c). 34px, no frame or tile.
 - **Favicon and home-screen icon:** `favicon.svg` and `apple-touch-icon.png` are exact copies: the ivory line on a deep green rounded square. These two are the only places the mark sits on a shape.
 
